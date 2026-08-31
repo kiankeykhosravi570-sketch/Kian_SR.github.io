@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ارسال آهنگ | Kian Music</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Tahoma,Arial,sans-serif;
+}
+
+body{
+background:#080808;
+color:white;
+}
+
+header{
+background:#101010;
+border-bottom:1px solid #222;
+padding:20px;
+}
+
+.header{
+max-width:900px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:23px;
+font-weight:bold;
+}
+
+.logo span{
+color:#777;
+}
+
+.back{
+color:#aaa;
+text-decoration:none;
+font-size:13px;
+}
+
+.container{
+max-width:700px;
+margin:50px auto;
+padding:0 20px;
+}
+
+.title{
+text-align:center;
+margin-bottom:35px;
+}
+
+.title h1{
+font-size:30px;
+margin-bottom:12px;
+}
+
+.title p{
+color:#888;
+line-height:2;
+}
+
+.form-box{
+background:#121212;
+border:1px solid #222;
+border-radius:18px;
+padding:25px;
+}
+
+label{
+display:block;
+margin-bottom:8px;
+font-size:14px;
+color:#ccc;
+}
+
+input,
+textarea,
+select{
+width:100%;
+background:#181818;
+border:1px solid #292929;
+border-radius:10px;
+padding:14px;
+color:white;
+outline:none;
+margin-bottom:20px;
+font-size:14px;
+}
+
+textarea{
+height:120px;
+resize:vertical;
+}
+
+button{
+width:100%;
+padding:15px;
+border:none;
+border-radius:10px;
+background:white;
+color:black;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+opacity:.85;
+}
+
+.notice{
+margin-top:20px;
+padding:15px;
+background:#181818;
+border-radius:10px;
+color:#888;
+font-size:12px;
+line-height:2;
+}
+
+footer{
+text-align:center;
+margin-top:60px;
+padding:30px;
+border-top:1px solid #222;
+color:#666;
+font-size:12px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="header">
+
+<div class="logo">
+Kian <span>Music</span>
+</div>
+
+<a class="back" href="index.html">
+← بازگشت به سایت
+</a>
+
+</div>
+
+</header>
+
+
+<div class="container">
+
+<div class="title">
+
+<h1>📤 ارسال آهنگ</h1>
+
+<p>
+اطلاعات آهنگ خود را وارد کنید تا درخواست شما بررسی شود.
+</p>
+
+</div>
+
+
+<div class="form-box">
+
+<form onsubmit="sendForm(event)">
+
+<label>
+نام خواننده
+</label>
+
+<input
+type="text"
+id="artist"
+placeholder="مثلاً Kian"
+required>
+
+
+<label>
+نام آهنگ
+</label>
+
+<input
+type="text"
+id="song"
+placeholder="نام آهنگ"
+required>
+
+
+<label>
+نوع درخواست
+</label>
+
+<select id="type">
+
+<option>
+انتشار آهنگ
+</option>
+
+<option>
+تبلیغ آهنگ
+</option>
+
+<option>
+درخواست همکاری
+</option>
+
+</select>
+
+
+<label>
+راه ارتباطی
+</label>
+
+<input
+type="text"
+id="contact"
+placeholder="شماره تماس یا آیدی شبکه اجتماعی"
+required>
+
+
+<label>
+توضیحات
+</label>
+
+<textarea
+id="description"
+placeholder="توضیحات مربوط به آهنگ..."></textarea>
+
+
+<button type="submit">
+ارسال درخواست
+</button>
+
+</form>
+
+
+<div class="notice">
+
+⚠️ توجه: در این نسخه اطلاعات فرم فقط برای نمایش آزمایشی است
+و هنوز به سیستم ذخیره‌سازی متصل نشده است.
+
+</div>
+
+</div>
+
+</div>
+
+
+<footer>
+
+© 2026 Kian Music
+
+</footer>
+
+
+<script>
+
+function sendForm(event){
+
+event.preventDefault();
+
+alert(
+"درخواست شما ثبت شد.\
+\n\nدر نسخه بعدی، این فرم را به سیستم دریافت درخواست متصل می‌کنیم."
+);
+
+}
+
+</script>
+
+</body>
+  </html>
