@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kian Music</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>خواننده‌ها | Kian Music</title>
 
 <style>
 
@@ -17,16 +21,13 @@ font-family:Tahoma,Arial,sans-serif;
 
 body{
 background:#080808;
-color:#fff;
+color:white;
 }
 
 header{
 background:#101010;
 border-bottom:1px solid #222;
 padding:20px;
-position:sticky;
-top:0;
-z-index:10;
 }
 
 .header{
@@ -46,293 +47,208 @@ font-weight:bold;
 color:#777;
 }
 
-nav{
-display:flex;
-gap:20px;
-}
-
-nav a{
+.back{
 color:#aaa;
 text-decoration:none;
-font-size:14px;
-}
-
-nav a:hover{
-color:white;
-}
-
-.hero{
-max-width:1100px;
-margin:auto;
-padding:60px 20px 35px;
-}
-
-.hero h1{
-font-size:40px;
-margin-bottom:15px;
-}
-
-.hero p{
-color:#888;
-line-height:2;
-}
-
-.search-box{
-max-width:1100px;
-margin:auto;
-padding:0 20px 30px;
-}
-
-.search{
-width:100%;
-padding:16px 18px;
-background:#151515;
-border:1px solid #292929;
-border-radius:12px;
-outline:none;
-color:white;
-font-size:15px;
+font-size:13px;
 }
 
 .container{
 max-width:1100px;
-margin:auto;
+margin:50px auto;
 padding:0 20px;
 }
 
-.section-title{
-font-size:22px;
-margin-bottom:20px;
+.title{
+text-align:center;
+margin-bottom:35px;
 }
 
-.music{
+.title h1{
+font-size:32px;
+margin-bottom:12px;
+}
+
+.title p{
+color:#888;
+line-height:2;
+}
+
+.artists{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(180px,1fr));
+
+gap:18px;
+}
+
+.artist{
 background:#121212;
 border:1px solid #222;
-border-radius:16px;
-padding:18px;
+border-radius:18px;
+padding:20px;
+text-align:center;
+transition:.2s;
+}
+
+.artist:hover{
+transform:translateY(-4px);
+border-color:#444;
+}
+
+.artist img{
+width:110px;
+height:110px;
+border-radius:50%;
+object-fit:cover;
+background:#222;
 margin-bottom:15px;
 }
 
-.song{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.cover{
-width:75px;
-height:75px;
-border-radius:12px;
-object-fit:cover;
-background:#222;
-}
-
-.song-info h2{
+.artist h2{
 font-size:17px;
 margin-bottom:8px;
 }
 
-.song-info p{
-color:#888;
-font-size:13px;
+.artist p{
+color:#777;
+font-size:12px;
 }
 
-audio{
-width:100%;
-margin-top:18px;
-}
-
-.download{
-display:inline-block;
+.artist a{
+display:block;
 margin-top:15px;
-padding:11px 18px;
+padding:10px;
 background:white;
 color:black;
+border-radius:8px;
 text-decoration:none;
-border-radius:9px;
-font-size:13px;
+font-size:12px;
 font-weight:bold;
 }
 
 footer{
 margin-top:70px;
 padding:35px 20px;
-text-align:center;
 border-top:1px solid #222;
+text-align:center;
 color:#666;
-font-size:13px;
-}
-
-@media(max-width:600px){
-
-.hero h1{
-font-size:30px;
-}
-
-nav{
-gap:10px;
-}
-
-nav a{
 font-size:12px;
 }
 
-}
-
 </style>
+
 </head>
 
+
 <body>
+
 
 <header>
 
 <div class="header">
 
 <div class="logo">
+
 Kian <span>Music</span>
+
 </div>
 
-<nav>
 
-<a href="index.html">خانه</a>
+<a
+class="back"
+href="index.html">
 
-<a href="#musicList">آهنگ‌ها</a>
+← بازگشت
 
-<a href="send.html">📤 ارسال آهنگ</a>
-
-</nav>
+</a>
 
 </div>
 
 </header>
 
 
-<section class="hero">
+<div class="container">
 
-<h1>
-Kian Music 🎵
-</h1>
+
+<div class="title">
+
+<h1>🎤 خواننده‌ها</h1>
 
 <p>
-جدیدترین آهنگ‌ها را آنلاین گوش کنید و با کیفیت بالا دانلود کنید.
+خواننده موردنظر خود را انتخاب کنید.
 </p>
-
-</section>
-
-
-<div class="search-box">
-
-<input
-class="search"
-id="search"
-type="text"
-placeholder="🔎 جستجوی آهنگ یا خواننده..."
-onkeyup="searchMusic()">
 
 </div>
 
 
-<main class="container">
-
-<h2 class="section-title">
-آخرین آهنگ‌ها
-</h2>
+<div class="artists">
 
 
-<div id="musicList">
+<!-- خواننده ۱ -->
 
-
-<!-- آهنگ شماره ۱ -->
-
-<div class="music">
-
-<div class="song">
+<div class="artist">
 
 <img
-class="cover"
 src="https://placehold.co/300x300"
-alt="کاور آهنگ">
-
-<div class="song-info">
+alt="Kian">
 
 <h2>
-آهنگ من
+Kian
 </h2>
 
 <p>
-خواننده: Kian
+1 آهنگ
 </p>
 
-</div>
-
-</div>
-
-
-<audio controls preload="metadata">
-
-<source
-src="../song1.mp3"
-type="audio/mpeg">
-
-مرورگر شما از پخش صوت پشتیبانی نمی‌کند.
-
-</audio>
-
-
-<a
-class="download"
-href="../song1.mp3"
-download>
-
-⬇ دانلود آهنگ
-
+<a href="index.html">
+مشاهده آهنگ‌ها
 </a>
 
 </div>
 
 
-<!-- آهنگ شماره ۲ -->
+<!-- خواننده ۲ -->
 
-<div class="music">
-
-<div class="song">
+<div class="artist">
 
 <img
-class="cover"
 src="https://placehold.co/300x300"
-alt="کاور آهنگ">
-
-<div class="song-info">
+alt="خواننده دوم">
 
 <h2>
-آهنگ نمونه ۲
+خواننده دوم
 </h2>
 
 <p>
-خواننده: Kian
+0 آهنگ
 </p>
 
-</div>
+<a href="index.html">
+مشاهده آهنگ‌ها
+</a>
 
 </div>
 
 
-<audio controls preload="metadata">
+<!-- خواننده ۳ -->
 
-<source
-src="../song1.mp3"
-type="audio/mpeg">
+<div class="artist">
 
-</audio>
+<img
+src="https://placehold.co/300x300"
+alt="خواننده سوم">
 
+<h2>
+خواننده سوم
+</h2>
 
-<a
-class="download"
-href="../song1.mp3"
-download>
+<p>
+0 آهنگ
+</p>
 
-⬇ دانلود آهنگ
-
+<a href="index.html">
+مشاهده آهنگ‌ها
 </a>
 
 </div>
@@ -340,52 +256,16 @@ download>
 
 </div>
 
-</main>
+</div>
 
 
 <footer>
 
 © 2026 Kian Music
 
-<br><br>
-
-تمامی حقوق محفوظ است.
-
 </footer>
 
 
-<script>
-
-function searchMusic(){
-
-let input =
-document.getElementById("search")
-.value
-.toLowerCase();
-
-let songs =
-document.querySelectorAll(".music");
-
-songs.forEach(function(song){
-
-let text =
-song.innerText.toLowerCase();
-
-if(text.includes(input)){
-
-song.style.display="block";
-
-}else{
-
-song.style.display="none";
-
-}
-
-});
-
-}
-
-</script>
-
 </body>
+
 </html>
