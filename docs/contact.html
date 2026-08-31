@@ -4,7 +4,6 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>تماس با ما | Kian Music</title>
@@ -18,107 +17,646 @@ box-sizing:border-box;
 font-family:Tahoma,Arial,sans-serif;
 }
 
-body{
-background:#080808;
-color:white;
+html{
+scroll-behavior:smooth;
 }
 
+body{
+background:#050509;
+color:#fff;
+min-height:100vh;
+overflow-x:hidden;
+}
+
+
+/* =========================
+   NEON BACKGROUND
+========================= */
+
+body::before{
+content:"";
+position:fixed;
+
+width:600px;
+height:600px;
+
+background:#7c3aed;
+filter:blur(200px);
+
+opacity:.18;
+
+top:-250px;
+right:-180px;
+
+z-index:-2;
+}
+
+body::after{
+content:"";
+position:fixed;
+
+width:550px;
+height:550px;
+
+background:#00e5ff;
+filter:blur(210px);
+
+opacity:.10;
+
+bottom:-250px;
+left:-180px;
+
+z-index:-2;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
 header{
-background:#101010;
-border-bottom:1px solid #222;
-padding:20px;
+position:sticky;
+top:0;
+z-index:100;
+
+background:rgba(5,5,9,.72);
+
+backdrop-filter:blur(22px);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+padding:15px 20px;
 }
 
 .header{
-max-width:900px;
+max-width:1200px;
 margin:auto;
+
 display:flex;
-justify-content:space-between;
 align-items:center;
+justify-content:space-between;
+
+gap:20px;
 }
+
+
+/* LOGO */
 
 .logo{
-font-size:23px;
-font-weight:bold;
+font-size:25px;
+font-weight:900;
+
+background:
+linear-gradient(
+90deg,
+#ffffff,
+#b47cff,
+#00e5ff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-.logo span{
-color:#777;
+
+/* =========================
+   NAV
+========================= */
+
+nav{
+display:flex;
+gap:9px;
+
+align-items:center;
+justify-content:flex-end;
+
+flex-wrap:wrap;
 }
 
-.back{
-color:#aaa;
+nav a{
+
+display:inline-flex;
+
+align-items:center;
+justify-content:center;
+
+color:#cfcfe0;
+
 text-decoration:none;
-font-size:13px;
+
+font-size:12px;
+
+padding:10px 14px;
+
+border-radius:12px;
+
+border:1px solid rgba(255,255,255,.13);
+
+background:
+linear-gradient(
+135deg,
+rgba(255,255,255,.075),
+rgba(255,255,255,.025)
+);
+
+box-shadow:
+inset 0 1px 0 rgba(255,255,255,.06),
+0 5px 20px rgba(0,0,0,.25);
+
+backdrop-filter:blur(12px);
+
+transition:.25s;
+
+white-space:nowrap;
 }
+
+nav a:hover{
+
+color:#fff;
+
+background:
+linear-gradient(
+135deg,
+rgba(124,58,237,.38),
+rgba(37,99,235,.20)
+);
+
+border-color:rgba(180,124,255,.65);
+
+box-shadow:
+0 0 25px rgba(124,58,237,.25);
+
+transform:translateY(-2px);
+}
+
+nav a.active{
+
+color:#fff;
+
+background:
+linear-gradient(
+135deg,
+rgba(124,58,237,.28),
+rgba(37,99,235,.14)
+);
+
+border-color:rgba(180,124,255,.45);
+
+box-shadow:
+0 0 18px rgba(124,58,237,.16);
+}
+
+
+/* =========================
+   MAIN
+========================= */
 
 .container{
-max-width:700px;
-margin:55px auto;
+
+max-width:900px;
+
+margin:65px auto;
+
 padding:0 20px;
 }
 
+
+/* =========================
+   TITLE
+========================= */
+
 .title{
+
 text-align:center;
-margin-bottom:35px;
+
+margin-bottom:38px;
+}
+
+.title-icon{
+
+width:78px;
+height:78px;
+
+margin:0 auto 20px;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+font-size:32px;
+
+border-radius:23px;
+
+background:
+linear-gradient(
+135deg,
+rgba(124,58,237,.22),
+rgba(0,229,255,.08)
+);
+
+border:1px solid rgba(180,124,255,.28);
+
+box-shadow:
+0 0 40px rgba(124,58,237,.18);
 }
 
 .title h1{
-font-size:32px;
+
+font-size:40px;
+
+font-weight:900;
+
 margin-bottom:12px;
+
+background:
+linear-gradient(
+90deg,
+#fff,
+#b47cff,
+#00e5ff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .title p{
-color:#888;
-line-height:2;
-}
 
-.contact-box{
-background:#121212;
-border:1px solid #222;
-border-radius:18px;
-padding:25px;
-margin-bottom:20px;
-}
-
-.contact-item{
-background:#181818;
-border-radius:12px;
-padding:18px;
-margin-bottom:12px;
-}
-
-.contact-item:last-child{
-margin-bottom:0;
-}
-
-.contact-item h2{
-font-size:15px;
-margin-bottom:8px;
-}
-
-.contact-item p{
 font-size:13px;
-color:#888;
+
+color:#777;
+
+line-height:2.2;
+}
+
+
+/* =========================
+   CONTACT GRID
+========================= */
+
+.contact-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:18px;
+}
+
+
+/* =========================
+   CONTACT CARD
+========================= */
+
+.contact-card{
+
+position:relative;
+
+padding:25px;
+
+border-radius:22px;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.07),
+rgba(255,255,255,.018)
+);
+
+border:1px solid rgba(180,124,255,.15);
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.35);
+
+overflow:hidden;
+
+transition:.3s;
+}
+
+.contact-card::before{
+
+content:"";
+
+position:absolute;
+
+width:160px;
+height:160px;
+
+background:#7c3aed;
+
+filter:blur(90px);
+
+opacity:.10;
+
+top:-80px;
+right:-70px;
+
+pointer-events:none;
+}
+
+.contact-card:hover{
+
+transform:translateY(-5px);
+
+border-color:rgba(180,124,255,.4);
+
+box-shadow:
+0 25px 70px rgba(0,0,0,.4),
+0 0 30px rgba(124,58,237,.08);
+}
+
+
+/* ICON */
+
+.contact-icon{
+
+width:52px;
+height:52px;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+border-radius:16px;
+
+font-size:23px;
+
+margin-bottom:18px;
+
+background:
+linear-gradient(
+135deg,
+rgba(124,58,237,.18),
+rgba(0,229,255,.06)
+);
+
+border:1px solid rgba(180,124,255,.20);
+
+box-shadow:
+0 0 20px rgba(124,58,237,.08);
+}
+
+
+/* TEXT */
+
+.contact-card h2{
+
+font-size:16px;
+
+margin-bottom:9px;
+}
+
+.contact-card p{
+
+font-size:11px;
+
+color:#777;
+
 line-height:2;
 }
 
-.contact-item a{
-color:white;
+
+/* CONTACT BUTTON */
+
+.contact-button{
+
+display:inline-flex;
+
+align-items:center;
+justify-content:center;
+
+margin-top:18px;
+
+padding:11px 15px;
+
+border-radius:11px;
+
 text-decoration:none;
+
+font-size:11px;
+
+font-weight:bold;
+
+color:#ddd;
+
+background:
+rgba(255,255,255,.045);
+
+border:1px solid rgba(255,255,255,.10);
+
+transition:.25s;
 }
 
-.contact-item a:hover{
-text-decoration:underline;
+.contact-button:hover{
+
+color:#fff;
+
+background:
+linear-gradient(
+135deg,
+#7c3aed,
+#2563eb
+);
+
+border-color:transparent;
+
+box-shadow:
+0 0 25px rgba(124,58,237,.2);
+
+transform:translateY(-2px);
 }
+
+
+/* =========================
+   MAIN CTA
+========================= */
+
+.cta{
+
+margin-top:22px;
+
+padding:28px;
+
+text-align:center;
+
+border-radius:22px;
+
+background:
+linear-gradient(
+135deg,
+rgba(124,58,237,.13),
+rgba(0,229,255,.035)
+);
+
+border:1px solid rgba(180,124,255,.18);
+
+box-shadow:
+inset 0 0 35px rgba(124,58,237,.04);
+}
+
+.cta h2{
+
+font-size:18px;
+
+margin-bottom:10px;
+}
+
+.cta p{
+
+font-size:11px;
+
+color:#777;
+
+line-height:2;
+}
+
+.cta-button{
+
+display:inline-flex;
+
+margin-top:20px;
+
+padding:14px 24px;
+
+border-radius:13px;
+
+text-decoration:none;
+
+font-size:12px;
+
+font-weight:bold;
+
+color:#fff;
+
+background:
+linear-gradient(
+135deg,
+#7c3aed,
+#2563eb,
+#0891b2
+);
+
+border:1px solid rgba(255,255,255,.15);
+
+box-shadow:
+0 10px 35px rgba(124,58,237,.25);
+
+transition:.3s;
+}
+
+.cta-button:hover{
+
+transform:translateY(-3px);
+
+filter:brightness(1.12);
+
+box-shadow:
+0 15px 45px rgba(124,58,237,.35);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-margin-top:70px;
-padding:35px 20px;
-border-top:1px solid #222;
+
+margin-top:80px;
+
+padding:45px 20px;
+
 text-align:center;
-color:#666;
-font-size:12px;
+
+border-top:1px solid rgba(255,255,255,.07);
+
+color:#555;
+
+font-size:11px;
+}
+
+.footer-logo{
+
+font-size:20px;
+
+font-weight:900;
+
+margin-bottom:10px;
+
+background:
+linear-gradient(
+90deg,
+#aaa,
+#b47cff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:750px){
+
+.header{
+
+flex-direction:column;
+
+align-items:stretch;
+}
+
+nav{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:8px;
+}
+
+nav a{
+
+font-size:10px;
+
+padding:10px 5px;
+}
+
+.container{
+
+margin-top:40px;
+}
+
+.title h1{
+
+font-size:32px;
+}
+
+.contact-grid{
+
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:400px){
+
+nav{
+
+grid-template-columns:
+repeat(2,1fr);
+}
+
+.title h1{
+
+font-size:28px;
+}
+
 }
 
 </style>
@@ -129,24 +667,48 @@ font-size:12px;
 <body>
 
 
+<!-- HEADER -->
+
 <header>
 
 <div class="header">
 
 <div class="logo">
-
-Kian <span>Music</span>
-
+Kian Music
 </div>
 
 
-<a
-class="back"
-href="index.html">
+<nav>
 
-← بازگشت به خانه
+<a href="index.html">
+🏠 خانه
+</a>
+
+<a href="index.html#musicList">
+🎵 آهنگ‌ها
+</a>
+
+<a href="artists.html">
+🎤 خواننده‌ها
+</a>
+
+<a href="send.html">
+📤 ارسال آهنگ
+</a>
+
+<a href="about.html">
+ℹ️ درباره ما
+</a>
+
+<a
+href="contact.html"
+class="active">
+
+📞 تماس
 
 </a>
+
+</nav>
 
 </div>
 
@@ -154,98 +716,200 @@ href="index.html">
 
 
 
-<div class="container">
+<!-- CONTENT -->
+
+<main class="container">
 
 
 <div class="title">
 
+
+<div class="title-icon">
+📞
+</div>
+
+
 <h1>
-📞 تماس با ما
+تماس با ما
 </h1>
 
+
 <p>
-برای ارتباط با Kian Music از راه‌های زیر با ما در تماس باشید.
+
+برای ارتباط با Kian Music،
+می‌توانید از راه‌های زیر با ما در ارتباط باشید.
+
 </p>
+
 
 </div>
 
 
 
-<div class="contact-box">
+<div class="contact-grid">
 
 
-<div class="contact-item">
+<!-- TELEGRAM -->
+
+<div class="contact-card">
+
+<div class="contact-icon">
+✈️
+</div>
 
 <h2>
-📱 شبکه اجتماعی
+تلگرام
+</h2>
+
+<p>
+برای پشتیبانی، سوالات و پیگیری درخواست‌ها از طریق تلگرام با ما در ارتباط باشید.
+</p>
+
+<a
+class="contact-button"
+href="#"
+target="_blank">
+
+ارتباط در تلگرام ←
+
+</a>
+
+</div>
+
+
+
+<!-- INSTAGRAM -->
+
+<div class="contact-card">
+
+<div class="contact-icon">
+📸
+</div>
+
+<h2>
+اینستاگرام
+</h2>
+
+<p>
+برای مشاهده اخبار و فعالیت‌های Kian Music ما را در اینستاگرام دنبال کنید.
+</p>
+
+<a
+class="contact-button"
+href="#"
+target="_blank">
+
+مشاهده اینستاگرام ←
+
+</a>
+
+</div>
+
+
+
+<!-- EMAIL -->
+
+<div class="contact-card">
+
+<div class="contact-icon">
+✉️
+</div>
+
+<h2>
+ایمیل
+</h2>
+
+<p>
+برای موضوعات مربوط به همکاری و ارتباط رسمی می‌توانید از ایمیل استفاده کنید.
+</p>
+
+<a
+class="contact-button"
+href="mailto:">
+
+ارسال ایمیل ←
+
+</a>
+
+</div>
+
+
+
+<!-- SUPPORT -->
+
+<div class="contact-card">
+
+<div class="contact-icon">
+💬
+</div>
+
+<h2>
+پشتیبانی
+</h2>
+
+<p>
+اگر درباره ارسال آهنگ یا نحوه انتشار سوالی دارید، ابتدا بخش ارسال آهنگ را بررسی کنید.
+</p>
+
+<a
+class="contact-button"
+href="send.html">
+
+صفحه ارسال آهنگ ←
+
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<!-- CTA -->
+
+<div class="cta">
+
+<h2>
+🎵 آماده انتشار آهنگت هستی؟
 </h2>
 
 <p>
 
-برای ارتباط و پشتیبانی می‌توانید
-از شبکه اجتماعی ما استفاده کنید.
-
-<br><br>
-
-<a href="#">
-@Kian_Music
-</a>
+اطلاعات آهنگت رو ارسال کن تا بررسی بشه.
 
 </p>
 
-</div>
+<a
+class="cta-button"
+href="send.html">
 
-
-
-<div class="contact-item">
-
-<h2>
-📧 ایمیل
-</h2>
-
-<p>
-
-<a href="mailto:example@email.com">
-example@email.com
-</a>
-
-</p>
-
-</div>
-
-
-
-<div class="contact-item">
-
-<h2>
 📤 ارسال آهنگ
-</h2>
 
-<p>
-
-برای ارسال اثر و درخواست انتشار،
-از صفحه ارسال آهنگ استفاده کنید.
-
-<br><br>
-
-<a href="send.html">
-رفتن به صفحه ارسال آهنگ ←
 </a>
 
-</p>
-
 </div>
 
 
-</div>
-
-</div>
+</main>
 
 
+
+<!-- FOOTER -->
 
 <footer>
 
-© 2026 Kian Music
+<div class="footer-logo">
+Kian Music
+</div>
+
+<p>
+پلتفرمی برای کشف و معرفی موسیقی
+</p>
+
+<br>
+
+© 2026 Kian Music • تمام حقوق محفوظ است.
 
 </footer>
 
