@@ -119,13 +119,14 @@ button:hover{
 opacity:.85;
 }
 
-.notice{
+.success{
+display:none;
 margin-top:20px;
 padding:15px;
 background:#181818;
+border:1px solid #333;
 border-radius:10px;
-color:#888;
-font-size:12px;
+text-align:center;
 line-height:2;
 }
 
@@ -167,7 +168,7 @@ Kian <span>Music</span>
 <h1>📤 ارسال آهنگ</h1>
 
 <p>
-اطلاعات آهنگ خود را وارد کنید تا درخواست شما بررسی شود.
+اطلاعات آهنگ خود را وارد کنید.
 </p>
 
 </div>
@@ -175,7 +176,11 @@ Kian <span>Music</span>
 
 <div class="form-box">
 
-<form onsubmit="sendForm(event)">
+<form
+action="https://docs.google.com/forms/d/e/1FAIpQLScCytFMryyL4_j3SirtQ9Y4SHpqhEWy0tNrK2MqW5lTC7G2Vw/formResponse"
+method="POST"
+target="hidden_iframe"
+onsubmit="submitted=true;">
 
 <label>
 نام خواننده
@@ -183,9 +188,36 @@ Kian <span>Music</span>
 
 <input
 type="text"
-id="artist"
-placeholder="مثلاً Kian"
+name="entry.755885147"
+placeholder="نام خواننده"
 required>
+
+
+<label>
+نوع درخواست
+</label>
+
+<select
+name="entry.730839540"
+required>
+
+<option value="">
+انتخاب کنید
+</option>
+
+<option value="انتشار آهنگ">
+انتشار آهنگ
+</option>
+
+<option value="تبلیغ آهنگ">
+تبلیغ آهنگ
+</option>
+
+<option value="درخواست همکاری">
+درخواست همکاری
+</option>
+
+</select>
 
 
 <label>
@@ -194,30 +226,9 @@ required>
 
 <input
 type="text"
-id="song"
+name="entry.1447632670"
 placeholder="نام آهنگ"
 required>
-
-
-<label>
-نوع درخواست
-</label>
-
-<select id="type">
-
-<option>
-انتشار آهنگ
-</option>
-
-<option>
-تبلیغ آهنگ
-</option>
-
-<option>
-درخواست همکاری
-</option>
-
-</select>
 
 
 <label>
@@ -226,7 +237,7 @@ required>
 
 <input
 type="text"
-id="contact"
+name="entry.436797421"
 placeholder="شماره تماس یا آیدی شبکه اجتماعی"
 required>
 
@@ -236,21 +247,30 @@ required>
 </label>
 
 <textarea
-id="description"
-placeholder="توضیحات مربوط به آهنگ..."></textarea>
+name="entry.1121425605"
+placeholder="توضیحات مربوط به آهنگ...">
+</textarea>
 
 
 <button type="submit">
-ارسال درخواست
+📤 ارسال درخواست
 </button>
 
 </form>
 
 
-<div class="notice">
+<iframe
+name="hidden_iframe"
+id="hidden_iframe"
+style="display:none;">
+</iframe>
 
-⚠️ توجه: در این نسخه اطلاعات فرم فقط برای نمایش آزمایشی است
-و هنوز به سیستم ذخیره‌سازی متصل نشده است.
+
+<div
+class="success"
+id="success">
+
+✅ درخواست شما با موفقیت ارسال شد.
 
 </div>
 
@@ -268,18 +288,27 @@ placeholder="توضیحات مربوط به آهنگ..."></textarea>
 
 <script>
 
-function sendForm(event){
+let submitted = false;
 
-event.preventDefault();
+document
+.getElementById("hidden_iframe")
+.onload = function(){
 
-alert(
-"درخواست شما ثبت شد.\
-\n\nدر نسخه بعدی، این فرم را به سیستم دریافت درخواست متصل می‌کنیم."
-);
+if(submitted){
+
+document
+.getElementById("success")
+.style.display = "block";
+
+document
+.querySelector("form")
+.reset();
 
 }
+
+};
 
 </script>
 
 </body>
-  </html>
+</html>
