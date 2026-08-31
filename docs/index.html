@@ -189,11 +189,9 @@ Kian <span>Music</span>
 </div>
 
 <nav>
-
 <a href="#">خانه</a>
 <a href="#">آهنگ‌ها</a>
 <a href="#">خواننده‌ها</a>
-
 </nav>
 
 </div>
@@ -233,4 +231,151 @@ onkeyup="searchMusic()">
 </h2>
 
 
-<div id="
+<div id="musicList">
+
+
+<!-- آهنگ شماره ۱ -->
+
+<div class="music">
+
+<div class="song">
+
+<img
+class="cover"
+src="https://placehold.co/300x300"
+alt="کاور آهنگ">
+
+<div class="song-info">
+
+<h2>
+آهنگ من
+</h2>
+
+<p>
+خواننده: Kian
+</p>
+
+</div>
+
+</div>
+
+
+<audio controls>
+
+<source
+src="song1.mp3"
+type="audio/mpeg">
+
+</audio>
+
+
+<a
+class="download"
+href="song1.mp3"
+download>
+
+⬇ دانلود آهنگ
+
+</a>
+
+</div>
+
+
+<!-- آهنگ شماره ۲ -->
+
+<div class="music">
+
+<div class="song">
+
+<img
+class="cover"
+src="https://placehold.co/300x300"
+alt="کاور آهنگ">
+
+<div class="song-info">
+
+<h2>
+آهنگ نمونه ۲
+</h2>
+
+<p>
+خواننده: Kian
+</p>
+
+</div>
+
+</div>
+
+
+<audio controls>
+
+<source
+src="song1.mp3"
+type="audio/mpeg">
+
+</audio>
+
+
+<a
+class="download"
+href="song1.mp3"
+download>
+
+⬇ دانلود آهنگ
+
+</a>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer>
+
+© 2026 Kian Music
+
+<br><br>
+
+تمامی حقوق محفوظ است.
+
+</footer>
+
+
+<script>
+
+function searchMusic(){
+
+let input =
+document.getElementById("search")
+.value
+.toLowerCase();
+
+let songs =
+document.querySelectorAll(".music");
+
+songs.forEach(function(song){
+
+let text =
+song.innerText.toLowerCase();
+
+if(text.includes(input)){
+
+song.style.display="block";
+
+}else{
+
+song.style.display="none";
+
+}
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
