@@ -1,144 +1,359 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kian Music</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
+<title>Kian Music</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Tahoma,Arial,sans-serif;
+}
+
+body{
+    background:#080808;
+    color:#fff;
+}
+
+/* Header */
+
+header{
+    padding:22px 18px;
+    background:#101010;
+    border-bottom:1px solid #222;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+.header-content{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#aaa;
+}
+
+.menu{
+    display:flex;
+    gap:20px;
+}
+
+.menu a{
+    color:#aaa;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.menu a:hover{
+    color:white;
+}
+
+/* Hero */
+
+.hero{
+    max-width:1100px;
+    margin:auto;
+    padding:70px 20px 45px;
+}
+
+.hero h1{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    color:#999;
+    font-size:16px;
+    line-height:2;
+}
+
+/* Search */
+
+.search-box{
+    max-width:1100px;
+    margin:auto;
+    padding:0 20px 35px;
+}
+
+.search{
+    width:100%;
+    padding:17px 20px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:#171717;
+    color:white;
+    font-size:15px;
+    border:1px solid #272727;
+}
+
+.search::placeholder{
+    color:#777;
+}
+
+/* Songs */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:0 20px;
+}
+
+.section-title{
+    margin-bottom:20px;
+    font-size:22px;
+}
+
+.music{
+    background:#121212;
+    border:1px solid #222;
+    border-radius:16px;
+    padding:20px;
+    margin-bottom:15px;
+    transition:.2s;
+}
+
+.music:hover{
+    border-color:#444;
+    transform:translateY(-2px);
+}
+
+.song-info{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.cover{
+    width:70px;
+    height:70px;
+    border-radius:12px;
+    background:#222;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+}
+
+.song-text h2{
+    font-size:18px;
+    margin-bottom:8px;
+}
+
+.song-text p{
+    color:#888;
+    font-size:13px;
+}
+
+audio{
+    width:100%;
+    margin-top:18px;
+}
+
+.download{
+    display:inline-block;
+    margin-top:15px;
+    padding:11px 18px;
+    border-radius:9px;
+    background:white;
+    color:black;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.download:hover{
+    opacity:.8;
+}
+
+/* Footer */
+
+footer{
+    margin-top:70px;
+    padding:35px 20px;
+    text-align:center;
+    border-top:1px solid #222;
+    color:#666;
+    font-size:13px;
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    .menu{
+        gap:10px;
     }
 
-    body {
-      margin: 0;
-      background: #111;
-      color: white;
+    .menu a{
+        font-size:12px;
     }
 
-    header {
-      background: #181818;
-      padding: 25px;
-      text-align: center;
-      border-bottom: 1px solid #333;
+    .hero{
+        padding-top:45px;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 30px;
+    .hero h1{
+        font-size:32px;
     }
 
-    header p {
-      color: #aaa;
+    .song-info{
+        align-items:flex-start;
     }
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 25px;
-    }
+}
 
-    .search {
-      width: 100%;
-      padding: 15px;
-      border-radius: 10px;
-      border: none;
-      outline: none;
-      margin-bottom: 25px;
-      background: #222;
-      color: white;
-      font-size: 16px;
-    }
-
-    .music {
-      background: #1c1c1c;
-      padding: 18px;
-      margin-bottom: 15px;
-      border-radius: 15px;
-    }
-
-    .music h2 {
-      margin-top: 0;
-    }
-
-    audio {
-      width: 100%;
-      margin-top: 10px;
-    }
-
-    .download {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 10px 18px;
-      background: white;
-      color: #111;
-      text-decoration: none;
-      border-radius: 8px;
-    }
-
-    footer {
-      text-align: center;
-      color: #777;
-      padding: 30px;
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>🎵 Kian Music</h1>
-  <p>دانلود و پخش آنلاین آهنگ</p>
-</header>
 
-<div class="container">
+<div class="header-content">
 
-  <input
-    class="search"
-    type="text"
-    placeholder="جستجوی آهنگ..."
-    onkeyup="searchMusic()"
-    id="search"
-  >
+<div class="logo">
+Kian <span>Music</span>
+</div>
 
-  <div id="musicList">
-
-    <div class="music">
-      <h2>آهنگ نمونه</h2>
-      <p>خواننده: Kian</p>
-
-      <audio controls>
-        <source src="" type="audio/mpeg">
-      </audio>
-
-      <a class="download" href="#">دانلود آهنگ</a>
-    </div>
-
-  </div>
+<nav class="menu">
+<a href="#">خانه</a>
+<a href="#">آهنگ‌ها</a>
+<a href="#">خواننده‌ها</a>
+</nav>
 
 </div>
 
+</header>
+
+
+<section class="hero">
+
+<h1>موسیقی، همیشه همراه تو 🎵</h1>
+
+<p>
+جدیدترین آهنگ‌ها را آنلاین گوش کنید و با کیفیت بالا دانلود کنید.
+</p>
+
+</section>
+
+
+<div class="search-box">
+
+<input
+class="search"
+id="search"
+type="text"
+placeholder="🔎 جستجوی آهنگ یا خواننده..."
+onkeyup="searchMusic()">
+
+</div>
+
+
+<main class="container">
+
+<h2 class="section-title">
+آخرین آهنگ‌ها
+</h2>
+
+
+<div id="musicList">
+
+
+<div class="music">
+
+<div class="song-info">
+
+<div class="cover">
+🎵
+</div>
+
+<div class="song-text">
+
+<h2>آهنگ نمونه</h2>
+
+<p>
+خواننده: Kian
+</p>
+
+</div>
+
+</div>
+
+
+<audio controls>
+
+<source src="" type="audio/mpeg">
+
+</audio>
+
+
+<a class="download" href="#">
+⬇ دانلود آهنگ
+</a>
+
+</div>
+
+
+</div>
+
+</main>
+
+
 <footer>
-  © 2026 Kian Music
+
+© 2026 Kian Music  
+<br><br>
+تمامی حقوق محفوظ است.
+
 </footer>
 
+
 <script>
-function searchMusic() {
-  let input = document.getElementById("search").value.toLowerCase();
-  let songs = document.querySelectorAll(".music");
 
-  songs.forEach(function(song) {
-    let text = song.innerText.toLowerCase();
+function searchMusic(){
 
-    if (text.includes(input)) {
-      song.style.display = "block";
-    } else {
-      song.style.display = "none";
-    }
-  });
+let input =
+document.getElementById("search").value.toLowerCase();
+
+let songs =
+document.querySelectorAll(".music");
+
+songs.forEach(function(song){
+
+let text =
+song.innerText.toLowerCase();
+
+if(text.includes(input)){
+
+song.style.display="block";
+
+}else{
+
+song.style.display="none";
+
 }
+
+});
+
+}
+
 </script>
 
 </body>
-  </html>
+</html>
