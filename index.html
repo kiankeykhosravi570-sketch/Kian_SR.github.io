@@ -1,1 +1,144 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kian Music</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #111;
+      color: white;
+    }
+
+    header {
+      background: #181818;
+      padding: 25px;
+      text-align: center;
+      border-bottom: 1px solid #333;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    header p {
+      color: #aaa;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 25px;
+    }
+
+    .search {
+      width: 100%;
+      padding: 15px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      margin-bottom: 25px;
+      background: #222;
+      color: white;
+      font-size: 16px;
+    }
+
+    .music {
+      background: #1c1c1c;
+      padding: 18px;
+      margin-bottom: 15px;
+      border-radius: 15px;
+    }
+
+    .music h2 {
+      margin-top: 0;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .download {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 18px;
+      background: white;
+      color: #111;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      padding: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>🎵 Kian Music</h1>
+  <p>دانلود و پخش آنلاین آهنگ</p>
+</header>
+
+<div class="container">
+
+  <input
+    class="search"
+    type="text"
+    placeholder="جستجوی آهنگ..."
+    onkeyup="searchMusic()"
+    id="search"
+  >
+
+  <div id="musicList">
+
+    <div class="music">
+      <h2>آهنگ نمونه</h2>
+      <p>خواننده: Kian</p>
+
+      <audio controls>
+        <source src="" type="audio/mpeg">
+      </audio>
+
+      <a class="download" href="#">دانلود آهنگ</a>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Kian Music
+</footer>
+
+<script>
+function searchMusic() {
+  let input = document.getElementById("search").value.toLowerCase();
+  let songs = document.querySelectorAll(".music");
+
+  songs.forEach(function(song) {
+    let text = song.innerText.toLowerCase();
+
+    if (text.includes(input)) {
+      song.style.display = "block";
+    } else {
+      song.style.display = "none";
+    }
+  });
+}
+</script>
+
+</body>
+  </html>
