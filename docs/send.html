@@ -4,12 +4,15 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ارسال آهنگ | Kian Music</title>
 
 <style>
+
+/* =========================
+   RESET
+========================= */
 
 *{
 margin:0;
@@ -23,33 +26,35 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#07070b;
+background:#050509;
 color:#fff;
 min-height:100vh;
 overflow-x:hidden;
 }
 
 
-/* BACKGROUND */
+/* =========================
+   NEON BACKGROUND
+========================= */
 
 body::before{
 content:"";
 
 position:fixed;
 
-width:500px;
-height:500px;
+width:600px;
+height:600px;
 
 background:#7c3aed;
 
-filter:blur(180px);
+filter:blur(200px);
 
-opacity:.14;
+opacity:.18;
 
-top:-200px;
-right:-150px;
+top:-250px;
+right:-180px;
 
-z-index:-1;
+z-index:-2;
 }
 
 body::after{
@@ -57,38 +62,41 @@ content:"";
 
 position:fixed;
 
-width:450px;
-height:450px;
+width:550px;
+height:550px;
 
 background:#00e5ff;
 
-filter:blur(180px);
+filter:blur(210px);
 
-opacity:.08;
+opacity:.10;
 
-bottom:-200px;
-left:-150px;
+bottom:-250px;
+left:-180px;
 
-z-index:-1;
+z-index:-2;
 }
 
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header{
+
 position:sticky;
 
 top:0;
 
 z-index:100;
 
-background:rgba(8,8,12,.82);
+background:rgba(5,5,9,.72);
 
-backdrop-filter:blur(20px);
+backdrop-filter:blur(22px);
 
 border-bottom:1px solid rgba(255,255,255,.08);
 
-padding:16px 20px;
+padding:15px 20px;
 }
 
 .header{
@@ -115,11 +123,13 @@ font-size:25px;
 
 font-weight:900;
 
+letter-spacing:.5px;
+
 background:
 
 linear-gradient(
 90deg,
-#fff,
+#ffffff,
 #b47cff,
 #00e5ff
 );
@@ -128,11 +138,14 @@ linear-gradient(
 
 -webkit-text-fill-color:transparent;
 
-white-space:nowrap;
+text-shadow:
+0 0 25px rgba(124,58,237,.15);
 }
 
 
-/* NAV */
+/* =========================
+   NAV BUTTONS
+========================= */
 
 nav{
 
@@ -155,7 +168,7 @@ align-items:center;
 
 justify-content:center;
 
-color:#d0d0d0;
+color:#cfcfe0;
 
 text-decoration:none;
 
@@ -179,7 +192,7 @@ box-shadow:
 
 inset 0 1px 0 rgba(255,255,255,.06),
 
-0 5px 18px rgba(0,0,0,.22);
+0 5px 20px rgba(0,0,0,.25);
 
 backdrop-filter:blur(12px);
 
@@ -196,33 +209,63 @@ background:
 
 linear-gradient(
 135deg,
-rgba(124,58,237,.35),
+rgba(124,58,237,.38),
 rgba(37,99,235,.20)
 );
 
-border-color:rgba(180,124,255,.65);
+border-color:
+
+rgba(180,124,255,.65);
 
 box-shadow:
 
-0 0 22px rgba(124,58,237,.25);
+0 0 25px rgba(124,58,237,.25);
 
 transform:translateY(-2px);
 }
 
 
-/* CONTAINER */
+/* ACTIVE PAGE */
+
+nav a.active{
+
+color:#fff;
+
+background:
+
+linear-gradient(
+135deg,
+rgba(124,58,237,.28),
+rgba(37,99,235,.14)
+);
+
+border-color:
+
+rgba(180,124,255,.45);
+
+box-shadow:
+
+0 0 18px rgba(124,58,237,.16);
+}
+
+
+/* =========================
+   MAIN
+========================= */
 
 .container{
 
 max-width:850px;
 
-margin:60px auto;
+margin:65px auto;
 
 padding:0 20px;
 }
 
 
-/* TITLE */
+/* =========================
+   TITLE
+========================= */
 
 .title{
 
@@ -231,9 +274,46 @@ text-align:center;
 margin-bottom:35px;
 }
 
+.title-icon{
+
+width:75px;
+
+height:75px;
+
+margin:0 auto 20px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:32px;
+
+border-radius:22px;
+
+background:
+
+linear-gradient(
+135deg,
+rgba(124,58,237,.22),
+rgba(0,229,255,.08)
+);
+
+border:1px solid rgba(180,124,255,.28);
+
+box-shadow:
+
+0 0 35px rgba(124,58,237,.18),
+
+inset 0 0 25px rgba(124,124,255,.05);
+}
+
 .title h1{
 
-font-size:38px;
+font-size:40px;
+
+font-weight:900;
 
 margin-bottom:12px;
 
@@ -241,7 +321,7 @@ background:
 
 linear-gradient(
 90deg,
-#fff,
+#ffffff,
 #b47cff,
 #00e5ff
 );
@@ -257,59 +337,149 @@ color:#777;
 
 font-size:13px;
 
-line-height:2;
+line-height:2.2;
 }
 
 
-/* FORM CARD */
+/* =========================
+   MAIN CARD
+========================= */
 
 .form-card{
+
+position:relative;
+
+padding:32px;
+
+border-radius:26px;
 
 background:
 
 linear-gradient(
 145deg,
-rgba(255,255,255,.07),
-rgba(255,255,255,.02)
+rgba(255,255,255,.075),
+rgba(255,255,255,.018)
 );
 
-border:1px solid rgba(255,255,255,.09);
-
-border-radius:24px;
-
-padding:30px;
+border:1px solid rgba(180,124,255,.16);
 
 box-shadow:
 
-0 25px 70px rgba(0,0,0,.35);
+0 25px 80px rgba(0,0,0,.45),
+
+0 0 50px rgba(124,58,237,.08);
+
+overflow:hidden;
+}
+
+.form-card::before{
+
+content:"";
+
+position:absolute;
+
+width:220px;
+
+height:220px;
+
+background:#7c3aed;
+
+filter:blur(100px);
+
+opacity:.12;
+
+top:-120px;
+
+right:-100px;
+
+pointer-events:none;
+}
+
+.form-card::after{
+
+content:"";
+
+position:absolute;
+
+width:180px;
+
+height:180px;
+
+background:#00e5ff;
+
+filter:blur(100px);
+
+opacity:.07;
+
+bottom:-100px;
+
+left:-80px;
+
+pointer-events:none;
 }
 
 
-/* INFO */
+/* =========================
+   INFO BOX
+========================= */
 
 .info{
 
-padding:18px;
+position:relative;
+
+z-index:2;
+
+padding:20px;
 
 margin-bottom:25px;
 
-border-radius:15px;
+border-radius:17px;
 
-background:rgba(124,58,237,.08);
+background:
 
-border:1px solid rgba(124,58,237,.18);
+linear-gradient(
+135deg,
+rgba(124,58,237,.13),
+rgba(0,229,255,.035)
+);
 
-color:#aaa;
+border:1px solid rgba(180,124,255,.18);
 
-font-size:12px;
+box-shadow:
 
-line-height:2;
+inset 0 0 25px rgba(124,58,237,.04);
+}
+
+.info-title{
+
+font-size:14px;
+
+font-weight:bold;
+
+margin-bottom:9px;
+
+color:#ddd;
+}
+
+.info-text{
+
+color:#888;
+
+font-size:11px;
+
+line-height:2.1;
 }
 
 
-/* BUTTON */
+/* =========================
+   SEND BUTTON
+========================= */
 
 .form-button{
+
+position:relative;
+
+z-index:2;
 
 display:flex;
 
@@ -319,15 +489,17 @@ justify-content:center;
 
 width:100%;
 
-padding:17px;
+min-height:58px;
 
-border-radius:14px;
+padding:16px 20px;
+
+border-radius:15px;
 
 text-decoration:none;
 
 font-size:14px;
 
-font-weight:bold;
+font-weight:900;
 
 color:#fff;
 
@@ -336,29 +508,59 @@ background:
 linear-gradient(
 135deg,
 #7c3aed,
-#2563eb
+#2563eb,
+#0891b2
 );
+
+border:1px solid rgba(255,255,255,.16);
 
 box-shadow:
 
-0 12px 35px rgba(124,58,237,.25);
+0 10px 35px rgba(124,58,237,.28),
 
-transition:.25s;
+0 0 25px rgba(0,229,255,.08);
+
+transition:.3s;
 }
 
 .form-button:hover{
 
-transform:translateY(-3px);
+transform:translateY(-4px);
 
 filter:brightness(1.15);
 
 box-shadow:
 
-0 15px 45px rgba(124,58,237,.35);
+0 15px 50px rgba(124,58,237,.38),
+
+0 0 35px rgba(0,229,255,.12);
+}
+
+.form-button:active{
+
+transform:scale(.98);
 }
 
 
-/* STEPS */
+/* =========================
+   STEPS TITLE
+========================= */
+
+.steps-title{
+
+text-align:center;
+
+font-size:17px;
+
+font-weight:bold;
+
+margin:40px 0 18px;
+}
+
+
+/* =========================
+   STEPS
+========================= */
 
 .steps{
 
@@ -367,36 +569,83 @@ display:grid;
 grid-template-columns:
 repeat(3,1fr);
 
-gap:12px;
-
-margin-top:20px;
+gap:14px;
 }
 
 .step{
 
-padding:18px;
+position:relative;
+
+padding:22px 15px;
 
 text-align:center;
 
-background:rgba(255,255,255,.035);
+background:
 
-border:1px solid rgba(255,255,255,.07);
+linear-gradient(
+145deg,
+rgba(255,255,255,.055),
+rgba(255,255,255,.018)
+);
 
-border-radius:15px;
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:18px;
+
+transition:.3s;
+
+overflow:hidden;
+}
+
+.step:hover{
+
+transform:translateY(-5px);
+
+border-color:
+
+rgba(180,124,255,.35);
+
+box-shadow:
+
+0 12px 35px rgba(0,0,0,.3),
+
+0 0 25px rgba(124,58,237,.08);
 }
 
 .step-number{
 
-font-size:22px;
+width:45px;
 
-margin-bottom:10px;
+height:45px;
+
+margin:0 auto 13px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:14px;
+
+background:
+
+linear-gradient(
+135deg,
+rgba(124,58,237,.2),
+rgba(0,229,255,.07)
+);
+
+border:1px solid rgba(180,124,255,.2);
+
+font-size:20px;
 }
 
 .step h3{
 
 font-size:13px;
 
-margin-bottom:7px;
+margin-bottom:8px;
 }
 
 .step p{
@@ -405,17 +654,19 @@ font-size:10px;
 
 color:#777;
 
-line-height:1.8;
+line-height:1.9;
 }
 
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
 
 margin-top:80px;
 
-padding:40px 20px;
+padding:45px 20px;
 
 text-align:center;
 
@@ -426,8 +677,31 @@ color:#555;
 font-size:11px;
 }
 
+.footer-logo{
 
-/* MOBILE */
+font-size:20px;
+
+font-weight:900;
+
+margin-bottom:10px;
+
+background:
+
+linear-gradient(
+90deg,
+#aaa,
+#b47cff
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:750px){
 
@@ -462,7 +736,7 @@ margin-top:40px;
 
 .title h1{
 
-font-size:30px;
+font-size:32px;
 }
 
 .form-card{
@@ -477,6 +751,21 @@ grid-template-columns:1fr;
 
 }
 
+@media(max-width:400px){
+
+nav{
+
+grid-template-columns:
+repeat(2,1fr);
+}
+
+.title h1{
+
+font-size:28px;
+}
+
+}
+
 </style>
 
 </head>
@@ -485,7 +774,9 @@ grid-template-columns:1fr;
 <body>
 
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
@@ -511,8 +802,12 @@ Kian Music
 🎤 خواننده‌ها
 </a>
 
-<a href="send.html">
+<a
+href="send.html"
+class="active">
+
 📤 ارسال آهنگ
+
 </a>
 
 <a href="about.html">
@@ -532,23 +827,33 @@ Kian Music
 
 
 
-<!-- CONTENT -->
+<!-- =========================
+     CONTENT
+========================= -->
 
 <main class="container">
 
 
 <div class="title">
 
+
+<div class="title-icon">
+📤
+</div>
+
+
 <h1>
-📤 ارسال آهنگ
+ارسال آهنگ
 </h1>
+
 
 <p>
 
-اگر خواننده یا صاحب اثر هستید،
-می‌توانید اطلاعات آهنگ خود را برای بررسی و انتشار ارسال کنید.
+آهنگ خودت رو برای بررسی و انتشار
+در Kian Music ارسال کن.
 
 </p>
+
 
 </div>
 
@@ -559,11 +864,19 @@ Kian Music
 
 <div class="info">
 
-🎵 قبل از ارسال، اطلاعات آهنگ را با دقت وارد کنید.
 
-<br>
+<div class="info-title">
+🎵 قبل از ارسال
+</div>
 
-پس از بررسی اطلاعات، در صورت تأیید، اثر شما در Kian Music منتشر خواهد شد.
+
+<div class="info-text">
+
+لطفاً اطلاعات آهنگ و خواننده را با دقت وارد کنید.
+پس از بررسی، آثار تأییدشده در Kian Music منتشر خواهند شد.
+
+</div>
+
 
 </div>
 
@@ -590,56 +903,75 @@ rel="noopener noreferrer">
 
 <!-- STEPS -->
 
+<h2 class="steps-title">
+🚀 روند انتشار
+</h2>
+
+
 <div class="steps">
 
 
 <div class="step">
 
+
 <div class="step-number">
 📝
 </div>
 
+
 <h3>
-۱. ثبت اطلاعات
+ثبت اطلاعات
 </h3>
 
+
 <p>
-اطلاعات آهنگ و خواننده را وارد کنید.
+اطلاعات آهنگ و خواننده را وارد کن.
 </p>
+
 
 </div>
 
 
+
 <div class="step">
+
 
 <div class="step-number">
 🔍
 </div>
 
+
 <h3>
-۲. بررسی
+بررسی اثر
 </h3>
+
 
 <p>
 اطلاعات ارسال‌شده بررسی می‌شود.
 </p>
 
+
 </div>
 
 
+
 <div class="step">
+
 
 <div class="step-number">
 🎵
 </div>
 
+
 <h3>
-۳. انتشار
+انتشار
 </h3>
+
 
 <p>
 اثر تأییدشده در سایت قرار می‌گیرد.
 </p>
+
 
 </div>
 
@@ -655,17 +987,17 @@ rel="noopener noreferrer">
 
 <footer>
 
-<strong>
+<div class="footer-logo">
 Kian Music
-</strong>
+</div>
 
-<br><br>
-
+<p>
 پلتفرمی برای کشف و معرفی موسیقی
+</p>
 
-<br><br>
+<br>
 
-© 2026 Kian Music
+© 2026 Kian Music • تمام حقوق محفوظ است.
 
 </footer>
 
