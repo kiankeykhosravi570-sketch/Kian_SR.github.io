@@ -1,6 +1,13 @@
-<!DOCTYPE html><html lang="fa" dir="rtl"><head>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ورود مدیر | Kian Music</title><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ورود مدیر | Kian Music</title>
+
+<style>
 
 *{
     margin:0;
@@ -19,9 +26,7 @@ body{
     overflow:hidden;
 }
 
-/* =========================
-   NEON BACKGROUND
-========================= */
+/* پس زمینه نئونی */
 
 body::before{
     content:"";
@@ -34,7 +39,6 @@ body::before{
     top:-250px;
     right:-180px;
     z-index:-2;
-    pointer-events:none;
 }
 
 body::after{
@@ -48,12 +52,9 @@ body::after{
     bottom:-250px;
     left:-180px;
     z-index:-2;
-    pointer-events:none;
 }
 
-/* =========================
-   LOGIN CARD
-========================= */
+/* کارت */
 
 .login-card{
     width:calc(100% - 40px);
@@ -77,9 +78,7 @@ body::after{
     backdrop-filter:blur(20px);
 }
 
-/* =========================
-   ADMIN ICON
-========================= */
+/* آیکون */
 
 .admin-icon{
     width:72px;
@@ -107,9 +106,7 @@ body::after{
     0 0 35px rgba(124,58,237,.20);
 }
 
-/* =========================
-   LOGO
-========================= */
+/* لوگو */
 
 .logo{
     text-align:center;
@@ -136,9 +133,7 @@ body::after{
     margin-bottom:30px;
 }
 
-/* =========================
-   LABEL
-========================= */
+/* لیبل */
 
 label{
     display:block;
@@ -147,9 +142,7 @@ label{
     margin-bottom:8px;
 }
 
-/* =========================
-   INPUT
-========================= */
+/* ورودی */
 
 .input{
     width:100%;
@@ -184,9 +177,7 @@ label{
     color:#555;
 }
 
-/* =========================
-   PASSWORD
-========================= */
+/* رمز */
 
 .password-box{
     position:relative;
@@ -197,9 +188,7 @@ label{
     padding-left:52px;
 }
 
-/* =========================
-   EYE
-========================= */
+/* چشم */
 
 .eye-button{
     position:absolute;
@@ -235,9 +224,7 @@ label{
     background:rgba(124,58,237,.12);
 }
 
-/* =========================
-   LOGIN BUTTON
-========================= */
+/* دکمه ورود */
 
 .login-button{
     width:100%;
@@ -270,18 +257,13 @@ label{
 .login-button:hover{
     transform:translateY(-3px);
     filter:brightness(1.12);
-
-    box-shadow:
-    0 15px 45px rgba(124,58,237,.40);
 }
 
 .login-button:active{
     transform:scale(.98);
 }
 
-/* =========================
-   ERROR
-========================= */
+/* خطا */
 
 .error{
     display:none;
@@ -303,77 +285,25 @@ label{
     text-align:center;
 }
 
-/* =========================
-   NEON BACK TO SITE
-========================= */
+/* بازگشت */
 
 .back{
-    width:100%;
-    height:48px;
+    display:block;
 
-    margin-top:18px;
+    text-align:center;
 
-    display:flex;
+    margin-top:22px;
 
-    align-items:center;
+    color:#666;
 
-    justify-content:center;
-
-    gap:8px;
+    font-size:10px;
 
     text-decoration:none;
-
-    color:#aaa;
-
-    font-size:11px;
-    font-weight:bold;
-
-    border-radius:13px;
-
-    background:
-    linear-gradient(
-        135deg,
-        rgba(124,58,237,.10),
-        rgba(0,229,255,.045)
-    );
-
-    border:1px solid rgba(180,124,255,.18);
-
-    box-shadow:
-    0 0 18px rgba(124,58,237,.06),
-    inset 0 0 18px rgba(124,58,237,.025);
-
-    backdrop-filter:blur(12px);
-
-    transition:.3s;
 }
 
 .back:hover{
     color:#fff;
-
-    transform:translateY(-2px);
-
-    border-color:rgba(180,124,255,.48);
-
-    background:
-    linear-gradient(
-        135deg,
-        rgba(124,58,237,.22),
-        rgba(0,229,255,.08)
-    );
-
-    box-shadow:
-    0 0 28px rgba(124,58,237,.18),
-    0 0 12px rgba(0,229,255,.08);
 }
-
-.back:active{
-    transform:scale(.98);
-}
-
-/* =========================
-   MOBILE
-========================= */
 
 @media(max-width:450px){
 
@@ -387,97 +317,110 @@ label{
 
 }
 
-</style></head><body><div class="login-card"><div class="admin-icon">
-    🔐
-</div>
+</style>
+
+</head>
 
 
-<div class="logo">
-    Kian Music
-</div>
+<body>
 
 
-<div class="subtitle">
-    ورود به پنل مدیریت
-</div>
+<div class="login-card">
 
 
-<form id="loginForm">
+    <div class="admin-icon">
+        🔐
+    </div>
 
 
-    <label>
-        نام کاربری
-    </label>
+    <div class="logo">
+        Kian Music
+    </div>
 
 
-    <input
-        class="input"
-        id="username"
-        type="text"
-        placeholder="نام کاربری مدیر"
-        autocomplete="username"
-        required
-    >
+    <div class="subtitle">
+        ورود به پنل مدیریت
+    </div>
 
 
-    <label>
-        رمز عبور
-    </label>
+    <form id="loginForm">
 
 
-    <div class="password-box">
+        <label>
+            نام کاربری
+        </label>
+
 
         <input
             class="input"
-            id="password"
-            type="password"
-            placeholder="رمز عبور"
-            autocomplete="current-password"
+            id="username"
+            type="text"
+            placeholder="نام کاربری مدیر"
+            autocomplete="username"
             required
         >
 
 
+        <label>
+            رمز عبور
+        </label>
+
+
+        <div class="password-box">
+
+            <input
+                class="input"
+                id="password"
+                type="password"
+                placeholder="رمز عبور"
+                autocomplete="current-password"
+                required
+            >
+
+            <button
+                type="button"
+                class="eye-button"
+                id="togglePassword"
+                aria-label="نمایش رمز"
+            >
+                👁️
+            </button>
+
+        </div>
+
+
         <button
-            type="button"
-            class="eye-button"
-            id="togglePassword"
-            aria-label="نمایش رمز"
+            class="login-button"
+            type="submit"
         >
-            👁️
+            🔐 ورود به پنل
         </button>
 
+
+    </form>
+
+
+    <div
+        class="error"
+        id="error"
+    >
+        نام کاربری یا رمز عبور اشتباه است.
     </div>
 
 
-    <button
-        class="login-button"
-        type="submit"
+    <a
+        href="./index.html"
+        class="back"
     >
-        🔐 ورود به پنل
-    </button>
+        ← بازگشت به سایت
+    </a>
 
 
-</form>
-
-
-<div
-    class="error"
-    id="error"
->
-    نام کاربری یا رمز عبور اشتباه است.
 </div>
 
 
-<!-- دکمه جدید -->
 
-<a
-    href="./index.html"
-    class="back"
->    
-     بازگشت به سایت
-</a>
-
-</div><script>
+<script>
 
 /* =========================
    اطلاعات ورود
@@ -547,8 +490,8 @@ document
 
 
         if(
-            username === USERNAME &&
-            password === PASSWORD
+            username === "admin" &&
+            password === "admin"
         ){
 
             sessionStorage.setItem(
@@ -556,6 +499,8 @@ document
                 "true"
             );
 
+
+            /* ورود مستقیم به پنل */
 
             window.location.replace(
                 "./admin.html"
@@ -573,4 +518,9 @@ document
     }
 );
 
-</script></body></html>
+</script>
+
+
+</body>
+
+</html>
