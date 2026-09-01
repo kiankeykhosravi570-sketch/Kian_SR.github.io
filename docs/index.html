@@ -6,14 +6,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description"
-content="Kian Music - پلتفرم انتشار و شنیدن موسیقی">
-
-<title>Kian Music | خانه</title>
+<title>Kian Music | موسیقی</title>
 
 <style>
 
-/* RESET */
+/* =========================
+   RESET
+========================= */
 
 *{
 margin:0;
@@ -27,72 +26,85 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#07070b;
+background:#050509;
 color:#fff;
-overflow-x:hidden;
 min-height:100vh;
+overflow-x:hidden;
 }
 
 
-/* BACKGROUND */
+/* =========================
+   NEON BACKGROUND
+========================= */
 
 body::before{
 content:"";
+
 position:fixed;
 
-width:500px;
-height:500px;
+width:650px;
+height:650px;
 
 background:#7c3aed;
 
-filter:blur(180px);
+filter:blur(210px);
 
 opacity:.16;
 
-top:-200px;
-right:-150px;
+top:-280px;
+right:-200px;
 
-z-index:-1;
+z-index:-2;
+
+pointer-events:none;
 }
 
 body::after{
 content:"";
+
 position:fixed;
 
-width:450px;
-height:450px;
+width:600px;
+height:600px;
 
 background:#00e5ff;
 
-filter:blur(180px);
+filter:blur(220px);
 
-opacity:.10;
+opacity:.09;
 
-bottom:-200px;
-left:-150px;
+bottom:-300px;
+left:-200px;
 
-z-index:-1;
+z-index:-2;
+
+pointer-events:none;
 }
 
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header{
+
 position:sticky;
+
 top:0;
 
 z-index:100;
 
-background:rgba(8,8,12,.82);
+background:rgba(5,5,9,.72);
 
-backdrop-filter:blur(20px);
+backdrop-filter:blur(22px);
 
 border-bottom:1px solid rgba(255,255,255,.08);
 
-padding:16px 20px;
+padding:15px 20px;
 }
 
 .header{
+
 max-width:1200px;
 
 margin:auto;
@@ -110,13 +122,15 @@ gap:20px;
 /* LOGO */
 
 .logo{
+
 font-size:25px;
 
 font-weight:900;
 
-letter-spacing:.5px;
+white-space:nowrap;
 
-background:linear-gradient(
+background:
+linear-gradient(
 90deg,
 #ffffff,
 #b47cff,
@@ -127,52 +141,57 @@ background:linear-gradient(
 
 -webkit-text-fill-color:transparent;
 
-white-space:nowrap;
+text-shadow:
+0 0 25px rgba(124,58,237,.12);
 }
 
 
-/* NAV */
+/* =========================
+   NAV
+========================= */
 
 nav{
-display:flex;
 
-gap:9px;
+display:flex;
 
 align-items:center;
 
 justify-content:flex-end;
 
+gap:9px;
+
 flex-wrap:wrap;
 }
 
 nav a{
+
 display:inline-flex;
 
 align-items:center;
 
 justify-content:center;
 
-color:#d0d0d0;
-
-text-decoration:none;
-
-font-size:12px;
-
-padding:10px 14px;
+padding:10px 13px;
 
 border-radius:12px;
 
-border:1px solid rgba(255,255,255,.13);
+text-decoration:none;
+
+color:#cfcfe0;
+
+font-size:11px;
+
+border:1px solid rgba(255,255,255,.12);
 
 background:
 linear-gradient(
 135deg,
-rgba(255,255,255,.075),
+rgba(255,255,255,.07),
 rgba(255,255,255,.025)
 );
 
 box-shadow:
-inset 0 1px 0 rgba(255,255,255,.06),
+inset 0 1px 0 rgba(255,255,255,.05),
 0 5px 18px rgba(0,0,0,.22);
 
 backdrop-filter:blur(12px);
@@ -183,75 +202,88 @@ white-space:nowrap;
 }
 
 nav a:hover{
+
 color:#fff;
+
+transform:translateY(-2px);
 
 background:
 linear-gradient(
 135deg,
 rgba(124,58,237,.35),
-rgba(37,99,235,.20)
+rgba(0,229,255,.08)
 );
 
-border-color:rgba(180,124,255,.65);
+border-color:
+rgba(180,124,255,.55);
 
 box-shadow:
-0 0 22px rgba(124,58,237,.25);
-
-transform:translateY(-2px);
+0 0 25px rgba(124,58,237,.20);
 }
 
-nav a:active{
-transform:scale(.96);
+nav a.admin{
+
+border-color:
+rgba(0,229,255,.20);
 }
 
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
-max-width:1200px;
 
-margin:auto;
+max-width:1100px;
 
-padding:90px 20px 55px;
+margin:70px auto 55px;
+
+padding:0 20px;
+
+text-align:center;
 }
 
-.hero-content{
-max-width:720px;
-}
+.hero-badge{
 
-.badge{
-display:inline-block;
+display:inline-flex;
 
-padding:8px 14px;
+align-items:center;
 
-border:1px solid rgba(255,255,255,.12);
+gap:8px;
 
-background:rgba(255,255,255,.04);
+padding:9px 15px;
 
 border-radius:50px;
 
-font-size:11px;
+font-size:10px;
 
-color:#bbb;
+color:#aaa;
+
+background:
+rgba(255,255,255,.045);
+
+border:1px solid rgba(180,124,255,.16);
+
+box-shadow:
+0 0 25px rgba(124,58,237,.08);
 
 margin-bottom:20px;
 }
 
 .hero h1{
-font-size:54px;
 
-line-height:1.25;
-
-margin-bottom:20px;
+font-size:52px;
 
 font-weight:900;
-}
 
-.hero h1 span{
+line-height:1.3;
+
+margin-bottom:15px;
+
 background:
 linear-gradient(
 90deg,
-#fff,
+#ffffff,
 #b47cff,
 #00e5ff
 );
@@ -262,124 +294,124 @@ linear-gradient(
 }
 
 .hero p{
-color:#888;
 
-font-size:15px;
+max-width:600px;
 
-line-height:2.1;
+margin:auto;
 
-max-width:650px;
+color:#777;
+
+font-size:13px;
+
+line-height:2.2;
 }
 
 
 /* HERO BUTTONS */
 
 .hero-buttons{
+
 display:flex;
+
+justify-content:center;
 
 gap:12px;
 
-margin-top:30px;
+margin-top:27px;
 
 flex-wrap:wrap;
 }
 
-.btn{
-text-decoration:none;
+.hero-button{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+min-width:160px;
 
 padding:14px 20px;
 
-border-radius:13px;
+border-radius:14px;
 
-font-size:13px;
+text-decoration:none;
+
+font-size:12px;
 
 font-weight:bold;
 
-transition:.25s;
+transition:.3s;
 }
 
-.btn-primary{
+.primary{
+
 color:#fff;
 
 background:
 linear-gradient(
 135deg,
 #7c3aed,
-#2563eb
+#2563eb,
+#0891b2
 );
+
+border:1px solid rgba(255,255,255,.15);
 
 box-shadow:
 0 10px 35px rgba(124,58,237,.25);
 }
 
-.btn-secondary{
-color:#ddd;
+.primary:hover{
 
-background:rgba(255,255,255,.05);
+transform:translateY(-4px);
 
-border:1px solid rgba(255,255,255,.12);
-}
-
-.btn:hover{
-transform:translateY(-3px);
-
-filter:brightness(1.15);
-}
-
-
-/* SEARCH */
-
-.search-area{
-max-width:1200px;
-
-margin:auto;
-
-padding:0 20px 35px;
-}
-
-.search{
-width:100%;
-
-padding:17px 20px;
-
-background:rgba(255,255,255,.045);
-
-border:1px solid rgba(255,255,255,.10);
-
-border-radius:15px;
-
-outline:none;
-
-color:white;
-
-font-size:14px;
-
-transition:.25s;
-}
-
-.search:focus{
-border-color:#7c3aed;
+filter:brightness(1.12);
 
 box-shadow:
-0 0 0 4px rgba(124,58,237,.08);
+0 15px 45px rgba(124,58,237,.38);
 }
 
-.search::placeholder{
-color:#666;
+.secondary{
+
+color:#ccc;
+
+background:
+rgba(255,255,255,.045);
+
+border:1px solid rgba(255,255,255,.11);
+}
+
+.secondary:hover{
+
+color:#fff;
+
+transform:translateY(-4px);
+
+border-color:
+rgba(180,124,255,.40);
+
+box-shadow:
+0 0 25px rgba(124,58,237,.10);
 }
 
 
-/* CONTENT */
+/* =========================
+   SECTION
+========================= */
 
-.container{
-max-width:1200px;
+.section{
 
-margin:auto;
+max-width:1100px;
+
+margin:0 auto 70px;
 
 padding:0 20px;
 }
 
-.section-header{
+.section-title{
+
 display:flex;
 
 align-items:center;
@@ -389,41 +421,42 @@ justify-content:space-between;
 margin-bottom:20px;
 }
 
-.section-title{
-font-size:22px;
+.section-title h2{
 
-font-weight:800;
+font-size:20px;
+
+font-weight:900;
 }
 
-.section-link{
-color:#888;
+.section-title span{
 
-text-decoration:none;
+font-size:10px;
 
-font-size:12px;
-}
-
-.section-link:hover{
-color:#fff;
+color:#666;
 }
 
 
-/* MUSIC GRID */
+/* =========================
+   MUSIC EMPTY
+========================= */
 
-.music-grid{
-display:grid;
+.music-box{
 
-grid-template-columns:
-repeat(2,1fr);
-
-gap:18px;
-}
-
-
-/* MUSIC CARD */
-
-.music{
 position:relative;
+
+min-height:300px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+padding:30px;
+
+border-radius:25px;
 
 background:
 linear-gradient(
@@ -432,211 +465,189 @@ rgba(255,255,255,.065),
 rgba(255,255,255,.018)
 );
 
-border:1px solid rgba(255,255,255,.08);
-
-border-radius:20px;
-
-padding:18px;
-
-overflow:hidden;
-
-transition:.3s;
-}
-
-.music:hover{
-transform:translateY(-5px);
-
-border-color:rgba(180,124,255,.35);
+border:1px solid rgba(180,124,255,.14);
 
 box-shadow:
-0 18px 50px rgba(0,0,0,.35);
+0 20px 65px rgba(0,0,0,.35);
+
+overflow:hidden;
 }
 
+.music-box::before{
 
-/* SONG LINK */
+content:"";
 
-.song-link{
-display:block;
+position:absolute;
 
-color:white;
+width:250px;
+height:250px;
 
-text-decoration:none;
+background:#7c3aed;
+
+filter:blur(110px);
+
+opacity:.10;
+
+top:-130px;
+right:-100px;
 }
 
+.music-empty{
 
-/* SONG */
+position:relative;
 
-.song{
+z-index:2;
+}
+
+.music-icon{
+
+width:78px;
+height:78px;
+
+margin:0 auto 18px;
+
 display:flex;
 
 align-items:center;
 
-gap:15px;
-}
+justify-content:center;
 
+font-size:32px;
 
-/* COVER */
-
-.cover{
-width:82px;
-
-height:82px;
-
-border-radius:16px;
-
-object-fit:cover;
+border-radius:23px;
 
 background:
 linear-gradient(
 135deg,
-#1d1d27,
-#101016
+rgba(124,58,237,.20),
+rgba(0,229,255,.07)
 );
 
-border:1px solid rgba(255,255,255,.1);
+border:1px solid rgba(180,124,255,.22);
 
-transition:.3s;
+box-shadow:
+0 0 35px rgba(124,58,237,.14);
 }
 
-.music:hover .cover{
-transform:scale(1.04);
-}
+.music-empty h3{
 
-
-/* INFO */
-
-.song-info{
-flex:1;
-}
-
-.song-info h2{
 font-size:17px;
 
-margin-bottom:7px;
-
-transition:.2s;
+margin-bottom:9px;
 }
 
-.song-link:hover .song-info h2{
-color:#c9a8ff;
-}
+.music-empty p{
 
-.song-info p{
-font-size:12px;
+font-size:11px;
 
-color:#777;
+color:#666;
+
+line-height:2;
 }
 
 
-/* TAG */
-
-.tag{
-display:inline-block;
-
-font-size:9px;
-
-color:#b47cff;
-
-background:rgba(124,58,237,.10);
-
-border:1px solid rgba(124,58,237,.22);
-
-padding:5px 8px;
-
-border-radius:7px;
-
-margin-top:8px;
-}
-
-
-/* AUDIO */
-
-audio{
-width:100%;
-
-margin-top:18px;
-
-height:40px;
-}
-
-
-/* DOWNLOAD */
-
-.download{
-display:block;
-
-margin-top:13px;
-
-padding:11px;
-
-text-align:center;
-
-background:rgba(255,255,255,.06);
-
-border:1px solid rgba(255,255,255,.08);
-
-color:#ddd;
-
-text-decoration:none;
-
-border-radius:10px;
-
-font-size:12px;
-
-transition:.25s;
-}
-
-.download:hover{
-background:#fff;
-
-color:#080808;
-}
-
-
-/* FEATURES */
+/* =========================
+   FEATURE CARDS
+========================= */
 
 .features{
+
 display:grid;
 
 grid-template-columns:
 repeat(3,1fr);
 
 gap:15px;
-
-margin-top:60px;
 }
 
 .feature{
-padding:25px;
 
-background:rgba(255,255,255,.035);
+padding:23px;
+
+border-radius:19px;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.06),
+rgba(255,255,255,.018)
+);
 
 border:1px solid rgba(255,255,255,.07);
-
-border-radius:18px;
 
 transition:.3s;
 }
 
 .feature:hover{
-transform:translateY(-4px);
 
-background:rgba(255,255,255,.055);
+transform:translateY(-5px);
+
+border-color:
+rgba(180,124,255,.35);
+
+box-shadow:
+0 15px 45px rgba(0,0,0,.30),
+0 0 25px rgba(124,58,237,.07);
 }
 
 .feature-icon{
+
 font-size:25px;
 
 margin-bottom:15px;
 }
 
 .feature h3{
-font-size:15px;
+
+font-size:13px;
 
 margin-bottom:8px;
 }
 
 .feature p{
+
+font-size:10px;
+
+color:#707070;
+
+line-height:2;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+
+padding:38px 25px;
+
+text-align:center;
+
+border-radius:25px;
+
+background:
+linear-gradient(
+135deg,
+rgba(124,58,237,.13),
+rgba(0,229,255,.035)
+);
+
+border:1px solid rgba(180,124,255,.17);
+
+box-shadow:
+inset 0 0 40px rgba(124,58,237,.035);
+}
+
+.cta h2{
+
+font-size:21px;
+
+margin-bottom:10px;
+}
+
+.cta p{
+
 font-size:11px;
 
 color:#777;
@@ -644,46 +655,105 @@ color:#777;
 line-height:2;
 }
 
+.cta-button{
 
-/* FOOTER */
+display:inline-flex;
+
+margin-top:20px;
+
+padding:14px 25px;
+
+border-radius:13px;
+
+text-decoration:none;
+
+color:#fff;
+
+font-size:12px;
+
+font-weight:bold;
+
+background:
+linear-gradient(
+135deg,
+#7c3aed,
+#2563eb
+);
+
+box-shadow:
+0 10px 30px rgba(124,58,237,.23);
+
+transition:.3s;
+}
+
+.cta-button:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 15px 40px rgba(124,58,237,.35);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
+
 margin-top:80px;
 
 padding:45px 20px;
 
-border-top:1px solid rgba(255,255,255,.07);
-
 text-align:center;
+
+border-top:1px solid rgba(255,255,255,.07);
 
 color:#555;
 
-font-size:11px;
+font-size:10px;
 }
 
 .footer-logo{
-font-size:20px;
 
-font-weight:bold;
+font-size:21px;
 
-color:#aaa;
+font-weight:900;
 
 margin-bottom:10px;
+
+background:
+linear-gradient(
+90deg,
+#aaa,
+#b47cff
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
 }
 
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
-@media(max-width:750px){
+@media(max-width:800px){
 
 .header{
+
 flex-direction:column;
 
 align-items:stretch;
 }
 
+.logo{
+
+text-align:center;
+}
+
 nav{
-width:100%;
 
 display:grid;
 
@@ -694,74 +764,52 @@ gap:8px;
 }
 
 nav a{
-width:100%;
-
-padding:10px 5px;
 
 font-size:10px;
+
+padding:10px 5px;
 }
 
 .hero{
-padding-top:60px;
+
+margin-top:45px;
 }
 
 .hero h1{
-font-size:38px;
-}
 
-.music-grid{
-grid-template-columns:1fr;
+font-size:39px;
 }
 
 .features{
+
 grid-template-columns:1fr;
 }
 
 }
 
-
-@media(max-width:450px){
-
-.hero h1{
-font-size:32px;
-}
-
-.hero p{
-font-size:13px;
-}
-
-.logo{
-font-size:22px;
-
-text-align:center;
-}
+@media(max-width:430px){
 
 nav{
+
 grid-template-columns:
 repeat(2,1fr);
 }
 
+.hero h1{
+
+font-size:32px;
 }
 
+.hero p{
 
-/* SCROLLBAR */
-
-::-webkit-scrollbar{
-width:7px;
+font-size:11px;
 }
 
-::-webkit-scrollbar-track{
-background:#08080c;
+.hero-button{
+
+width:100%;
 }
 
-::-webkit-scrollbar-thumb{
-background:#292335;
-
-border-radius:10px;
-}
-
-::-webkit-scrollbar-thumb:hover{
-background:#7c3aed;
 }
 
 </style>
@@ -772,7 +820,9 @@ background:#7c3aed;
 <body>
 
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
@@ -786,28 +836,60 @@ Kian Music
 
 <nav>
 
-<a href="index.html">
+<a
+href="index.html">
+
 🏠 خانه
+
 </a>
 
-<a href="#musicList">
+
+<a
+href="#musicList">
+
 🎵 آهنگ‌ها
+
 </a>
 
-<a href="artists.html">
+
+<a
+href="artists.html">
+
 🎤 خواننده‌ها
+
 </a>
 
-<a href="send.html">
+
+<a
+href="send.html">
+
 📤 ارسال آهنگ
+
 </a>
 
-<a href="about.html">
+
+<a
+href="about.html">
+
 ℹ️ درباره ما
+
 </a>
 
-<a href="contact.html">
+
+<a
+href="contact.html">
+
 📞 تماس
+
+</a>
+
+
+<a
+href="login.html"
+class="admin">
+
+🔐 مدیریت
+
 </a>
 
 </nav>
@@ -819,34 +901,35 @@ Kian Music
 
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
-<div class="hero-content">
 
+<div class="hero-badge">
 
-<div class="badge">
-🎧 MUSIC • DISCOVER • ENJOY
+<span>✦</span>
+
+Kian Music
+
+<span>✦</span>
+
 </div>
 
 
 <h1>
-
-موسیقی رو
-
+دنیای موسیقی
 <br>
-
-<span>متفاوت تجربه کن.</span>
-
+از اینجا شروع میشه
 </h1>
 
 
 <p>
 
-به دنیای Kian Music خوش آمدید؛
-جایی برای کشف آهنگ‌های جدید،
-شناخت خواننده‌ها و انتشار آثار موسیقی.
+آهنگ‌های جدید، خواننده‌های مختلف و آثار مورد علاقه‌ات را
+در یک فضای مدرن و نئونی کشف کن.
 
 </p>
 
@@ -855,17 +938,82 @@ Kian Music
 
 
 <a
-class="btn btn-primary"
-href="#musicList">
+href="#musicList"
+class="hero-button primary">
 
-🎵 گوش دادن به آهنگ‌ها
+🎵 مشاهده آهنگ‌ها
 
 </a>
 
 
 <a
-class="btn btn-secondary"
-href="send.html">
+href="send.html"
+class="hero-button secondary">
+
+📤 ارسال آهنگ
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================
+     MUSIC
+========================= -->
+
+<section
+class="section"
+id="musicList">
+
+
+<div class="section-title">
+
+<h2>
+🎵 آهنگ‌های جدید
+</h2>
+
+<span>
+Kian Music
+</span>
+
+</div>
+
+
+<div class="music-box">
+
+
+<div class="music-empty">
+
+
+<div class="music-icon">
+🎵
+</div>
+
+
+<h3>
+هنوز آهنگی اضافه نشده
+</h3>
+
+
+<p>
+
+به‌زودی آهنگ‌های جدید در این قسمت قرار می‌گیرند.
+
+<br>
+
+اگر صاحب اثر هستی، می‌توانی آهنگت را برای بررسی ارسال کنی.
+
+</p>
+
+
+<a
+href="send.html"
+class="cta-button">
 
 📤 ارسال آهنگ
 
@@ -877,245 +1025,26 @@ href="send.html">
 
 </div>
 
+
 </section>
 
 
 
-<!-- SEARCH -->
+<!-- =========================
+     FEATURES
+========================= -->
 
-<div class="search-area">
-
-<input
-
-class="search"
-
-id="search"
-
-type="text"
-
-placeholder="🔎 جستجوی آهنگ یا خواننده..."
-
-onkeyup="searchMusic()"
-
->
-
-</div>
+<section class="section">
 
 
-
-<!-- MUSIC -->
-
-<main
-class="container"
-id="musicList">
-
-
-<div class="section-header">
-
-<h2 class="section-title">
-🔥 آخرین آهنگ‌ها
-</h2>
-
-<a
-class="section-link"
-href="#musicList">
-
-مشاهده همه ←
-
-</a>
-
-</div>
-
-
-
-<div class="music-grid">
-
-
-<!-- SONG 1 -->
-
-<div class="music">
-
-
-<a
-href="song.html"
-class="song-link">
-
-
-<div class="song">
-
-
-<img
-
-class="cover"
-
-src="https://placehold.co/500x500"
-
-alt="کاور آهنگ"
-
-
->
-
-
-<div class="song-info">
-
+<div class="section-title">
 
 <h2>
-آهنگ من
+✨ امکانات Kian Music
 </h2>
 
-
-<p>
-خواننده: Kian
-</p>
-
-
-<span class="tag">
-جدید
-</span>
-
-
 </div>
 
-
-</div>
-
-
-</a>
-
-
-
-<audio
-controls
-preload="metadata">
-
-
-<source
-
-src="../song1.mp3"
-
-type="audio/mpeg"
-
-
->
-
-مرورگر شما از پخش صوت پشتیبانی نمی‌کند.
-
-</audio>
-
-
-
-<a
-
-class="download"
-
-href="../song1.mp3"
-
-download>
-
-⬇️ دانلود آهنگ
-
-</a>
-
-
-</div>
-
-
-
-<!-- SONG 2 -->
-
-<div class="music">
-
-
-<a
-href="song.html"
-class="song-link">
-
-
-<div class="song">
-
-
-<img
-
-class="cover"
-
-src="https://placehold.co/500x500"
-
-alt="کاور آهنگ"
-
-
->
-
-
-<div class="song-info">
-
-
-<h2>
-آهنگ نمونه ۲
-</h2>
-
-
-<p>
-خواننده: Kian
-</p>
-
-
-<span class="tag">
-Kian Music
-</span>
-
-
-</div>
-
-
-</div>
-
-
-</a>
-
-
-
-<audio
-controls
-preload="metadata">
-
-
-<source
-
-src="../song1.mp3"
-
-type="audio/mpeg"
-
-
->
-
-مرورگر شما از پخش صوت پشتیبانی نمی‌کند.
-
-</audio>
-
-
-
-<a
-
-class="download"
-
-href="../song1.mp3"
-
-download>
-
-⬇️ دانلود آهنگ
-
-</a>
-
-
-</div>
-
-
-
-</div>
-
-
-
-<!-- FEATURES -->
 
 <div class="features">
 
@@ -1127,15 +1056,15 @@ download>
 </div>
 
 <h3>
-موسیقی باکیفیت
+موسیقی
 </h3>
 
 <p>
-آهنگ‌های مورد علاقه خود را
-در یک محیط ساده و مدرن پیدا کنید.
+آهنگ‌های مختلف را در یک محیط ساده و مدرن پیدا کن.
 </p>
 
 </div>
+
 
 
 <div class="feature">
@@ -1149,11 +1078,11 @@ download>
 </h3>
 
 <p>
-با خواننده‌ها و آثار مختلف
-آشنا شوید.
+صفحه خواننده‌ها را مشاهده کن و آثار آن‌ها را دنبال کن.
 </p>
 
 </div>
+
 
 
 <div class="feature">
@@ -1163,12 +1092,11 @@ download>
 </div>
 
 <h3>
-انتشار آثار
+ارسال آثار
 </h3>
 
 <p>
-آهنگ خود را برای بررسی و
-انتشار در Kian Music ارسال کنید.
+اگر صاحب اثر هستی، می‌توانی آهنگ خودت را برای بررسی ارسال کنی.
 </p>
 
 </div>
@@ -1177,11 +1105,46 @@ download>
 </div>
 
 
-</main>
+</section>
 
 
 
-<!-- FOOTER -->
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="section">
+
+
+<div class="cta">
+
+<h2>
+🎧 آهنگت رو منتشر کن
+</h2>
+
+<p>
+اثر خودت را برای بررسی و انتشار در Kian Music ارسال کن.
+</p>
+
+
+<a
+href="send.html"
+class="cta-button">
+
+📤 ارسال آهنگ
+
+</a>
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -1198,48 +1161,6 @@ Kian Music
 © 2026 Kian Music • تمام حقوق محفوظ است.
 
 </footer>
-
-
-
-<script>
-
-function searchMusic(){
-
-let input =
-document
-.getElementById("search")
-.value
-.toLowerCase();
-
-
-let songs =
-document
-.querySelectorAll(".music");
-
-
-songs.forEach(function(song){
-
-let text =
-song
-.innerText
-.toLowerCase();
-
-
-if(text.includes(input)){
-
-song.style.display="block";
-
-}else{
-
-song.style.display="none";
-
-}
-
-});
-
-}
-
-</script>
 
 
 </body>
