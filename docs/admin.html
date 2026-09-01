@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>مدیریت سایت | Kian Music</title>
+<title>پنل مدیریت | Kian Music</title>
 
 <style>
 
@@ -24,32 +24,41 @@ min-height:100vh;
 overflow-x:hidden;
 }
 
-
-/* NEON BACKGROUND */
-
 body::before{
 content:"";
 position:fixed;
+
 width:600px;
 height:600px;
+
 background:#7c3aed;
+
 filter:blur(200px);
+
 opacity:.16;
+
 top:-250px;
 right:-180px;
+
 z-index:-2;
 }
 
 body::after{
 content:"";
 position:fixed;
+
 width:550px;
 height:550px;
+
 background:#00e5ff;
+
 filter:blur(210px);
+
 opacity:.09;
+
 bottom:-250px;
 left:-180px;
+
 z-index:-2;
 }
 
@@ -60,18 +69,24 @@ header{
 position:sticky;
 top:0;
 z-index:100;
+
 background:rgba(5,5,9,.75);
+
 backdrop-filter:blur(22px);
+
 border-bottom:1px solid rgba(255,255,255,.08);
+
 padding:15px 20px;
 }
 
 .header{
 max-width:1200px;
 margin:auto;
+
 display:flex;
 align-items:center;
 justify-content:space-between;
+
 gap:15px;
 }
 
@@ -91,30 +106,41 @@ linear-gradient(
 -webkit-text-fill-color:transparent;
 }
 
-.back{
+.header-buttons{
+display:flex;
+gap:9px;
+}
+
+.header-button{
 text-decoration:none;
+
 color:#ccc;
+
 font-size:11px;
 
 padding:10px 14px;
+
 border-radius:11px;
 
 border:1px solid rgba(255,255,255,.12);
 
-background:
-rgba(255,255,255,.04);
+background:rgba(255,255,255,.04);
 
 transition:.25s;
 }
 
-.back:hover{
+.header-button:hover{
 color:#fff;
 
 background:
-rgba(124,58,237,.25);
+linear-gradient(
+135deg,
+rgba(124,58,237,.30),
+rgba(0,229,255,.07)
+);
 
 border-color:
-rgba(180,124,255,.5);
+rgba(180,124,255,.45);
 
 transform:translateY(-2px);
 }
@@ -124,7 +150,9 @@ transform:translateY(-2px);
 
 .container{
 max-width:1200px;
+
 margin:45px auto;
+
 padding:0 20px;
 }
 
@@ -161,9 +189,12 @@ color:#777;
 
 .stats{
 display:grid;
+
 grid-template-columns:
 repeat(4,1fr);
+
 gap:15px;
+
 margin-bottom:25px;
 }
 
@@ -215,14 +246,12 @@ color:#777;
 
 .grid{
 display:grid;
+
 grid-template-columns:
 1.4fr 1fr;
 
 gap:18px;
 }
-
-
-/* CARD */
 
 .card{
 padding:24px;
@@ -252,14 +281,18 @@ margin-bottom:18px;
 
 .actions{
 display:grid;
+
 grid-template-columns:
 repeat(2,1fr);
+
 gap:12px;
 }
 
 .action{
 display:flex;
+
 align-items:center;
+
 gap:12px;
 
 padding:16px;
@@ -270,8 +303,7 @@ color:#ddd;
 
 border-radius:14px;
 
-background:
-rgba(255,255,255,.04);
+background:rgba(255,255,255,.04);
 
 border:1px solid rgba(255,255,255,.08);
 
@@ -300,12 +332,15 @@ font-size:23px;
 
 .action-text strong{
 display:block;
+
 font-size:12px;
+
 margin-bottom:5px;
 }
 
 .action-text span{
 font-size:9px;
+
 color:#777;
 }
 
@@ -314,21 +349,24 @@ color:#777;
 
 .recent{
 display:flex;
+
 flex-direction:column;
+
 gap:10px;
 }
 
 .item{
 display:flex;
+
 align-items:center;
+
 gap:12px;
 
 padding:13px;
 
 border-radius:13px;
 
-background:
-rgba(255,255,255,.035);
+background:rgba(255,255,255,.035);
 
 border:1px solid rgba(255,255,255,.06);
 }
@@ -338,13 +376,13 @@ width:38px;
 height:38px;
 
 display:flex;
+
 align-items:center;
 justify-content:center;
 
 border-radius:10px;
 
-background:
-rgba(124,58,237,.12);
+background:rgba(124,58,237,.12);
 
 border:1px solid rgba(124,58,237,.18);
 }
@@ -355,28 +393,29 @@ flex:1;
 
 .item-info strong{
 display:block;
+
 font-size:11px;
+
 margin-bottom:4px;
 }
 
 .item-info span{
 font-size:9px;
+
 color:#666;
 }
 
 
-/* WARNING */
+/* NOTICE */
 
 .notice{
-
 margin-top:18px;
 
 padding:18px;
 
 border-radius:15px;
 
-background:
-rgba(255,180,0,.045);
+background:rgba(255,180,0,.045);
 
 border:1px solid rgba(255,180,0,.14);
 
@@ -385,6 +424,37 @@ color:#999;
 font-size:10px;
 
 line-height:2;
+}
+
+
+/* LOGOUT */
+
+.logout{
+margin-top:18px;
+
+width:100%;
+
+padding:14px;
+
+border-radius:13px;
+
+border:1px solid rgba(255,80,100,.15);
+
+background:rgba(255,70,90,.045);
+
+color:#ff9baa;
+
+cursor:pointer;
+
+font-size:11px;
+
+transition:.25s;
+}
+
+.logout:hover{
+background:rgba(255,70,90,.10);
+
+border-color:rgba(255,80,100,.30);
 }
 
 
@@ -431,8 +501,8 @@ align-items:stretch;
 text-align:center;
 }
 
-.back{
-text-align:center;
+.header-buttons{
+justify-content:center;
 }
 
 .container{
@@ -446,6 +516,7 @@ font-size:27px;
 .stats{
 grid-template-columns:
 repeat(2,1fr);
+
 gap:10px;
 }
 
@@ -475,7 +546,23 @@ padding:18px;
 <body>
 
 
-<!-- HEADER -->
+<script>
+
+/*
+بررسی ورود مدیر
+*/
+
+if(
+sessionStorage.getItem("kian_admin_login")
+!=="true"
+){
+
+window.location.replace("login.html");
+
+}
+
+</script>
+
 
 <header>
 
@@ -485,21 +572,23 @@ padding:18px;
 Kian Music • Admin
 </div>
 
+<div class="header-buttons">
+
 <a
 href="index.html"
-class="back">
+class="header-button">
 
-← بازگشت به سایت
+🏠 سایت
 
 </a>
+
+</div>
 
 </div>
 
 </header>
 
 
-
-<!-- MAIN -->
 
 <main class="container">
 
@@ -511,14 +600,12 @@ class="back">
 </h1>
 
 <p>
-مدیریت و کنترل بخش‌های مختلف Kian Music
+مدیریت بخش‌های مختلف Kian Music
 </p>
 
 </div>
 
 
-
-<!-- STATS -->
 
 <div class="stats">
 
@@ -529,12 +616,8 @@ class="back">
 🎵
 </div>
 
-<div
-class="stat-number"
-id="songCount">
-
+<div class="stat-number">
 2
-
 </div>
 
 <div class="stat-label">
@@ -544,19 +627,14 @@ id="songCount">
 </div>
 
 
-
 <div class="stat">
 
 <div class="stat-icon">
 🎤
 </div>
 
-<div
-class="stat-number"
-id="artistCount">
-
+<div class="stat-number">
 3
-
 </div>
 
 <div class="stat-label">
@@ -566,18 +644,14 @@ id="artistCount">
 </div>
 
 
-
 <div class="stat">
 
 <div class="stat-icon">
 📩
 </div>
 
-<div
-class="stat-number">
-
+<div class="stat-number">
 0
-
 </div>
 
 <div class="stat-label">
@@ -587,18 +661,14 @@ class="stat-number">
 </div>
 
 
-
 <div class="stat">
 
 <div class="stat-icon">
 👁️
 </div>
 
-<div
-class="stat-number">
-
+<div class="stat-number">
 0
-
 </div>
 
 <div class="stat-label">
@@ -612,19 +682,14 @@ class="stat-number">
 
 
 
-<!-- GRID -->
-
 <div class="grid">
 
-
-<!-- ACTIONS -->
 
 <div class="card">
 
 <h2>
 🛠️ مدیریت سایت
 </h2>
-
 
 <div class="actions">
 
@@ -652,7 +717,6 @@ class="action">
 </a>
 
 
-
 <a
 href="artists.html"
 class="action">
@@ -676,7 +740,6 @@ class="action">
 </a>
 
 
-
 <a
 href="send.html"
 class="action">
@@ -692,13 +755,12 @@ class="action">
 </strong>
 
 <span>
-مشاهده فرم ارسال
+فرم ارسال آهنگ
 </span>
 
 </div>
 
 </a>
-
 
 
 <a
@@ -716,7 +778,7 @@ class="action">
 </strong>
 
 <span>
-مدیریت اطلاعات تماس
+اطلاعات تماس سایت
 </span>
 
 </div>
@@ -730,14 +792,11 @@ class="action">
 
 
 
-<!-- RECENT -->
-
 <div class="card">
 
 <h2>
 🕐 فعالیت اخیر
 </h2>
-
 
 <div class="recent">
 
@@ -751,39 +810,37 @@ class="action">
 <div class="item-info">
 
 <strong>
-آهنگ من
+سیستم موسیقی
 </strong>
 
 <span>
-آخرین آهنگ اضافه‌شده
+پنل مدیریت فعال شد
 </span>
 
 </div>
 
 </div>
-
 
 
 <div class="item">
 
 <div class="item-icon">
-🎤
+🔐
 </div>
 
 <div class="item-info">
 
 <strong>
-Kian
+ورود مدیر
 </strong>
 
 <span>
-خواننده ثبت‌شده
+احراز ورود مرورگر فعال است
 </span>
 
 </div>
 
 </div>
-
 
 
 <div class="item">
@@ -795,11 +852,11 @@ Kian
 <div class="item-info">
 
 <strong>
-سیستم مدیریت
+Kian Music
 </strong>
 
 <span>
-پنل آماده استفاده است
+سیستم آماده توسعه است
 </span>
 
 </div>
@@ -810,21 +867,26 @@ Kian
 </div>
 
 
-
 <div class="notice">
 
-⚠️ این نسخه فعلاً ظاهر پنل مدیریت است.
-برای اینکه تغییرات واقعاً روی سایت ذخیره شوند،
-در مرحله بعد سیستم مدیریت و ذخیره اطلاعات را به آن متصل می‌کنیم.
+⚠️ توجه: این پنل فعلاً روی GitHub Pages اجرا می‌شود.
+ورود فعلی فقط یک محافظت سمت مرورگر است و برای اطلاعات حساس مناسب نیست.
+
+</div>
+
+
+<button
+class="logout"
+onclick="logout()">
+
+🚪 خروج از پنل
+
+</button>
 
 </div>
 
 
 </div>
-
-
-</div>
-
 
 </main>
 
@@ -836,11 +898,28 @@ Kian Music Admin
 
 <br><br>
 
-© 2026
+© 2026 Kian Music
 
 </footer>
 
 
+
+<script>
+
+function logout(){
+
+sessionStorage.removeItem(
+"kian_admin_login"
+);
+
+window.location.href =
+"login.html";
+
+}
+
+</script>
+
+
 </body>
 
-  </html>
+</html>
