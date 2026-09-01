@@ -2,7 +2,6 @@
 <html lang="fa" dir="rtl">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,408 +10,310 @@
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Tahoma,Arial,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Tahoma,Arial,sans-serif;
 }
 
 body{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-
-background:#050509;
-
-color:#fff;
-
-overflow:hidden;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#050509;
+    color:#fff;
+    overflow:hidden;
 }
-
 
 /* پس زمینه نئونی */
 
 body::before{
-content:"";
-
-position:fixed;
-
-width:600px;
-height:600px;
-
-background:#7c3aed;
-
-filter:blur(200px);
-
-opacity:.20;
-
-top:-250px;
-right:-180px;
-
-z-index:-2;
+    content:"";
+    position:fixed;
+    width:600px;
+    height:600px;
+    background:#7c3aed;
+    filter:blur(200px);
+    opacity:.20;
+    top:-250px;
+    right:-180px;
+    z-index:-2;
 }
 
 body::after{
-content:"";
-
-position:fixed;
-
-width:550px;
-height:550px;
-
-background:#00e5ff;
-
-filter:blur(210px);
-
-opacity:.10;
-
-bottom:-250px;
-left:-180px;
-
-z-index:-2;
+    content:"";
+    position:fixed;
+    width:550px;
+    height:550px;
+    background:#00e5ff;
+    filter:blur(210px);
+    opacity:.10;
+    bottom:-250px;
+    left:-180px;
+    z-index:-2;
 }
 
-
-/* کارت ورود */
+/* کارت */
 
 .login-card{
+    width:calc(100% - 40px);
+    max-width:430px;
+    padding:35px 30px;
+    border-radius:27px;
 
-width:calc(100% - 40px);
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.075),
+        rgba(255,255,255,.018)
+    );
 
-max-width:430px;
+    border:1px solid rgba(180,124,255,.20);
 
-padding:35px 30px;
+    box-shadow:
+    0 30px 90px rgba(0,0,0,.55),
+    0 0 55px rgba(124,58,237,.12);
 
-border-radius:27px;
-
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,.075),
-rgba(255,255,255,.018)
-);
-
-border:1px solid rgba(180,124,255,.20);
-
-box-shadow:
-
-0 30px 90px rgba(0,0,0,.55),
-
-0 0 55px rgba(124,58,237,.12);
-
-backdrop-filter:blur(20px);
-
-position:relative;
-
-overflow:hidden;
+    backdrop-filter:blur(20px);
 }
 
-
-/* آیکون مدیر */
+/* آیکون */
 
 .admin-icon{
+    width:72px;
+    height:72px;
+    margin:0 auto 20px;
 
-width:72px;
-height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-margin:0 auto 20px;
+    font-size:31px;
 
-display:flex;
+    border-radius:22px;
 
-align-items:center;
-justify-content:center;
+    background:
+    linear-gradient(
+        135deg,
+        rgba(124,58,237,.25),
+        rgba(0,229,255,.08)
+    );
 
-font-size:31px;
+    border:1px solid rgba(180,124,255,.28);
 
-border-radius:22px;
-
-background:
-linear-gradient(
-135deg,
-rgba(124,58,237,.25),
-rgba(0,229,255,.08)
-);
-
-border:1px solid rgba(180,124,255,.28);
-
-box-shadow:
-0 0 35px rgba(124,58,237,.20);
+    box-shadow:
+    0 0 35px rgba(124,58,237,.20);
 }
-
 
 /* لوگو */
 
 .logo{
+    text-align:center;
+    font-size:29px;
+    font-weight:900;
 
-text-align:center;
+    background:
+    linear-gradient(
+        90deg,
+        #fff,
+        #b47cff,
+        #00e5ff
+    );
 
-font-size:29px;
-
-font-weight:900;
-
-background:
-linear-gradient(
-90deg,
-#fff,
-#b47cff,
-#00e5ff
-);
-
--webkit-background-clip:text;
-
--webkit-text-fill-color:transparent;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
-
-
-/* توضیحات */
 
 .subtitle{
-
-text-align:center;
-
-font-size:11px;
-
-color:#777;
-
-margin-top:8px;
-
-margin-bottom:30px;
+    text-align:center;
+    font-size:11px;
+    color:#777;
+    margin-top:8px;
+    margin-bottom:30px;
 }
 
-
-/* عنوان فیلد */
+/* لیبل */
 
 label{
-
-display:block;
-
-font-size:11px;
-
-color:#aaa;
-
-margin-bottom:8px;
+    display:block;
+    font-size:11px;
+    color:#aaa;
+    margin-bottom:8px;
 }
-
 
 /* ورودی */
 
 .input{
+    width:100%;
+    height:51px;
 
-width:100%;
+    padding:0 15px;
+    margin-bottom:18px;
 
-height:51px;
+    border-radius:13px;
 
-padding:0 15px;
+    outline:none;
 
-margin-bottom:18px;
+    border:1px solid rgba(255,255,255,.10);
 
-border-radius:13px;
+    background:rgba(255,255,255,.045);
 
-outline:none;
+    color:#fff;
 
-border:1px solid rgba(255,255,255,.10);
+    font-size:12px;
 
-background:
-rgba(255,255,255,.045);
-
-color:#fff;
-
-font-size:12px;
-
-transition:.25s;
+    transition:.25s;
 }
 
 .input:focus{
+    border-color:#7c3aed;
 
-border-color:#7c3aed;
-
-box-shadow:
-0 0 0 4px rgba(124,58,237,.08),
-0 0 20px rgba(124,58,237,.08);
+    box-shadow:
+    0 0 0 4px rgba(124,58,237,.08);
 }
 
 .input::placeholder{
-
-color:#555;
+    color:#555;
 }
 
-
-/* =========================
-   PASSWORD BOX
-========================= */
+/* رمز */
 
 .password-box{
-
-position:relative;
-
-width:100%;
+    position:relative;
+    width:100%;
 }
 
 .password-box .input{
-
-padding-left:52px;
+    padding-left:52px;
 }
 
-
-/* دکمه چشم */
+/* چشم */
 
 .eye-button{
+    position:absolute;
 
-position:absolute;
+    left:8px;
+    top:0;
 
-left:8px;
+    width:43px;
+    height:51px;
 
-top:0;
+    border:0;
 
-width:43px;
+    background:transparent;
 
-height:51px;
+    color:#777;
 
-border:0;
+    font-size:18px;
 
-background:transparent;
+    cursor:pointer;
 
-color:#777;
+    display:flex;
 
-font-size:18px;
+    align-items:center;
+    justify-content:center;
 
-cursor:pointer;
+    border-radius:10px;
 
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-border-radius:10px;
-
-transition:.25s;
+    transition:.25s;
 }
 
 .eye-button:hover{
-
-color:#fff;
-
-background:
-rgba(124,58,237,.12);
-
+    color:#fff;
+    background:rgba(124,58,237,.12);
 }
-
 
 /* دکمه ورود */
 
 .login-button{
+    width:100%;
+    height:54px;
 
-width:100%;
+    border:0;
+    border-radius:14px;
 
-height:54px;
+    color:#fff;
 
-border:0;
+    font-size:13px;
+    font-weight:bold;
 
-border-radius:14px;
+    cursor:pointer;
 
-color:#fff;
+    background:
+    linear-gradient(
+        135deg,
+        #7c3aed,
+        #2563eb,
+        #0891b2
+    );
 
-font-size:13px;
+    box-shadow:
+    0 12px 35px rgba(124,58,237,.28);
 
-font-weight:bold;
-
-cursor:pointer;
-
-background:
-linear-gradient(
-135deg,
-#7c3aed,
-#2563eb,
-#0891b2
-);
-
-box-shadow:
-0 12px 35px rgba(124,58,237,.28);
-
-transition:.3s;
+    transition:.3s;
 }
 
 .login-button:hover{
-
-transform:translateY(-3px);
-
-filter:brightness(1.12);
-
-box-shadow:
-0 16px 45px rgba(124,58,237,.38);
+    transform:translateY(-3px);
+    filter:brightness(1.12);
 }
 
 .login-button:active{
-
-transform:scale(.98);
+    transform:scale(.98);
 }
-
 
 /* خطا */
 
 .error{
+    display:none;
 
-display:none;
+    margin-top:15px;
 
-margin-top:15px;
+    padding:12px;
 
-padding:12px;
+    border-radius:11px;
 
-border-radius:11px;
+    background:rgba(255,70,100,.07);
 
-background:
-rgba(255,70,100,.07);
+    border:1px solid rgba(255,70,100,.18);
 
-border:1px solid rgba(255,70,100,.18);
+    color:#ff9baa;
 
-color:#ff9baa;
+    font-size:10px;
 
-font-size:10px;
-
-text-align:center;
+    text-align:center;
 }
-
 
 /* بازگشت */
 
 .back{
+    display:block;
 
-display:block;
+    text-align:center;
 
-text-align:center;
+    margin-top:22px;
 
-margin-top:22px;
+    color:#666;
 
-color:#666;
+    font-size:10px;
 
-font-size:10px;
-
-text-decoration:none;
-
-transition:.2s;
+    text-decoration:none;
 }
 
 .back:hover{
-
-color:#fff;
+    color:#fff;
 }
-
-
-/* موبایل */
 
 @media(max-width:450px){
 
-.login-card{
+    .login-card{
+        padding:30px 20px;
+    }
 
-padding:30px 20px;
-}
-
-.logo{
-
-font-size:25px;
-}
+    .logo{
+        font-size:25px;
+    }
 
 }
 
@@ -427,148 +328,92 @@ font-size:25px;
 <div class="login-card">
 
 
-<!-- آیکون -->
+    <div class="admin-icon">
+        🔐
+    </div>
 
-<div class="admin-icon">
 
-🔐
+    <div class="logo">
+        Kian Music
+    </div>
 
-</div>
 
+    <div class="subtitle">
+        ورود به پنل مدیریت
+    </div>
 
-<!-- لوگو -->
 
-<div class="logo">
+    <form id="loginForm">
 
-Kian Music
 
-</div>
+        <label>
+            نام کاربری
+        </label>
 
 
-<div class="subtitle">
+        <input
+            class="input"
+            id="username"
+            type="text"
+            placeholder="نام کاربری مدیر"
+            autocomplete="username"
+            required
+        >
 
-ورود به پنل مدیریت
 
-</div>
+        <label>
+            رمز عبور
+        </label>
 
 
+        <div class="password-box">
 
-<form id="loginForm">
+            <input
+                class="input"
+                id="password"
+                type="password"
+                placeholder="رمز عبور"
+                autocomplete="current-password"
+                required
+            >
 
+            <button
+                type="button"
+                class="eye-button"
+                id="togglePassword"
+                aria-label="نمایش رمز"
+            >
+                👁️
+            </button>
 
-<!-- نام کاربری -->
+        </div>
 
-<label>
 
-نام کاربری
+        <button
+            class="login-button"
+            type="submit"
+        >
+            🔐 ورود به پنل
+        </button>
 
-</label>
 
+    </form>
 
-<input
 
-class="input"
+    <div
+        class="error"
+        id="error"
+    >
+        نام کاربری یا رمز عبور اشتباه است.
+    </div>
 
-id="username"
 
-type="text"
-
-placeholder="نام کاربری مدیر"
-
-autocomplete="username"
-
-required>
-
-
-
-<!-- رمز -->
-
-<label>
-
-رمز عبور
-
-</label>
-
-
-<div class="password-box">
-
-
-<input
-
-class="input"
-
-id="password"
-
-type="password"
-
-placeholder="رمز عبور"
-
-autocomplete="current-password"
-
-required>
-
-
-<button
-
-type="button"
-
-class="eye-button"
-
-id="togglePassword"
-
-aria-label="نمایش رمز عبور">
-
-👁️
-
-</button>
-
-
-</div>
-
-
-
-<!-- ورود -->
-
-<button
-
-class="login-button"
-
-type="submit">
-
-🔐 ورود به پنل
-
-</button>
-
-
-</form>
-
-
-
-<!-- پیام خطا -->
-
-<div
-
-class="error"
-
-id="error">
-
-نام کاربری یا رمز عبور اشتباه است.
-
-</div>
-
-
-
-<!-- برگشت -->
-
-<a
-
-href="index.html"
-
-class="back">
-
-← بازگشت به سایت
-
-</a>
+    <a
+        href="./index.html"
+        class="back"
+    >
+        ← بازگشت به سایت
+    </a>
 
 
 </div>
@@ -577,18 +422,16 @@ class="back">
 
 <script>
 
-
 /* =========================
    اطلاعات ورود
 ========================= */
 
 const USERNAME = "admin";
-
 const PASSWORD = "admin";
 
 
 /* =========================
-   نمایش / مخفی کردن رمز
+   چشم رمز عبور
 ========================= */
 
 const passwordInput =
@@ -599,93 +442,80 @@ document.getElementById("togglePassword");
 
 
 togglePassword.addEventListener(
-"click",
-function(){
+    "click",
+    function(){
 
-if(
-passwordInput.type === "password"
-){
+        if(passwordInput.type === "password"){
 
-passwordInput.type = "text";
+            passwordInput.type = "text";
 
-togglePassword.textContent = "🙈";
+            togglePassword.textContent = "🙈";
 
-togglePassword.setAttribute(
-"aria-label",
-"مخفی کردن رمز عبور"
-);
+        }else{
 
-}else{
+            passwordInput.type = "password";
 
-passwordInput.type = "password";
+            togglePassword.textContent = "👁️";
 
-togglePassword.textContent = "👁️";
+        }
 
-togglePassword.setAttribute(
-"aria-label",
-"نمایش رمز عبور"
-);
-
-}
-
-}
+    }
 );
 
 
 /* =========================
-   ورود
+   ورود مدیر
 ========================= */
 
 document
 .getElementById("loginForm")
 .addEventListener(
-"submit",
-function(event){
+    "submit",
+    function(event){
 
-event.preventDefault();
-
-
-const username =
-document
-.getElementById("username")
-.value
-.trim();
+        event.preventDefault();
 
 
-const password =
-document
-.getElementById("password")
-.value;
+        const username =
+        document
+        .getElementById("username")
+        .value
+        .trim();
 
 
-if(
-username === USERNAME &&
-password === PASSWORD
-){
+        const password =
+        document
+        .getElementById("password")
+        .value;
 
 
-sessionStorage.setItem(
-"kian_admin_login",
-"true"
-);
+        if(
+            username === "admin" &&
+            password === "admin"
+        ){
+
+            sessionStorage.setItem(
+                "kian_admin_login",
+                "true"
+            );
 
 
-window.location.href =
-"admin.html";
+            /* ورود مستقیم به پنل */
+
+            window.location.replace(
+                "./admin.html"
+            );
 
 
-}else{
+        }else{
 
+            document
+            .getElementById("error")
+            .style.display = "block";
 
-document
-.getElementById("error")
-.style
-.display = "block";
+        }
 
-
-}
-
-}
+    }
 );
 
 </script>
