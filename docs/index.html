@@ -39,29 +39,45 @@ overflow-x:hidden;
 
 body::before{
 content:"";
+
 position:fixed;
+
 width:650px;
 height:650px;
+
 background:#7c3aed;
+
 filter:blur(210px);
+
 opacity:.16;
+
 top:-280px;
 right:-200px;
+
 z-index:-2;
+
 pointer-events:none;
 }
 
 body::after{
 content:"";
+
 position:fixed;
+
 width:600px;
 height:600px;
+
 background:#00e5ff;
+
 filter:blur(220px);
+
 opacity:.09;
+
 bottom:-300px;
 left:-200px;
+
 z-index:-2;
+
 pointer-events:none;
 }
 
@@ -96,7 +112,6 @@ justify-content:center;
 padding:20px;
 
 }
-
 
 .logo{
 
@@ -155,10 +170,6 @@ padding:10px 20px;
 
 }
 
-
-/* =========================
-   NAV
-========================= */
 
 nav{
 
@@ -245,6 +256,102 @@ nav a.admin{
 
 border-color:
 rgba(0,229,255,.20);
+
+}
+
+
+/* =========================
+   BACK TO TOP
+========================= */
+
+.back-to-top{
+
+position:fixed;
+
+bottom:25px;
+
+right:25px;
+
+width:48px;
+
+height:48px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:15px;
+
+text-decoration:none;
+
+font-size:21px;
+
+font-weight:bold;
+
+color:rgba(255,255,255,.75);
+
+background:
+linear-gradient(
+135deg,
+rgba(124,58,237,.20),
+rgba(0,229,255,.08)
+);
+
+border:1px solid rgba(180,124,255,.25);
+
+box-shadow:
+0 0 25px rgba(124,58,237,.15),
+inset 0 0 15px rgba(255,255,255,.03);
+
+backdrop-filter:blur(12px);
+
+-webkit-backdrop-filter:blur(12px);
+
+opacity:0;
+
+visibility:hidden;
+
+transform:translateY(15px);
+
+transition:.35s;
+
+z-index:999999;
+
+cursor:pointer;
+
+}
+
+
+/* ظاهر شدن دکمه */
+
+.back-to-top.show{
+
+opacity:.75;
+
+visibility:visible;
+
+transform:translateY(0);
+
+}
+
+
+/* حالت هاور */
+
+.back-to-top:hover{
+
+opacity:1;
+
+transform:translateY(-4px);
+
+color:#fff;
+
+border-color:rgba(180,124,255,.55);
+
+box-shadow:
+0 0 30px rgba(124,58,237,.30),
+0 0 50px rgba(0,229,255,.08);
 
 }
 
@@ -352,3 +459,51 @@ margin-top:27px;
 flex-wrap:wrap;
 
 }
+
+
+.hero-button{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+min-width:160px;
+
+padding:14px 20px;
+
+border-radius:14px;
+
+text-decoration:none;
+
+font-size:12px;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+
+.primary{
+
+color:#fff;
+
+background:
+linear-gradient(
+135deg,
+#7c3aed,
+#2563eb,
+#0891b2
+);
+
+border:1px solid rgba(255,255,255,.15);
+
+box-shadow:
+0 10px 35px rgba(124,58,237,.25);
+
+}
+
+
+.primary:hover{
