@@ -1,1181 +1,245 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>پنل مدیریت | Kian Music</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Tahoma,Arial,sans-serif;
-}
-
-body{
-background:#050509;
-color:#fff;
-min-height:100vh;
-overflow-x:hidden;
-}
-
-body::before{
-content:"";
-position:fixed;
-width:650px;
-height:650px;
-background:#7c3aed;
-filter:blur(210px);
-opacity:.16;
-top:-300px;
-right:-220px;
-z-index:-2;
-pointer-events:none;
-}
-
-body::after{
-content:"";
-position:fixed;
-width:600px;
-height:600px;
-background:#00e5ff;
-filter:blur(220px);
-opacity:.09;
-bottom:-300px;
-left:-220px;
-z-index:-2;
-pointer-events:none;
-}
-
-
-/* HEADER */
-
-header{
-position:sticky;
-top:0;
-z-index:100;
-padding:15px 20px;
-background:rgba(5,5,9,.78);
-backdrop-filter:blur(22px);
-border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.header{
-max-width:1200px;
-margin:auto;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:15px;
-}
-
-.logo{
-font-size:24px;
-font-weight:900;
-
-background:
-linear-gradient(
-90deg,
-#fff,
-#b47cff,
-#00e5ff
-);
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.header-buttons{
-display:flex;
-gap:8px;
-flex-wrap:wrap;
-}
-
-.header-button{
-text-decoration:none;
-color:#ccc;
-font-size:10px;
-padding:10px 14px;
-border-radius:11px;
-
-background:
-rgba(255,255,255,.045);
-
-border:1px solid rgba(255,255,255,.11);
-
-transition:.25s;
-}
-
-.header-button:hover{
-color:#fff;
-background:rgba(124,58,237,.20);
-border-color:rgba(180,124,255,.40);
-}
-
-
-/* MAIN */
-
-.container{
-max-width:1200px;
-margin:45px auto;
-padding:0 20px;
-}
-
-.title{
-margin-bottom:28px;
-}
-
-.title h1{
-font-size:32px;
-margin-bottom:9px;
-
-background:
-linear-gradient(
-90deg,
-#fff,
-#b47cff,
-#00e5ff
-);
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.title p{
-font-size:11px;
-color:#777;
-}
-
-
-/* STATS */
-
-.stats{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:14px;
-margin-bottom:22px;
-}
-
-.stat{
-padding:21px;
-border-radius:19px;
-
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,.065),
-rgba(255,255,255,.018)
-);
-
-border:1px solid rgba(255,255,255,.08);
-transition:.25s;
-}
-
-.stat:hover{
-transform:translateY(-4px);
-border-color:rgba(180,124,255,.35);
-
-box-shadow:
-0 15px 40px rgba(0,0,0,.3);
-}
-
-.stat-icon{
-font-size:23px;
-margin-bottom:12px;
-}
-
-.stat-number{
-font-size:26px;
-font-weight:900;
-margin-bottom:5px;
-}
-
-.stat-label{
-font-size:10px;
-color:#777;
-}
-
-
-/* GRID */
-
-.grid{
-display:grid;
-grid-template-columns:1.35fr 1fr;
-gap:18px;
-}
-
-
-/* CARD */
-
-.card{
-padding:23px;
-border-radius:20px;
-
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,.065),
-rgba(255,255,255,.018)
-);
-
-border:1px solid rgba(255,255,255,.08);
-
-box-shadow:
-0 15px 50px rgba(0,0,0,.25);
-
-margin-bottom:18px;
-}
-
-.card h2{
-font-size:16px;
-margin-bottom:18px;
-}
-
-
-/* ACTIONS */
-
-.actions{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:11px;
-}
-
-.action{
-display:flex;
-align-items:center;
-gap:12px;
-
-padding:15px;
-
-border-radius:14px;
-
-text-decoration:none;
-
-color:#ddd;
-
-background:
-rgba(255,255,255,.035);
-
-border:1px solid rgba(255,255,255,.08);
-
-transition:.25s;
-}
-
-.action:hover{
-color:#fff;
-
-transform:translateY(-3px);
-
-background:
-linear-gradient(
-135deg,
-rgba(124,58,237,.25),
-rgba(0,229,255,.06)
-);
-
-border-color:rgba(180,124,255,.4);
-}
-
-.action-icon{
-font-size:22px;
-}
-
-.action strong{
-display:block;
-font-size:11px;
-margin-bottom:4px;
-}
-
-.action span{
-font-size:9px;
-color:#666;
-}
-
-
-/* VISITOR DROPDOWN */
-
-.visitor-box{
-margin-top:10px;
-}
-
-.visitor-select{
-
-width:100%;
-
-height:50px;
-
-padding:0 15px;
-
-border-radius:13px;
-
-border:1px solid rgba(180,124,255,.20);
-
-background:#111018;
-
-color:#fff;
-
-font-size:11px;
-
-outline:none;
-
-cursor:pointer;
-
-transition:.25s;
-}
-
-.visitor-select:focus{
-
-border-color:#7c3aed;
-
-box-shadow:
-0 0 20px rgba(124,58,237,.15);
-}
-
-.visitor-select option{
-
-background:#111018;
-
-color:#fff;
-}
-
-
-/* VISITOR RESULT */
-
-.visitor-result{
-
-margin-top:15px;
-
-padding:20px;
-
-border-radius:16px;
-
-background:
-linear-gradient(
-135deg,
-rgba(124,58,237,.12),
-rgba(0,229,255,.04)
-);
-
-border:1px solid rgba(180,124,255,.15);
-
-text-align:center;
-}
-
-.visitor-number{
-
-font-size:32px;
-
-font-weight:900;
-
-margin-bottom:6px;
-
-background:
-linear-gradient(
-90deg,
-#fff,
-#b47cff,
-#00e5ff
-);
-
--webkit-background-clip:text;
-
--webkit-text-fill-color:transparent;
-}
-
-.visitor-label{
-
-font-size:10px;
-
-color:#777;
-}
-
-
-/* SONG */
-
-.song-list{
-
-display:flex;
-
-flex-direction:column;
-
-gap:9px;
-}
-
-.empty{
-
-text-align:center;
-
-padding:28px 15px;
-
-color:#666;
-
-font-size:10px;
-
-line-height:2;
-}
-
-.empty-icon{
-
-font-size:30px;
-
-margin-bottom:10px;
-}
-
-
-/* NOTICE */
-
-.notice{
-
-padding:16px;
-
-border-radius:14px;
-
-background:
-rgba(255,180,0,.045);
-
-border:1px solid rgba(255,180,0,.13);
-
-color:#999;
-
-font-size:10px;
-
-line-height:2;
-}
-
-
-/* LOGOUT */
-
-.logout{
-
-width:100%;
-
-padding:14px;
-
-margin-top:14px;
-
-border-radius:13px;
-
-border:1px solid rgba(255,70,90,.18);
-
-background:
-rgba(255,70,90,.045);
-
-color:#ff9baa;
-
-font-size:11px;
-
-cursor:pointer;
-
-transition:.25s;
-}
-
-.logout:hover{
-
-background:
-rgba(255,70,90,.10);
-
-border-color:
-rgba(255,70,90,.30);
-}
-
-
-/* FOOTER */
-
-footer{
-
-margin-top:65px;
-
-padding:35px 20px;
-
-text-align:center;
-
-border-top:
-1px solid rgba(255,255,255,.07);
-
-color:#555;
-
-font-size:10px;
-}
-
-
-/* MOBILE */
-
-@media(max-width:850px){
-
-.stats{
-
-grid-template-columns:
-repeat(2,1fr);
-}
-
-.grid{
-
-grid-template-columns:1fr;
-}
-
-}
-
-@media(max-width:550px){
-
-.header{
-
-flex-direction:column;
-
-align-items:stretch;
-}
-
-.logo{
-
-text-align:center;
-}
-
-.header-buttons{
-
-justify-content:center;
-}
-
-.container{
-
-margin-top:30px;
-}
-
-.title h1{
-
-font-size:27px;
-}
-
-.stats{
-
-gap:9px;
-}
-
-.stat{
-
-padding:16px;
-}
-
-.stat-number{
-
-font-size:22px;
-}
-
-.actions{
-
-grid-template-columns:1fr;
-}
-
-.card{
-
-padding:18px;
-}
-
-}
-
-</style>
-
-</head>
-
-
-<body>
-
-
-<!-- بررسی ورود -->
-
-<script>
-
-if(
-sessionStorage.getItem("kian_admin_login")
-!== "true"
-){
-
-window.location.replace("./login.html");
-
-}
-
-</script>
-
-
-<!-- HEADER -->
-
-<header>
-
-<div class="header">
-
-
-<div class="logo">
-Kian Music • Admin
-</div>
-
-
-<div class="header-buttons">
-
-
-<a
-href="./index.html"
-class="header-button">
-
-🏠 مشاهده سایت
-
-</a>
-
-
-<a
-href="./login.html"
-class="header-button"
-onclick="logout()">
-
-🚪 خروج
-
-</a>
-
-
-</div>
-
-
-</div>
-
-</header>
-
-
-<!-- MAIN -->
-
-<main class="container">
-
-
-<div class="title">
-
-<h1>
-⚡ پنل مدیریت
-</h1>
-
-<p>
-خوش آمدید مدیر؛ مرکز کنترل Kian Music
-</p>
-
-</div>
-
-
-<!-- آمار کلی -->
-
-<div class="stats">
-
-
-<div class="stat">
-
-<div class="stat-icon">
-🎵
-</div>
-
-<div class="stat-number">
-0
-</div>
-
-<div class="stat-label">
-تعداد آهنگ‌ها
-</div>
-
-</div>
-
-
-<div class="stat">
-
-<div class="stat-icon">
-🎤
-</div>
-
-<div class="stat-number">
-0
-</div>
-
-<div class="stat-label">
-تعداد خواننده‌ها
-</div>
-
-</div>
-
-
-<div class="stat">
-
-<div class="stat-icon">
-📩
-</div>
-
-<div class="stat-number">
-0
-</div>
-
-<div class="stat-label">
-درخواست‌های جدید
-</div>
-
-</div>
-
-
-<div class="stat">
-
-<div class="stat-icon">
-👁️
-</div>
-
-<div
-class="stat-number"
-id="todayTop">
-
-0
-</div>
-
-<div class="stat-label">
-بازدید امروز
-</div>
-
-</div>
-
-
-</div>
-
-
-
-<div class="grid">
-
-
-<!-- LEFT -->
-
-<div>
-
-
-<!-- مدیریت -->
+<!-- مدیریت مدیران -->
 
 <div class="card">
 
 <h2>
-🛠️ مدیریت سایت
+👑 مدیریت مدیران
 </h2>
 
-
-<div class="actions">
-
-
-<a
-href="./index.html"
-class="action">
-
-<div class="action-icon">
-🎵
-</div>
-
-<div>
-
-<strong>
-مدیریت آهنگ‌ها
-</strong>
-
-<span>
-مشاهده آهنگ‌های سایت
-</span>
-
-</div>
-
-</a>
-
-
-<a
-href="./artists.html"
-class="action">
-
-<div class="action-icon">
-🎤
-</div>
-
-<div>
-
-<strong>
-مدیریت خواننده‌ها
-</strong>
-
-<span>
-مدیریت خواننده‌ها
-</span>
-
-</div>
-
-</a>
-
-
-<a
-href="./send.html"
-class="action">
-
-<div class="action-icon">
-📤
-</div>
-
-<div>
-
-<strong>
-ارسال آهنگ
-</strong>
-
-<span>
-فرم ارسال آثار
-</span>
-
-</div>
-
-</a>
-
-
-<a
-href="./contact.html"
-class="action">
-
-<div class="action-icon">
-📞
-</div>
-
-<div>
-
-<strong>
-تماس با ما
-</strong>
-
-<span>
-اطلاعات تماس
-</span>
-
-</div>
-
-</a>
-
-
-</div>
-
-</div>
-
-
-
-<!-- آمار بازدید -->
-
-<div class="card">
-
-<h2>
-👥 آمار ورود به سایت
-</h2>
-
-
-<select
-id="visitorPeriod"
-class="visitor-select"
-onchange="changeVisitorPeriod()">
-
-<option value="day">
-🟢 امروز
-</option>
-
-<option value="week">
-🔵 ۷ روز اخیر
-</option>
-
-<option value="month">
-🟣 ۳۰ روز اخیر
-</option>
-
-<option value="year">
-🟠 یک سال اخیر
-</option>
-
-</select>
-
-
-<div class="visitor-result">
-
-<div
-class="visitor-number"
-id="visitorNumber">
-
-0
-
-</div>
-
-<div
-class="visitor-label"
-id="visitorLabel">
-
-ورود در امروز
-
-</div>
-
-</div>
-
-
-</div>
-
-
-
-<!-- آخرین آهنگ‌ها -->
-
-<div class="card">
-
-<h2>
-🎵 آخرین آهنگ‌ها
-</h2>
-
-
-<div class="song-list">
-
-
-<div class="empty">
-
-<div class="empty-icon">
-🎧
-</div>
-
-هنوز آهنگی ثبت نشده است.
-
-</div>
-
-
-</div>
-
-</div>
-
-
-</div>
-
-
-
-<!-- RIGHT -->
-
-<div>
-
-
-<div class="card">
-
-<h2>
-📊 وضعیت سایت
-</h2>
-
-
-<div class="notice">
-
-🟢 وضعیت سایت: فعال
-
-<br>
-
-🔐 وضعیت پنل مدیر: فعال
-
-<br>
-
-☁️ ذخیره‌سازی آهنگ: در حال توسعه
-
-<br>
-
-🎵 سیستم پخش موسیقی: فعال
-
-<br>
-
-👥 آمار بازدید: نمایشی تا اتصال سیستم آمارگیری
-
-</div>
-
-
-</div>
-
-
-
-<div class="card">
-
-<h2>
-⚡ دسترسی سریع
-</h2>
-
-
-<div class="actions">
-
-
-<a
-href="./send.html"
-class="action">
-
-<div class="action-icon">
-➕
-</div>
-
-<div>
-
-<strong>
-ارسال آهنگ جدید
-</strong>
-
-<span>
-افزودن اثر
-</span>
-
-</div>
-
-</a>
-
-
-<a
-href="./index.html"
-class="action">
-
-<div class="action-icon">
-🌐
-</div>
-
-<div>
-
-<strong>
-مشاهده سایت
-</strong>
-
-<span>
-صفحه اصلی
-</span>
-
-</div>
-
-</a>
-
-
-</div>
-
-</div>
-
+<div class="admin-manager">
+
+<input
+id="newAdmin"
+class="admin-input"
+type="text"
+placeholder="نام کاربری مدیر جدید"
+>
 
 <button
-class="logout"
-onclick="logout()">
+class="admin-add"
+onclick="addAdmin()">
 
-🚪 خروج از پنل مدیریت
+➕ افزودن مدیر
 
 </button>
 
-
 </div>
 
 
+<div
+id="adminList"
+class="admin-list">
+
+<div class="admin-user">
+
+<div>
+
+<strong>👑 admin</strong>
+
+<span>مدیر اصلی</span>
+
 </div>
 
-</main>
+<div class="main-admin">
+اصلی
+</div>
 
+</div>
 
-<footer>
+</div>
 
-Kian Music Admin
+</div>
 
-<br><br>
+و داخل "<style>" این کد رو اضافه کن:
 
-© 2026 Kian Music
+.admin-manager{
+display:flex;
+gap:9px;
+margin-bottom:15px;
+}
 
-</footer>
+.admin-input{
+flex:1;
+height:46px;
 
+padding:0 13px;
 
+border-radius:11px;
 
-<script>
+outline:none;
 
-/* =========================
-   آمار نمایشی
-========================= */
+border:1px solid rgba(255,255,255,.10);
 
-const visitorData = {
+background:rgba(255,255,255,.04);
 
-day: 0,
+color:#fff;
 
-week: 0,
+font-size:11px;
+}
 
-month: 0,
+.admin-input:focus{
+border-color:#7c3aed;
 
-year: 0
+box-shadow:
+0 0 20px rgba(124,58,237,.12);
+}
 
-};
+.admin-add{
 
+border:0;
 
-function changeVisitorPeriod(){
+padding:0 15px;
 
-const select =
-document.getElementById(
-"visitorPeriod"
+border-radius:11px;
+
+background:
+linear-gradient(
+135deg,
+#7c3aed,
+#2563eb
 );
 
-const period =
-select.value;
+color:#fff;
 
+font-size:10px;
 
-const number =
-document.getElementById(
-"visitorNumber"
-);
+font-weight:bold;
 
-const label =
-document.getElementById(
-"visitorLabel"
-);
+cursor:pointer;
+}
 
+.admin-list{
 
-number.textContent =
-visitorData[period];
+display:flex;
 
+flex-direction:column;
 
-if(period === "day"){
+gap:8px;
+}
 
-label.textContent =
-"ورود در امروز";
+.admin-user{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:13px;
+
+border-radius:12px;
+
+background:rgba(255,255,255,.035);
+
+border:1px solid rgba(255,255,255,.07);
+}
+
+.admin-user strong{
+
+display:block;
+
+font-size:11px;
+
+margin-bottom:5px;
+}
+
+.admin-user span{
+
+font-size:9px;
+
+color:#666;
+}
+
+.main-admin{
+
+font-size:9px;
+
+padding:6px 9px;
+
+border-radius:8px;
+
+background:
+rgba(124,58,237,.12);
+
+color:#b47cff;
+}
+
+و قبل از "</script>" این JavaScript رو اضافه کن:
+
+function addAdmin(){
+
+const input =
+document.getElementById("newAdmin");
+
+const username =
+input.value.trim();
+
+if(!username){
+
+alert("نام کاربری را وارد کنید.");
+
+return;
 
 }
 
-else if(period === "week"){
+const list =
+document.getElementById("adminList");
 
-label.textContent =
-"ورود در ۷ روز اخیر";
+const item =
+document.createElement("div");
+
+item.className =
+"admin-user";
+
+item.innerHTML = `
+
+<div>
+
+<strong>👤 ${username}</strong>
+
+<span>مدیر سایت</span>
+
+</div>
+
+<button
+onclick="removeAdmin(this)"
+style="
+border:0;
+padding:7px 10px;
+border-radius:8px;
+background:rgba(255,70,90,.08);
+color:#ff9baa;
+cursor:pointer;
+font-size:9px;
+">
+
+🗑️ حذف
+
+</button>
+
+`;
+
+list.appendChild(item);
+
+input.value = "";
 
 }
 
-else if(period === "month"){
 
-label.textContent =
-"ورود در ۳۰ روز اخیر";
+function removeAdmin(button){
 
-}
+if(
+confirm("این مدیر حذف شود؟")
+){
 
-else if(period === "year"){
-
-label.textContent =
-"ورود در یک سال اخیر";
-
-}
+button
+.parentElement
+.remove();
 
 }
 
-
-/* =========================
-   خروج
-========================= */
-
-function logout(){
-
-sessionStorage.removeItem(
-"kian_admin_login"
-);
-
-window.location.replace(
-"./login.html"
-);
-
 }
 
+با این کار داخل پنل یک بخش 👑 مدیریت مدیران داری که می‌تونی نام کاربری وارد کنی و به لیست اضافه یا از لیست حذف کنی.
 
-/* مقدار اولیه */
-
-changeVisitorPeriod();
-
-</script>
-
-
-</body>
-
-</html>
+اما فعلاً واقعی نیست و با رفرش صفحه پاک می‌شود. برای واقعی شدنش باید مرحله بعد یک سیستم ذخیره‌سازی و احراز هویت امن اضافه کنیم.
