@@ -138,7 +138,7 @@ z-index:99999;
 
 width:100%;
 
-background:rgba(5,5,9,.86);
+background:rgba(5,5,9,.88);
 
 backdrop-filter:blur(22px);
 
@@ -245,6 +245,98 @@ nav a.admin{
 
 border-color:
 rgba(0,229,255,.20);
+
+}
+
+
+/* =========================
+   BACK TO TOP
+========================= */
+
+.back-to-top{
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+width:48px;
+
+height:48px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:15px;
+
+text-decoration:none;
+
+font-size:22px;
+
+font-weight:bold;
+
+color:rgba(255,255,255,.75);
+
+background:
+linear-gradient(
+135deg,
+rgba(124,58,237,.20),
+rgba(0,229,255,.08)
+);
+
+border:1px solid rgba(180,124,255,.25);
+
+box-shadow:
+0 0 25px rgba(124,58,237,.15),
+inset 0 0 15px rgba(255,255,255,.03);
+
+backdrop-filter:blur(12px);
+
+-webkit-backdrop-filter:blur(12px);
+
+opacity:0;
+
+visibility:hidden;
+
+transform:translateY(15px);
+
+transition:.35s;
+
+z-index:999999;
+
+cursor:pointer;
+
+}
+
+
+.back-to-top.show{
+
+opacity:.75;
+
+visibility:visible;
+
+transform:translateY(0);
+
+}
+
+
+.back-to-top:hover{
+
+opacity:1;
+
+transform:translateY(-4px);
+
+color:#fff;
+
+border-color:rgba(180,124,255,.55);
+
+box-shadow:
+0 0 30px rgba(124,58,237,.30),
+0 0 50px rgba(0,229,255,.08);
 
 }
 
@@ -925,6 +1017,23 @@ width:100%;
 
 }
 
+
+.back-to-top{
+
+width:43px;
+
+height:43px;
+
+right:15px;
+
+bottom:18px;
+
+font-size:19px;
+
+border-radius:13px;
+
+}
+
 }
 
 </style>
@@ -936,7 +1045,7 @@ width:100%;
 
 
 <!-- =========================
-     LOGO
+     HEADER
 ========================= -->
 
 <header>
@@ -999,6 +1108,7 @@ Kian Music
 
 <section class="hero">
 
+
 <div class="hero-badge">
 
 <span>✦</span>
@@ -1029,6 +1139,7 @@ Kian Music
 
 <div class="hero-buttons">
 
+
 <a
 href="#musicList"
 class="hero-button primary">
@@ -1046,7 +1157,9 @@ class="hero-button secondary">
 
 </a>
 
+
 </div>
+
 
 </section>
 
@@ -1219,9 +1332,25 @@ class="cta-button">
 
 </a>
 
+
 </div>
 
 </section>
+
+
+<!-- =========================
+     BACK TO TOP
+========================= -->
+
+<a
+href="#"
+class="back-to-top"
+id="backToTop"
+aria-label="بازگشت به بالای صفحه">
+
+↑
+
+</a>
 
 
 <!-- =========================
@@ -1247,6 +1376,46 @@ Kian Music
 
 
 </footer>
+
+
+<!-- =========================
+     BACK TO TOP SCRIPT
+========================= -->
+
+<script>
+
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", function(){
+
+if(window.scrollY > 300){
+
+backToTop.classList.add("show");
+
+}else{
+
+backToTop.classList.remove("show");
+
+}
+
+});
+
+
+backToTop.addEventListener("click", function(e){
+
+e.preventDefault();
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+});
+
+</script>
 
 
 </body>
