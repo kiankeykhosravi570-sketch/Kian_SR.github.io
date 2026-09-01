@@ -2,11 +2,10 @@
 <html lang="fa" dir="rtl">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>پنل مدیریت | Kian Music</title>
+<title>ورود مدیر | Kian Music</title>
 
 <style>
 
@@ -18,908 +17,350 @@ font-family:Tahoma,Arial,sans-serif;
 }
 
 body{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
 background:#050509;
 color:#fff;
-min-height:100vh;
-overflow-x:hidden;
+overflow:hidden;
 }
 
 body::before{
 content:"";
 position:fixed;
-
 width:600px;
 height:600px;
-
 background:#7c3aed;
-
 filter:blur(200px);
-
-opacity:.16;
-
+opacity:.20;
 top:-250px;
 right:-180px;
-
 z-index:-2;
 }
 
 body::after{
 content:"";
 position:fixed;
-
 width:550px;
 height:550px;
-
 background:#00e5ff;
-
 filter:blur(210px);
-
-opacity:.09;
-
+opacity:.10;
 bottom:-250px;
 left:-180px;
-
 z-index:-2;
 }
 
-
-/* HEADER */
-
-header{
-position:sticky;
-top:0;
-z-index:100;
-
-background:rgba(5,5,9,.75);
-
-backdrop-filter:blur(22px);
-
-border-bottom:1px solid rgba(255,255,255,.08);
-
-padding:15px 20px;
-}
-
-.header{
-max-width:1200px;
-margin:auto;
-
-display:flex;
-align-items:center;
-justify-content:space-between;
-
-gap:15px;
-}
-
-.logo{
-font-size:24px;
-font-weight:900;
-
-background:
-linear-gradient(
-90deg,
-#fff,
-#b47cff,
-#00e5ff
-);
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.header-buttons{
-display:flex;
-gap:9px;
-}
-
-.header-button{
-text-decoration:none;
-
-color:#ccc;
-
-font-size:11px;
-
-padding:10px 14px;
-
-border-radius:11px;
-
-border:1px solid rgba(255,255,255,.12);
-
-background:rgba(255,255,255,.04);
-
-transition:.25s;
-}
-
-.header-button:hover{
-color:#fff;
-
-background:
-linear-gradient(
-135deg,
-rgba(124,58,237,.30),
-rgba(0,229,255,.07)
-);
-
-border-color:
-rgba(180,124,255,.45);
-
-transform:translateY(-2px);
-}
-
-
-/* MAIN */
-
-.container{
-max-width:1200px;
-
-margin:45px auto;
-
-padding:0 20px;
-}
-
-
-/* TITLE */
-
-.title{
-margin-bottom:30px;
-}
-
-.title h1{
-font-size:32px;
-margin-bottom:9px;
-
-background:
-linear-gradient(
-90deg,
-#fff,
-#b47cff,
-#00e5ff
-);
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.title p{
-font-size:12px;
-color:#777;
-}
-
-
-/* STATS */
-
-.stats{
-display:grid;
-
-grid-template-columns:
-repeat(4,1fr);
-
-gap:15px;
-
-margin-bottom:25px;
-}
-
-.stat{
-padding:22px;
-
-border-radius:19px;
+.login-card{
+width:calc(100% - 40px);
+max-width:430px;
+padding:35px 30px;
+border-radius:27px;
 
 background:
 linear-gradient(
 145deg,
-rgba(255,255,255,.065),
+rgba(255,255,255,.075),
 rgba(255,255,255,.018)
 );
 
-border:1px solid rgba(255,255,255,.08);
-
-transition:.25s;
-}
-
-.stat:hover{
-transform:translateY(-4px);
-
-border-color:
-rgba(180,124,255,.35);
+border:1px solid rgba(180,124,255,.20);
 
 box-shadow:
-0 15px 40px rgba(0,0,0,.3);
+0 30px 90px rgba(0,0,0,.55),
+0 0 55px rgba(124,58,237,.12);
+
+backdrop-filter:blur(20px);
 }
 
-.stat-icon{
-font-size:23px;
-margin-bottom:12px;
-}
+.admin-icon{
+width:72px;
+height:72px;
+margin:0 auto 20px;
 
-.stat-number{
-font-size:27px;
-font-weight:900;
-margin-bottom:6px;
-}
-
-.stat-label{
-font-size:11px;
-color:#777;
-}
-
-
-/* GRID */
-
-.grid{
-display:grid;
-
-grid-template-columns:
-1.4fr 1fr;
-
-gap:18px;
-}
-
-.card{
-padding:24px;
-
-border-radius:20px;
-
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,.065),
-rgba(255,255,255,.018)
-);
-
-border:1px solid rgba(255,255,255,.08);
-
-box-shadow:
-0 15px 50px rgba(0,0,0,.25);
-}
-
-.card h2{
-font-size:17px;
-margin-bottom:18px;
-}
-
-
-/* ACTIONS */
-
-.actions{
-display:grid;
-
-grid-template-columns:
-repeat(2,1fr);
-
-gap:12px;
-}
-
-.action{
 display:flex;
-
 align-items:center;
+justify-content:center;
 
-gap:12px;
+font-size:31px;
 
-padding:16px;
-
-text-decoration:none;
-
-color:#ddd;
-
-border-radius:14px;
-
-background:rgba(255,255,255,.04);
-
-border:1px solid rgba(255,255,255,.08);
-
-transition:.25s;
-}
-
-.action:hover{
-color:#fff;
+border-radius:22px;
 
 background:
 linear-gradient(
 135deg,
 rgba(124,58,237,.25),
-rgba(0,229,255,.06)
+rgba(0,229,255,.08)
 );
 
-border-color:
-rgba(180,124,255,.4);
+border:1px solid rgba(180,124,255,.28);
 
-transform:translateY(-3px);
-}
-
-.action-icon{
-font-size:23px;
-}
-
-.action-text strong{
-display:block;
-
-font-size:12px;
-
-margin-bottom:5px;
-}
-
-.action-text span{
-font-size:9px;
-
-color:#777;
-}
-
-
-/* RECENT */
-
-.recent{
-display:flex;
-
-flex-direction:column;
-
-gap:10px;
-}
-
-.item{
-display:flex;
-
-align-items:center;
-
-gap:12px;
-
-padding:13px;
-
-border-radius:13px;
-
-background:rgba(255,255,255,.035);
-
-border:1px solid rgba(255,255,255,.06);
-}
-
-.item-icon{
-width:38px;
-height:38px;
-
-display:flex;
-
-align-items:center;
-justify-content:center;
-
-border-radius:10px;
-
-background:rgba(124,58,237,.12);
-
-border:1px solid rgba(124,58,237,.18);
-}
-
-.item-info{
-flex:1;
-}
-
-.item-info strong{
-display:block;
-
-font-size:11px;
-
-margin-bottom:4px;
-}
-
-.item-info span{
-font-size:9px;
-
-color:#666;
-}
-
-
-/* NOTICE */
-
-.notice{
-margin-top:18px;
-
-padding:18px;
-
-border-radius:15px;
-
-background:rgba(255,180,0,.045);
-
-border:1px solid rgba(255,180,0,.14);
-
-color:#999;
-
-font-size:10px;
-
-line-height:2;
-}
-
-
-/* LOGOUT */
-
-.logout{
-margin-top:18px;
-
-width:100%;
-
-padding:14px;
-
-border-radius:13px;
-
-border:1px solid rgba(255,80,100,.15);
-
-background:rgba(255,70,90,.045);
-
-color:#ff9baa;
-
-cursor:pointer;
-
-font-size:11px;
-
-transition:.25s;
-}
-
-.logout:hover{
-background:rgba(255,70,90,.10);
-
-border-color:rgba(255,80,100,.30);
-}
-
-
-/* FOOTER */
-
-footer{
-margin-top:70px;
-
-padding:35px 20px;
-
-text-align:center;
-
-border-top:1px solid rgba(255,255,255,.07);
-
-color:#555;
-
-font-size:10px;
-}
-
-
-/* MOBILE */
-
-@media(max-width:850px){
-
-.stats{
-grid-template-columns:
-repeat(2,1fr);
-}
-
-.grid{
-grid-template-columns:1fr;
-}
-
-}
-
-@media(max-width:550px){
-
-.header{
-flex-direction:column;
-align-items:stretch;
+box-shadow:
+0 0 35px rgba(124,58,237,.20);
 }
 
 .logo{
 text-align:center;
+font-size:29px;
+font-weight:900;
+
+background:
+linear-gradient(
+90deg,
+#fff,
+#b47cff,
+#00e5ff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-.header-buttons{
-justify-content:center;
+.subtitle{
+text-align:center;
+font-size:11px;
+color:#777;
+margin-top:8px;
+margin-bottom:30px;
 }
 
-.container{
-margin-top:30px;
+label{
+display:block;
+font-size:11px;
+color:#aaa;
+margin-bottom:8px;
 }
 
-.title h1{
-font-size:27px;
+.input{
+width:100%;
+height:51px;
+
+padding:0 15px;
+margin-bottom:18px;
+
+border-radius:13px;
+
+outline:none;
+
+border:1px solid rgba(255,255,255,.10);
+
+background:rgba(255,255,255,.045);
+
+color:#fff;
+
+font-size:12px;
+
+transition:.25s;
 }
 
-.stats{
-grid-template-columns:
-repeat(2,1fr);
+.input:focus{
+border-color:#7c3aed;
 
-gap:10px;
+box-shadow:
+0 0 0 4px rgba(124,58,237,.08),
+0 0 20px rgba(124,58,237,.08);
 }
 
-.stat{
-padding:16px;
+.input::placeholder{
+color:#555;
 }
 
-.stat-number{
-font-size:22px;
+.login-button{
+width:100%;
+height:54px;
+
+border:0;
+border-radius:14px;
+
+color:#fff;
+
+font-size:13px;
+font-weight:bold;
+
+cursor:pointer;
+
+background:
+linear-gradient(
+135deg,
+#7c3aed,
+#2563eb,
+#0891b2
+);
+
+box-shadow:
+0 12px 35px rgba(124,58,237,.28);
+
+transition:.3s;
 }
 
-.actions{
-grid-template-columns:1fr;
+.login-button:hover{
+transform:translateY(-3px);
+filter:brightness(1.12);
+
+box-shadow:
+0 16px 45px rgba(124,58,237,.38);
 }
 
-.card{
-padding:18px;
+.error{
+display:none;
+
+margin-top:15px;
+
+padding:12px;
+
+border-radius:11px;
+
+background:rgba(255,70,100,.07);
+
+border:1px solid rgba(255,70,100,.18);
+
+color:#ff9baa;
+
+font-size:10px;
+
+text-align:center;
 }
 
+.back{
+display:block;
+
+text-align:center;
+
+margin-top:22px;
+
+color:#666;
+
+font-size:10px;
+
+text-decoration:none;
+}
+
+.back:hover{
+color:#fff;
 }
 
 </style>
 
 </head>
 
-
 <body>
 
+<div class="login-card">
 
-<script>
-
-/*
-بررسی ورود مدیر
-*/
-
-if(
-sessionStorage.getItem("kian_admin_login")
-!=="true"
-){
-
-window.location.replace("login.html");
-
-}
-
-</script>
-
-
-<header>
-
-<div class="header">
-
-<div class="logo">
-Kian Music • Admin
-</div>
-
-<div class="header-buttons">
-
-<a
-href="index.html"
-class="header-button">
-
-🏠 سایت
-
-</a>
-
-</div>
-
-</div>
-
-</header>
-
-
-
-<main class="container">
-
-
-<div class="title">
-
-<h1>
-⚡ پنل مدیریت
-</h1>
-
-<p>
-مدیریت بخش‌های مختلف Kian Music
-</p>
-
-</div>
-
-
-
-<div class="stats">
-
-
-<div class="stat">
-
-<div class="stat-icon">
-🎵
-</div>
-
-<div class="stat-number">
-2
-</div>
-
-<div class="stat-label">
-تعداد آهنگ‌ها
-</div>
-
-</div>
-
-
-<div class="stat">
-
-<div class="stat-icon">
-🎤
-</div>
-
-<div class="stat-number">
-3
-</div>
-
-<div class="stat-label">
-تعداد خواننده‌ها
-</div>
-
-</div>
-
-
-<div class="stat">
-
-<div class="stat-icon">
-📩
-</div>
-
-<div class="stat-number">
-0
-</div>
-
-<div class="stat-label">
-درخواست جدید
-</div>
-
-</div>
-
-
-<div class="stat">
-
-<div class="stat-icon">
-👁️
-</div>
-
-<div class="stat-number">
-0
-</div>
-
-<div class="stat-label">
-بازدید امروز
-</div>
-
-</div>
-
-
-</div>
-
-
-
-<div class="grid">
-
-
-<div class="card">
-
-<h2>
-🛠️ مدیریت سایت
-</h2>
-
-<div class="actions">
-
-
-<a
-href="index.html"
-class="action">
-
-<div class="action-icon">
-🎵
-</div>
-
-<div class="action-text">
-
-<strong>
-مدیریت آهنگ‌ها
-</strong>
-
-<span>
-مشاهده آهنگ‌های سایت
-</span>
-
-</div>
-
-</a>
-
-
-<a
-href="artists.html"
-class="action">
-
-<div class="action-icon">
-🎤
-</div>
-
-<div class="action-text">
-
-<strong>
-مدیریت خواننده‌ها
-</strong>
-
-<span>
-مشاهده خواننده‌ها
-</span>
-
-</div>
-
-</a>
-
-
-<a
-href="send.html"
-class="action">
-
-<div class="action-icon">
-📤
-</div>
-
-<div class="action-text">
-
-<strong>
-ارسال آهنگ
-</strong>
-
-<span>
-فرم ارسال آهنگ
-</span>
-
-</div>
-
-</a>
-
-
-<a
-href="contact.html"
-class="action">
-
-<div class="action-icon">
-📞
-</div>
-
-<div class="action-text">
-
-<strong>
-ارتباط با ما
-</strong>
-
-<span>
-اطلاعات تماس سایت
-</span>
-
-</div>
-
-</a>
-
-
-</div>
-
-</div>
-
-
-
-<div class="card">
-
-<h2>
-🕐 فعالیت اخیر
-</h2>
-
-<div class="recent">
-
-
-<div class="item">
-
-<div class="item-icon">
-🎵
-</div>
-
-<div class="item-info">
-
-<strong>
-سیستم موسیقی
-</strong>
-
-<span>
-پنل مدیریت فعال شد
-</span>
-
-</div>
-
-</div>
-
-
-<div class="item">
-
-<div class="item-icon">
+<div class="admin-icon">
 🔐
 </div>
 
-<div class="item-info">
-
-<strong>
-ورود مدیر
-</strong>
-
-<span>
-احراز ورود مرورگر فعال است
-</span>
-
-</div>
-
-</div>
-
-
-<div class="item">
-
-<div class="item-icon">
-⚙️
-</div>
-
-<div class="item-info">
-
-<strong>
+<div class="logo">
 Kian Music
-</strong>
-
-<span>
-سیستم آماده توسعه است
-</span>
-
 </div>
 
+<div class="subtitle">
+ورود به پنل مدیریت
 </div>
 
+<form id="loginForm">
 
-</div>
+<label>
+نام کاربری
+</label>
 
+<input
+class="input"
+id="username"
+type="text"
+placeholder="نام کاربری مدیر"
+autocomplete="username"
+required>
 
-<div class="notice">
+<label>
+رمز عبور
+</label>
 
-⚠️ توجه: این پنل فعلاً روی GitHub Pages اجرا می‌شود.
-ورود فعلی فقط یک محافظت سمت مرورگر است و برای اطلاعات حساس مناسب نیست.
-
-</div>
-
+<input
+class="input"
+id="password"
+type="password"
+placeholder="رمز عبور"
+autocomplete="current-password"
+required>
 
 <button
-class="logout"
-onclick="logout()">
+class="login-button"
+type="submit">
 
-🚪 خروج از پنل
+🔐 ورود به پنل
 
 </button>
 
+</form>
+
+<div
+class="error"
+id="error">
+
+نام کاربری یا رمز عبور اشتباه است.
+
 </div>
 
+<a
+href="index.html"
+class="back">
+
+← بازگشت به سایت
+
+</a>
 
 </div>
-
-</main>
-
-
-
-<footer>
-
-Kian Music Admin
-
-<br><br>
-
-© 2026 Kian Music
-
-</footer>
-
 
 
 <script>
 
-function logout(){
+const USERNAME = "admin";
 
-sessionStorage.removeItem(
-"kian_admin_login"
+/*
+این فقط ورود نمایشی است.
+رمز واقعی را داخل GitHub Pages قرار نده.
+*/
+
+const PASSWORD = "CHANGE_ME";
+
+
+document
+.getElementById("loginForm")
+.addEventListener("submit", function(event){
+
+event.preventDefault();
+
+const username =
+document.getElementById("username").value.trim();
+
+const password =
+document.getElementById("password").value;
+
+
+if(
+username === USERNAME &&
+password === PASSWORD
+){
+
+sessionStorage.setItem(
+"kian_admin_login",
+"true"
 );
 
-window.location.href =
-"login.html";
+window.location.href = "admin.html";
+
+}else{
+
+document.getElementById("error").style.display = "block";
 
 }
 
+});
+
 </script>
 
-
 </body>
-
 </html>
