@@ -2,11 +2,8 @@
 <html lang="fa" dir="rtl">
 
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>پنل مدیریت | Kian Music</title>
 
@@ -281,9 +278,6 @@ rgba(0,229,255,.06)
 );
 
 border-color:rgba(180,124,255,.4);
-
-box-shadow:
-0 8px 25px rgba(124,58,237,.10);
 }
 
 .action-icon{
@@ -302,89 +296,132 @@ color:#666;
 }
 
 
-/* SONG LIST */
+/* VISITOR DROPDOWN */
 
-.song-list{
-display:flex;
-flex-direction:column;
-gap:9px;
+.visitor-box{
+margin-top:10px;
 }
 
-.song{
-display:flex;
-align-items:center;
-gap:12px;
+.visitor-select{
 
-padding:12px;
+width:100%;
+
+height:50px;
+
+padding:0 15px;
 
 border-radius:13px;
 
-background:
-rgba(255,255,255,.035);
+border:1px solid rgba(180,124,255,.20);
 
-border:1px solid rgba(255,255,255,.06);
+background:#111018;
+
+color:#fff;
+
+font-size:11px;
+
+outline:none;
+
+cursor:pointer;
+
+transition:.25s;
 }
 
-.song-cover{
-width:42px;
-height:42px;
+.visitor-select:focus{
 
-border-radius:11px;
+border-color:#7c3aed;
 
-display:flex;
-align-items:center;
-justify-content:center;
+box-shadow:
+0 0 20px rgba(124,58,237,.15);
+}
 
-font-size:19px;
+.visitor-select option{
+
+background:#111018;
+
+color:#fff;
+}
+
+
+/* VISITOR RESULT */
+
+.visitor-result{
+
+margin-top:15px;
+
+padding:20px;
+
+border-radius:16px;
 
 background:
 linear-gradient(
 135deg,
-rgba(124,58,237,.25),
-rgba(0,229,255,.08)
+rgba(124,58,237,.12),
+rgba(0,229,255,.04)
 );
 
-border:1px solid rgba(180,124,255,.16);
+border:1px solid rgba(180,124,255,.15);
+
+text-align:center;
 }
 
-.song-info{
-flex:1;
-}
+.visitor-number{
 
-.song-info strong{
-display:block;
-font-size:11px;
-margin-bottom:4px;
-}
+font-size:32px;
 
-.song-info span{
-font-size:9px;
-color:#666;
-}
+font-weight:900;
 
-.song-status{
-font-size:9px;
-padding:6px 9px;
-border-radius:8px;
-color:#aaa;
+margin-bottom:6px;
 
 background:
-rgba(255,255,255,.04);
+linear-gradient(
+90deg,
+#fff,
+#b47cff,
+#00e5ff
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+}
+
+.visitor-label{
+
+font-size:10px;
+
+color:#777;
 }
 
 
-/* EMPTY */
+/* SONG */
+
+.song-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:9px;
+}
 
 .empty{
+
 text-align:center;
+
 padding:28px 15px;
+
 color:#666;
+
 font-size:10px;
+
 line-height:2;
 }
 
 .empty-icon{
+
 font-size:30px;
+
 margin-bottom:10px;
 }
 
@@ -392,7 +429,9 @@ margin-bottom:10px;
 /* NOTICE */
 
 .notice{
+
 padding:16px;
+
 border-radius:14px;
 
 background:
@@ -411,6 +450,7 @@ line-height:2;
 /* LOGOUT */
 
 .logout{
+
 width:100%;
 
 padding:14px;
@@ -434,20 +474,27 @@ transition:.25s;
 }
 
 .logout:hover{
-background:rgba(255,70,90,.10);
-border-color:rgba(255,70,90,.30);
+
+background:
+rgba(255,70,90,.10);
+
+border-color:
+rgba(255,70,90,.30);
 }
 
 
 /* FOOTER */
 
 footer{
+
 margin-top:65px;
+
 padding:35px 20px;
 
 text-align:center;
 
-border-top:1px solid rgba(255,255,255,.07);
+border-top:
+1px solid rgba(255,255,255,.07);
 
 color:#555;
 
@@ -460,10 +507,13 @@ font-size:10px;
 @media(max-width:850px){
 
 .stats{
-grid-template-columns:repeat(2,1fr);
+
+grid-template-columns:
+repeat(2,1fr);
 }
 
 .grid{
+
 grid-template-columns:1fr;
 }
 
@@ -472,43 +522,54 @@ grid-template-columns:1fr;
 @media(max-width:550px){
 
 .header{
+
 flex-direction:column;
+
 align-items:stretch;
 }
 
 .logo{
+
 text-align:center;
 }
 
 .header-buttons{
+
 justify-content:center;
 }
 
 .container{
+
 margin-top:30px;
 }
 
 .title h1{
+
 font-size:27px;
 }
 
 .stats{
+
 gap:9px;
 }
 
 .stat{
+
 padding:16px;
 }
 
 .stat-number{
+
 font-size:22px;
 }
 
 .actions{
+
 grid-template-columns:1fr;
 }
 
 .card{
+
 padding:18px;
 }
 
@@ -522,11 +583,7 @@ padding:18px;
 <body>
 
 
-<!--
-==================================================
-بررسی ورود مدیر
-==================================================
--->
+<!-- بررسی ورود -->
 
 <script>
 
@@ -596,13 +653,13 @@ onclick="logout()">
 </h1>
 
 <p>
-خوش آمدید مدیر؛ اینجا مرکز کنترل Kian Music است.
+خوش آمدید مدیر؛ مرکز کنترل Kian Music
 </p>
 
 </div>
 
 
-<!-- آمار -->
+<!-- آمار کلی -->
 
 <div class="stats">
 
@@ -613,12 +670,8 @@ onclick="logout()">
 🎵
 </div>
 
-<div
-class="stat-number"
-id="songCount">
-
+<div class="stat-number">
 0
-
 </div>
 
 <div class="stat-label">
@@ -668,7 +721,10 @@ id="songCount">
 👁️
 </div>
 
-<div class="stat-number">
+<div
+class="stat-number"
+id="todayTop">
+
 0
 </div>
 
@@ -682,15 +738,16 @@ id="songCount">
 </div>
 
 
-<!-- GRID -->
 
 <div class="grid">
 
 
-<!-- سمت چپ -->
+<!-- LEFT -->
 
 <div>
 
+
+<!-- مدیریت -->
 
 <div class="card">
 
@@ -799,6 +856,67 @@ class="action">
 </div>
 
 
+
+<!-- آمار بازدید -->
+
+<div class="card">
+
+<h2>
+👥 آمار ورود به سایت
+</h2>
+
+
+<select
+id="visitorPeriod"
+class="visitor-select"
+onchange="changeVisitorPeriod()">
+
+<option value="day">
+🟢 امروز
+</option>
+
+<option value="week">
+🔵 ۷ روز اخیر
+</option>
+
+<option value="month">
+🟣 ۳۰ روز اخیر
+</option>
+
+<option value="year">
+🟠 یک سال اخیر
+</option>
+
+</select>
+
+
+<div class="visitor-result">
+
+<div
+class="visitor-number"
+id="visitorNumber">
+
+0
+
+</div>
+
+<div
+class="visitor-label"
+id="visitorLabel">
+
+ورود در امروز
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<!-- آخرین آهنگ‌ها -->
+
 <div class="card">
 
 <h2>
@@ -815,7 +933,7 @@ class="action">
 🎧
 </div>
 
-هنوز آهنگی در سایت ثبت نشده است.
+هنوز آهنگی ثبت نشده است.
 
 </div>
 
@@ -828,7 +946,8 @@ class="action">
 </div>
 
 
-<!-- سمت راست -->
+
+<!-- RIGHT -->
 
 <div>
 
@@ -846,20 +965,25 @@ class="action">
 
 <br>
 
-🔐 وضعیت ورود مدیر: فعال
+🔐 وضعیت پنل مدیر: فعال
 
 <br>
 
-☁️ سیستم ذخیره آهنگ: در حال توسعه
+☁️ ذخیره‌سازی آهنگ: در حال توسعه
 
 <br>
 
-🎵 سیستم پخش موسیقی: در حال توسعه
+🎵 سیستم پخش موسیقی: فعال
+
+<br>
+
+👥 آمار بازدید: نمایشی تا اتصال سیستم آمارگیری
 
 </div>
 
 
 </div>
+
 
 
 <div class="card">
@@ -878,7 +1002,6 @@ class="action">
 
 <div class="action-icon">
 ➕
-
 </div>
 
 <div>
@@ -952,10 +1075,85 @@ Kian Music Admin
 </footer>
 
 
+
 <script>
 
 /* =========================
-   خروج از حساب مدیر
+   آمار نمایشی
+========================= */
+
+const visitorData = {
+
+day: 0,
+
+week: 0,
+
+month: 0,
+
+year: 0
+
+};
+
+
+function changeVisitorPeriod(){
+
+const select =
+document.getElementById(
+"visitorPeriod"
+);
+
+const period =
+select.value;
+
+
+const number =
+document.getElementById(
+"visitorNumber"
+);
+
+const label =
+document.getElementById(
+"visitorLabel"
+);
+
+
+number.textContent =
+visitorData[period];
+
+
+if(period === "day"){
+
+label.textContent =
+"ورود در امروز";
+
+}
+
+else if(period === "week"){
+
+label.textContent =
+"ورود در ۷ روز اخیر";
+
+}
+
+else if(period === "month"){
+
+label.textContent =
+"ورود در ۳۰ روز اخیر";
+
+}
+
+else if(period === "year"){
+
+label.textContent =
+"ورود در یک سال اخیر";
+
+}
+
+}
+
+
+/* =========================
+   خروج
 ========================= */
 
 function logout(){
@@ -969,6 +1167,11 @@ window.location.replace(
 );
 
 }
+
+
+/* مقدار اولیه */
+
+changeVisitorPeriod();
 
 </script>
 
