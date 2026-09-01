@@ -39,83 +39,45 @@ overflow-x:hidden;
 
 body::before{
 content:"";
-
 position:fixed;
-
 width:650px;
 height:650px;
-
 background:#7c3aed;
-
 filter:blur(210px);
-
 opacity:.16;
-
 top:-280px;
 right:-200px;
-
 z-index:-2;
-
 pointer-events:none;
 }
 
 body::after{
 content:"";
-
 position:fixed;
-
 width:600px;
 height:600px;
-
 background:#00e5ff;
-
 filter:blur(220px);
-
 opacity:.09;
-
 bottom:-300px;
 left:-200px;
-
 z-index:-2;
-
 pointer-events:none;
 }
 
 
 /* =========================
-   HEADER
+   LOGO AREA
 ========================= */
 
-header{
-
-position:sticky;
-
-top:0;
-
-z-index:100;
-
-background:rgba(5,5,9,.72);
-
-backdrop-filter:blur(22px);
-
-border-bottom:1px solid rgba(255,255,255,.08);
-
-padding:15px 20px;
-}
-
-.header{
+.logo-area{
 
 max-width:1200px;
 
 margin:auto;
 
-display:flex;
+padding:22px 20px 10px;
 
-align-items:center;
-
-justify-content:space-between;
-
-gap:20px;
 }
 
 
@@ -143,14 +105,45 @@ linear-gradient(
 
 text-shadow:
 0 0 25px rgba(124,58,237,.12);
+
 }
 
 
 /* =========================
-   NAV
+   FIXED NAV
 ========================= */
 
+.nav-bar{
+
+position:sticky;
+
+top:0;
+
+z-index:1000;
+
+width:100%;
+
+background:rgba(5,5,9,.82);
+
+backdrop-filter:blur(22px);
+
+-webkit-backdrop-filter:blur(22px);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+box-shadow:
+0 8px 30px rgba(0,0,0,.25);
+
+padding:10px 20px;
+
+}
+
+
 nav{
+
+max-width:1200px;
+
+margin:auto;
 
 display:flex;
 
@@ -161,7 +154,9 @@ justify-content:flex-end;
 gap:9px;
 
 flex-wrap:wrap;
+
 }
+
 
 nav a{
 
@@ -199,7 +194,9 @@ backdrop-filter:blur(12px);
 transition:.25s;
 
 white-space:nowrap;
+
 }
+
 
 nav a:hover{
 
@@ -219,12 +216,15 @@ rgba(180,124,255,.55);
 
 box-shadow:
 0 0 25px rgba(124,58,237,.20);
+
 }
+
 
 nav a.admin{
 
 border-color:
 rgba(0,229,255,.20);
+
 }
 
 
@@ -241,7 +241,9 @@ margin:70px auto 55px;
 padding:0 20px;
 
 text-align:center;
+
 }
+
 
 .hero-badge{
 
@@ -268,7 +270,9 @@ box-shadow:
 0 0 25px rgba(124,58,237,.08);
 
 margin-bottom:20px;
+
 }
+
 
 .hero h1{
 
@@ -291,7 +295,9 @@ linear-gradient(
 -webkit-background-clip:text;
 
 -webkit-text-fill-color:transparent;
+
 }
+
 
 .hero p{
 
@@ -304,10 +310,13 @@ color:#777;
 font-size:13px;
 
 line-height:2.2;
+
 }
 
 
-/* HERO BUTTONS */
+/* =========================
+   HERO BUTTONS
+========================= */
 
 .hero-buttons{
 
@@ -320,7 +329,9 @@ gap:12px;
 margin-top:27px;
 
 flex-wrap:wrap;
+
 }
+
 
 .hero-button{
 
@@ -343,7 +354,9 @@ font-size:12px;
 font-weight:bold;
 
 transition:.3s;
+
 }
+
 
 .primary{
 
@@ -361,7 +374,9 @@ border:1px solid rgba(255,255,255,.15);
 
 box-shadow:
 0 10px 35px rgba(124,58,237,.25);
+
 }
+
 
 .primary:hover{
 
@@ -371,7 +386,9 @@ filter:brightness(1.12);
 
 box-shadow:
 0 15px 45px rgba(124,58,237,.38);
+
 }
+
 
 .secondary{
 
@@ -381,7 +398,9 @@ background:
 rgba(255,255,255,.045);
 
 border:1px solid rgba(255,255,255,.11);
+
 }
+
 
 .secondary:hover{
 
@@ -394,6 +413,7 @@ rgba(180,124,255,.40);
 
 box-shadow:
 0 0 25px rgba(124,58,237,.10);
+
 }
 
 
@@ -408,7 +428,9 @@ max-width:1100px;
 margin:0 auto 70px;
 
 padding:0 20px;
+
 }
+
 
 .section-title{
 
@@ -419,25 +441,30 @@ align-items:center;
 justify-content:space-between;
 
 margin-bottom:20px;
+
 }
+
 
 .section-title h2{
 
 font-size:20px;
 
 font-weight:900;
+
 }
+
 
 .section-title span{
 
 font-size:10px;
 
 color:#666;
+
 }
 
 
 /* =========================
-   MUSIC EMPTY
+   MUSIC
 ========================= */
 
 .music-box{
@@ -471,7 +498,9 @@ box-shadow:
 0 20px 65px rgba(0,0,0,.35);
 
 overflow:hidden;
+
 }
+
 
 .music-box::before{
 
@@ -480,6 +509,7 @@ content:"";
 position:absolute;
 
 width:250px;
+
 height:250px;
 
 background:#7c3aed;
@@ -489,19 +519,25 @@ filter:blur(110px);
 opacity:.10;
 
 top:-130px;
+
 right:-100px;
+
 }
+
 
 .music-empty{
 
 position:relative;
 
 z-index:2;
+
 }
+
 
 .music-icon{
 
 width:78px;
+
 height:78px;
 
 margin:0 auto 18px;
@@ -527,14 +563,18 @@ border:1px solid rgba(180,124,255,.22);
 
 box-shadow:
 0 0 35px rgba(124,58,237,.14);
+
 }
+
 
 .music-empty h3{
 
 font-size:17px;
 
 margin-bottom:9px;
+
 }
+
 
 .music-empty p{
 
@@ -543,6 +583,7 @@ font-size:11px;
 color:#666;
 
 line-height:2;
+
 }
 
 
@@ -558,7 +599,9 @@ grid-template-columns:
 repeat(3,1fr);
 
 gap:15px;
+
 }
+
 
 .feature{
 
@@ -576,7 +619,9 @@ rgba(255,255,255,.018)
 border:1px solid rgba(255,255,255,.07);
 
 transition:.3s;
+
 }
+
 
 .feature:hover{
 
@@ -588,21 +633,27 @@ rgba(180,124,255,.35);
 box-shadow:
 0 15px 45px rgba(0,0,0,.30),
 0 0 25px rgba(124,58,237,.07);
+
 }
+
 
 .feature-icon{
 
 font-size:25px;
 
 margin-bottom:15px;
+
 }
+
 
 .feature h3{
 
 font-size:13px;
 
 margin-bottom:8px;
+
 }
+
 
 .feature p{
 
@@ -611,6 +662,7 @@ font-size:10px;
 color:#707070;
 
 line-height:2;
+
 }
 
 
@@ -637,14 +689,18 @@ border:1px solid rgba(180,124,255,.17);
 
 box-shadow:
 inset 0 0 40px rgba(124,58,237,.035);
+
 }
+
 
 .cta h2{
 
 font-size:21px;
 
 margin-bottom:10px;
+
 }
+
 
 .cta p{
 
@@ -653,7 +709,9 @@ font-size:11px;
 color:#777;
 
 line-height:2;
+
 }
+
 
 .cta-button{
 
@@ -684,7 +742,9 @@ box-shadow:
 0 10px 30px rgba(124,58,237,.23);
 
 transition:.3s;
+
 }
+
 
 .cta-button:hover{
 
@@ -692,6 +752,7 @@ transform:translateY(-3px);
 
 box-shadow:
 0 15px 40px rgba(124,58,237,.35);
+
 }
 
 
@@ -712,7 +773,9 @@ border-top:1px solid rgba(255,255,255,.07);
 color:#555;
 
 font-size:10px;
+
 }
+
 
 .footer-logo{
 
@@ -732,6 +795,7 @@ linear-gradient(
 -webkit-background-clip:text;
 
 -webkit-text-fill-color:transparent;
+
 }
 
 
@@ -741,17 +805,28 @@ linear-gradient(
 
 @media(max-width:800px){
 
-.header{
+.logo-area{
 
-flex-direction:column;
+text-align:center;
 
-align-items:stretch;
+padding:20px 15px 12px;
+
 }
+
 
 .logo{
 
-text-align:center;
+font-size:22px;
+
 }
+
+
+.nav-bar{
+
+padding:8px 10px;
+
+}
+
 
 nav{
 
@@ -760,32 +835,42 @@ display:grid;
 grid-template-columns:
 repeat(3,1fr);
 
-gap:8px;
+gap:7px;
+
 }
+
 
 nav a{
 
 font-size:10px;
 
-padding:10px 5px;
+padding:9px 4px;
+
 }
+
 
 .hero{
 
 margin-top:45px;
+
 }
+
 
 .hero h1{
 
 font-size:39px;
+
 }
+
 
 .features{
 
 grid-template-columns:1fr;
+
 }
 
 }
+
 
 @media(max-width:430px){
 
@@ -793,21 +878,28 @@ nav{
 
 grid-template-columns:
 repeat(2,1fr);
+
 }
+
 
 .hero h1{
 
 font-size:32px;
+
 }
+
 
 .hero p{
 
 font-size:11px;
+
 }
+
 
 .hero-button{
 
 width:100%;
+
 }
 
 }
@@ -821,84 +913,57 @@ width:100%;
 
 
 <!-- =========================
-     HEADER
+     LOGO
 ========================= -->
 
-<header>
-
-<div class="header">
-
+<div class="logo-area">
 
 <div class="logo">
 Kian Music
 </div>
 
+</div>
+
+
+<!-- =========================
+     FIXED MENU
+========================= -->
+
+<div class="nav-bar">
 
 <nav>
 
-<a
-href="index.html">
-
+<a href="index.html">
 🏠 خانه
-
 </a>
 
-
-<a
-href="#musicList">
-
+<a href="#musicList">
 🎵 آهنگ‌ها
-
 </a>
 
-
-<a
-href="artists.html">
-
+<a href="artists.html">
 🎤 خواننده‌ها
-
 </a>
 
-
-<a
-href="send.html">
-
+<a href="send.html">
 📤 ارسال آهنگ
-
 </a>
 
-
-<a
-href="about.html">
-
+<a href="about.html">
 ℹ️ درباره ما
-
 </a>
 
-
-<a
-href="contact.html">
-
+<a href="contact.html">
 📞 تماس
-
 </a>
 
-
-<a
-href="login.html"
-class="admin">
-
+<a href="login.html" class="admin">
 🔐 مدیریت
-
 </a>
 
 </nav>
 
-
 </div>
-
-</header>
-
 
 
 <!-- =========================
@@ -907,24 +972,17 @@ class="admin">
 
 <section class="hero">
 
-
 <div class="hero-badge">
-
 <span>✦</span>
-
 Kian Music
-
 <span>✦</span>
-
 </div>
-
 
 <h1>
 دنیای موسیقی
 <br>
 از اینجا شروع میشه
 </h1>
-
 
 <p>
 
@@ -936,40 +994,24 @@ Kian Music
 
 <div class="hero-buttons">
 
-
-<a
-href="#musicList"
-class="hero-button primary">
-
+<a href="#musicList" class="hero-button primary">
 🎵 مشاهده آهنگ‌ها
-
 </a>
 
-
-<a
-href="send.html"
-class="hero-button secondary">
-
+<a href="send.html" class="hero-button secondary">
 📤 ارسال آهنگ
-
 </a>
-
 
 </div>
 
-
 </section>
-
 
 
 <!-- =========================
      MUSIC
 ========================= -->
 
-<section
-class="section"
-id="musicList">
-
+<section class="section" id="musicList">
 
 <div class="section-title">
 
@@ -986,19 +1028,15 @@ Kian Music
 
 <div class="music-box">
 
-
 <div class="music-empty">
-
 
 <div class="music-icon">
 🎵
 </div>
 
-
 <h3>
 هنوز آهنگی اضافه نشده
 </h3>
-
 
 <p>
 
@@ -1010,24 +1048,15 @@ Kian Music
 
 </p>
 
-
-<a
-href="send.html"
-class="cta-button">
-
+<a href="send.html" class="cta-button">
 📤 ارسال آهنگ
-
 </a>
 
-
 </div>
 
-
 </div>
-
 
 </section>
-
 
 
 <!-- =========================
@@ -1035,7 +1064,6 @@ class="cta-button">
 ========================= -->
 
 <section class="section">
-
 
 <div class="section-title">
 
@@ -1066,7 +1094,6 @@ class="cta-button">
 </div>
 
 
-
 <div class="feature">
 
 <div class="feature-icon">
@@ -1082,7 +1109,6 @@ class="cta-button">
 </p>
 
 </div>
-
 
 
 <div class="feature">
@@ -1101,12 +1127,9 @@ class="cta-button">
 
 </div>
 
-
 </div>
 
-
 </section>
-
 
 
 <!-- =========================
@@ -1114,7 +1137,6 @@ class="cta-button">
 ========================= -->
 
 <section class="section">
-
 
 <div class="cta">
 
@@ -1126,20 +1148,13 @@ class="cta-button">
 اثر خودت را برای بررسی و انتشار در Kian Music ارسال کن.
 </p>
 
-
-<a
-href="send.html"
-class="cta-button">
-
+<a href="send.html" class="cta-button">
 📤 ارسال آهنگ
-
 </a>
 
 </div>
 
-
 </section>
-
 
 
 <!-- =========================
