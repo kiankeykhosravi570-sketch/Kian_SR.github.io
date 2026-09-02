@@ -1,18 +1,2134 @@
-<div class="logo">       Kian Music <span>• Admin</span>   </div>     <div class="header-left">        <a           href="./index.html"           class="header-btn"       >           🌐 مشاهده سایت       </a>         <button           class="header-btn"           onclick="logout()"       >           خروج       </button>    </div>                <div class="stat">        <div class="stat-icon">           🎵       </div>        <div class="stat-number">           0       </div>        <div class="stat-title">           تعداد آهنگ‌ها       </div>    </div>     <div class="stat">        <div class="stat-icon">           🎤       </div>        <div class="stat-number">           0       </div>        <div class="stat-title">           تعداد خواننده‌ها       </div>    </div>     <div class="stat">        <div class="stat-icon">           📩       </div>        <div class="stat-number">           0       </div>        <div class="stat-title">           درخواست‌های جدید       </div>    </div>     <div class="stat">        <div class="stat-icon">           👁️       </div>        <div class="stat-number">           0       </div>        <div class="stat-title">           بازدید امروز       </div>    </div>   
+<!DOCTYPE html>  <html lang="fa" dir="rtl">  <head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>پنل مدیریت | Kian Music</title>  <style>  
+  
+*{  
+    margin:0;  
+    padding:0;  
+    box-sizing:border-box;  
+    font-family:Tahoma,Arial,sans-serif;  
+}  
+  
+body{  
+    background:#050509;  
+    color:#fff;  
+    min-height:100vh;  
+    overflow-x:hidden;  
+}  
+  
+body::before{  
+    content:"";  
+    position:fixed;  
+    width:420px;  
+    height:420px;  
+    background:#7c3aed;  
+    filter:blur(150px);  
+    opacity:.12;  
+    top:-180px;  
+    right:-120px;  
+    pointer-events:none;  
+}  
+  
+body::after{  
+    content:"";  
+    position:fixed;  
+    width:380px;  
+    height:380px;  
+    background:#00e5ff;  
+    filter:blur(160px);  
+    opacity:.07;  
+    bottom:-180px;  
+    left:-120px;  
+    pointer-events:none;  
+}  
+  
+  
+/* =========================  
+   HEADER  
+========================= */  
+  
+header{  
+    height:65px;  
+    position:sticky;  
+    top:0;  
+    z-index:100;  
+  
+    padding:0 28px;  
+  
+    display:flex;  
+    align-items:center;  
+    justify-content:space-between;  
+  
+    background:rgba(5,5,9,.78);  
+    backdrop-filter:blur(18px);  
+  
+    border-bottom:1px solid rgba(255,255,255,.07);  
+}  
+  
+.logo{  
+    font-size:15px;  
+    font-weight:900;  
+}  
+  
+.logo span{  
+    color:#8b5cf6;  
+}  
+  
+.header-left{  
+    display:flex;  
+    align-items:center;  
+    gap:9px;  
+}  
+  
+.header-btn{  
+    color:#aaa;  
+    text-decoration:none;  
+  
+    padding:9px 13px;  
+  
+    border-radius:9px;  
+  
+    background:rgba(255,255,255,.04);  
+    border:1px solid rgba(255,255,255,.07);  
+  
+    font-size:9px;  
+  
+    cursor:pointer;  
+    transition:.2s;  
+}  
+  
+.header-btn:hover{  
+    color:#fff;  
+    border-color:#7c3aed;  
+}  
+  
+  
+/* =========================  
+   CONTAINER  
+========================= */  
+  
+.container{  
+    width:min(1250px,94%);  
+    margin:28px auto 50px;  
+}  
+  
+  
+/* =========================  
+   STATS  
+========================= */  
+  
+.stats{  
+    display:grid;  
+    grid-template-columns:repeat(4,1fr);  
+    gap:12px;  
+  
+    margin-bottom:18px;  
+}  
+  
+.stat{  
+    padding:18px;  
+  
+    border-radius:16px;  
+  
+    background:rgba(255,255,255,.035);  
+    border:1px solid rgba(255,255,255,.07);  
+  
+    backdrop-filter:blur(15px);  
+  
+    transition:.25s;  
+}  
+  
+.stat:hover{  
+    transform:translateY(-3px);  
+    border-color:rgba(124,58,237,.35);  
+}  
+  
+.stat-icon{  
+    font-size:20px;  
+    margin-bottom:12px;  
+}  
+  
+.stat-number{  
+    font-size:21px;  
+    font-weight:900;  
+}  
+  
+.stat-title{  
+    margin-top:5px;  
+    color:#777;  
+    font-size:9px;  
+}  
+  
+  
+/* =========================  
+   GRID  
+========================= */  
+  
+.dashboard-grid{  
+    display:grid;  
+    grid-template-columns:1.5fr 1fr;  
+    gap:15px;  
+}  
+  
+.column{  
+    display:flex;  
+    flex-direction:column;  
+    gap:15px;  
+}  
+  
+  
+/* =========================  
+   CARD  
+========================= */  
+  
+.card{  
+    padding:20px;  
+  
+    border-radius:17px;  
+  
+    background:rgba(255,255,255,.035);  
+    border:1px solid rgba(255,255,255,.07);  
+  
+    backdrop-filter:blur(15px);  
+}  
+  
+.card-title{  
+    display:flex;  
+    align-items:center;  
+    justify-content:space-between;  
+  
+    margin-bottom:17px;  
+}  
+  
+.card-title h2{  
+    font-size:12px;  
+}  
+  
+.card-title span{  
+    color:#666;  
+    font-size:9px;  
+}  
+  
+  
+/* =========================  
+   SITE MANAGEMENT  
+========================= */  
+  
+.actions{  
+    display:grid;  
+    grid-template-columns:repeat(2,1fr);  
+    gap:9px;  
+}  
+  
+.action{  
+    display:flex;  
+    align-items:center;  
+    gap:11px;  
+  
+    padding:13px;  
+  
+    border-radius:12px;  
+  
+    color:#fff;  
+    text-decoration:none;  
+  
+    background:rgba(255,255,255,.025);  
+    border:1px solid rgba(255,255,255,.06);  
+  
+    transition:.2s;  
+}  
+  
+.action:hover{  
+    background:rgba(124,58,237,.09);  
+    border-color:rgba(124,58,237,.35);  
+    transform:translateY(-2px);  
+}  
+  
+.action-icon{  
+    width:36px;  
+    height:36px;  
+  
+    flex-shrink:0;  
+  
+    display:flex;  
+    align-items:center;  
+    justify-content:center;  
+  
+    border-radius:10px;  
+  
+    background:rgba(124,58,237,.1);  
+  
+    font-size:17px;  
+}  
+  
+.action strong{  
+    display:block;  
+  
+    font-size:10px;  
+    margin-bottom:4px;  
+}  
+  
+.action span{  
+    display:block;  
+  
+    color:#666;  
+    font-size:8px;  
+}  
+  
+  
+/* =========================  
+   SITE SECTION CONTROL  
+========================= */  
+  
+.section-control{  
+    margin-top:17px;  
+    padding-top:17px;  
+  
+    border-top:1px solid rgba(255,255,255,.06);  
+}  
+  
+.section-control-header{  
+    display:flex;  
+    align-items:center;  
+    justify-content:space-between;  
+  
+    margin-bottom:12px;  
+}  
+  
+.section-control-header strong{  
+    font-size:10px;  
+}  
+  
+.section-control-header span{  
+    color:#666;  
+    font-size:8px;  
+}  
+  
+.site-sections{  
+    display:flex;  
+    flex-direction:column;  
+    gap:8px;  
+}  
+  
+.site-section{  
+    display:flex;  
+    align-items:center;  
+    justify-content:space-between;  
+  
+    gap:12px;  
+  
+    padding:11px;  
+  
+    border-radius:11px;  
+  
+    background:rgba(255,255,255,.025);  
+    border:1px solid rgba(255,255,255,.06);  
+  
+    transition:.2s;  
+}  
+  
+.site-section:hover{  
+    border-color:rgba(124,58,237,.22);  
+}  
+  
+.section-info{  
+    display:flex;  
+    align-items:center;  
+    gap:10px;  
+  
+    min-width:0;  
+}  
+  
+.section-icon{  
+    width:36px;  
+    height:36px;  
+  
+    flex-shrink:0;  
+  
+    display:flex;  
+    align-items:center;  
+    justify-content:center;  
+  
+    border-radius:10px;  
+  
+    background:rgba(124,58,237,.09);  
+  
+    font-size:16px;  
+}  
+  
+.section-name{  
+    font-size:9px;  
+    font-weight:bold;  
+}  
+  
+.section-description{  
+    color:#666;  
+    font-size:7px;  
+    margin-top:4px;  
+}  
+  
+.section-status{  
+    margin-top:4px;  
+    font-size:7px;  
+}  
+  
+.section-status.on{  
+    color:#5eead4;  
+}  
+  
+.section-status.off{  
+    color:#ff7180;  
+}  
+  
+  
+/* =========================  
+   TOGGLE  
+========================= */  
+  
+.section-toggle{  
+    position:relative;  
+  
+    width:57px;  
+    height:29px;  
+  
+    flex-shrink:0;  
+  
+    border:0;  
+    border-radius:30px;  
+  
+    background:#25232d;  
+  
+    cursor:pointer;  
+  
+    transition:.25s;  
+}  
+  
+.section-toggle::after{  
+    content:"";  
+  
+    position:absolute;  
+  
+    width:21px;  
+    height:21px;  
+  
+    top:4px;  
+    right:4px;  
+  
+    border-radius:50%;  
+  
+    background:#777;  
+  
+    transition:.25s;  
+}  
+  
+.section-toggle.active{  
+    background:linear-gradient(  
+        135deg,  
+        #7c3aed,  
+        #2563eb  
+    );  
+}  
+  
+.section-toggle.active::after{  
+    right:32px;  
+    background:#fff;  
+}  
+  
+  
+/* =========================  
+   CONTROL INFO  
+========================= */  
+  
+.control-info{  
+    margin-top:11px;  
+  
+    padding:10px 11px;  
+  
+    border-radius:10px;  
+  
+    background:rgba(0,229,255,.025);  
+    border:1px solid rgba(0,229,255,.06);  
+  
+    color:#777;  
+  
+    font-size:8px;  
+    line-height:1.9;  
+}  
+  
+  
+/* =========================  
+   VISITORS  
+========================= */  
+  
+.visitor-top{  
+    display:flex;  
+    align-items:center;  
+    justify-content:space-between;  
+  
+    margin-bottom:15px;  
+}  
+  
+.visitor-select{  
+    height:34px;  
+  
+    padding:0 9px;  
+  
+    border-radius:8px;  
+  
+    background:#111018;  
+    color:#ddd;  
+  
+    border:1px solid rgba(255,255,255,.08);  
+  
+    font-size:9px;  
+    outline:none;  
+}  
+  
+.visitor-number{  
+    font-size:25px;  
+    font-weight:900;  
+}  
+  
+.visitor-label{  
+    color:#666;  
+    font-size:9px;  
+}  
+  
+.visitor-bars{  
+    height:80px;  
+  
+    display:flex;  
+    align-items:flex-end;  
+    gap:6px;  
+}  
+  
+.bar{  
+    flex:1;  
+  
+    border-radius:5px 5px 0 0;  
+  
+    background:linear-gradient(  
+        180deg,  
+        #8b5cf6,  
+        #2563eb  
+    );  
+  
+    opacity:.65;  
+}  
+  
+  
+/* =========================  
+   ADMIN MANAGEMENT  
+========================= */  
+  
+.admin-add{  
+    display:flex;  
+    gap:8px;  
+  
+    margin-bottom:12px;  
+}  
+  
+.admin-input{  
+    flex:1;  
+  
+    height:40px;  
+  
+    padding:0 11px;  
+  
+    border-radius:9px;  
+  
+    background:#111018;  
+    color:#fff;  
+  
+    border:1px solid rgba(255,255,255,.08);  
+  
+    outline:none;  
+  
+    font-size:9px;  
+}  
+  
+.admin-input:focus{  
+    border-color:#7c3aed;  
+}  
+  
+.admin-add-btn{  
+    height:40px;  
+  
+    padding:0 15px;  
+  
+    border:0;  
+    border-radius:9px;  
+  
+    background:linear-gradient(  
+        135deg,  
+        #7c3aed,  
+        #2563eb  
+    );  
+  
+    color:#fff;  
+  
+    font-size:9px;  
+    font-weight:bold;  
+  
+    cursor:pointer;  
+}  
+  
+.admin-list{  
+    display:flex;  
+    flex-direction:column;  
+    gap:8px;  
+}  
+  
+.admin-item{  
+    display:flex;  
+    align-items:center;  
+    justify-content:space-between;  
+  
+    gap:10px;  
+  
+    padding:11px;  
+  
+    border-radius:11px;  
+  
+    background:rgba(255,255,255,.025);  
+    border:1px solid rgba(255,255,255,.055);  
+}  
+  
+.admin-name{  
+    font-size:9px;  
+    font-weight:bold;  
+}  
+  
+.admin-role{  
+    color:#666;  
+    font-size:8px;  
+    margin-top:4px;  
+}  
+  
+.admin-actions{  
+    display:flex;  
+    align-items:center;  
+    gap:6px;  
+}  
+  
+.access-select{  
+    height:32px;  
+  
+    padding:0 7px;  
+  
+    border-radius:7px;  
+  
+    background:#111018;  
+    color:#ddd;  
+  
+    border:1px solid rgba(255,255,255,.08);  
+  
+    font-size:8px;  
+  
+    outline:none;  
+}  
+  
+.remove-admin{  
+    height:32px;  
+  
+    padding:0 9px;  
+  
+    border-radius:7px;  
+  
+    border:1px solid rgba(255,60,80,.15);  
+  
+    background:rgba(255,60,80,.05);  
+  
+    color:#ff7180;  
+  
+    font-size:8px;  
+  
+    cursor:pointer;  
+}  
+  
+.access-info{  
+    margin-top:12px;  
+  
+    padding:10px;  
+  
+    border-radius:9px;  
+  
+    color:#777;  
+  
+    background:rgba(0,229,255,.025);  
+  
+    border:1px solid rgba(0,229,255,.06);  
+  
+    font-size:8px;  
+  
+    line-height:1.9;  
+}  
+  
+  
+/* =========================  
+   LAST SONGS  
+========================= */  
+  
+.empty{  
+    padding:35px 10px;  
+  
+    text-align:center;  
+  
+    color:#555;  
+  
+    font-size:9px;  
+}  
+  
+  
+/* =========================  
+   RIGHT SIDE  
+========================= */  
+  
+.status{  
+    display:flex;  
+    align-items:center;  
+    justify-content:space-between;  
+  
+    padding:12px;  
+  
+    border-radius:11px;  
+  
+    background:rgba(0,255,170,.025);  
+  
+    border:1px solid rgba(0,255,170,.08);  
+}  
+  
+.status-left{  
+    display:flex;  
+    align-items:center;  
+    gap:9px;  
+}  
+  
+.status-dot{  
+    width:8px;  
+    height:8px;  
+  
+    border-radius:50%;  
+  
+    background:#22c55e;  
+  
+    box-shadow:0 0 10px #22c55e;  
+}  
+  
+.status-text strong{  
+    display:block;  
+    font-size:9px;  
+}  
+  
+.status-text span{  
+    display:block;  
+  
+    margin-top:4px;  
+  
+    color:#666;  
+    font-size:7px;  
+}  
+  
+  
+/* =========================  
+   QUICK ACCESS  
+========================= */  
+  
+.quick{  
+    display:grid;  
+    grid-template-columns:repeat(2,1fr);  
+    gap:8px;  
+}  
+  
+.quick a{  
+    padding:11px;  
+  
+    text-align:center;  
+  
+    color:#aaa;  
+    text-decoration:none;  
+  
+    border-radius:9px;  
+  
+    background:rgba(255,255,255,.025);  
+    border:1px solid rgba(255,255,255,.06);  
+  
+    font-size:8px;  
+  
+    transition:.2s;  
+}  
+  
+.quick a:hover{  
+    color:#fff;  
+    border-color:#7c3aed;  
+}  
+  
+  
+/* =========================  
+   LOGOUT  
+========================= */  
+  
+.logout{  
+    width:100%;  
+    height:42px;  
+  
+    border:1px solid rgba(255,60,80,.15);  
+    border-radius:10px;  
+  
+    background:rgba(255,60,80,.04);  
+  
+    color:#ff7180;  
+  
+    cursor:pointer;  
+  
+    font-size:9px;  
+}  
+  
+  
+/* =========================  
+   FOOTER  
+========================= */  
+  
+footer{  
+    margin-top:35px;  
+  
+    text-align:center;  
+  
+    color:#444;  
+  
+    font-size:8px;  
+}  
+  
+  
+/* =========================  
+   RESPONSIVE  
+========================= */  
+  
+@media(max-width:850px){  
+  
+    .dashboard-grid{  
+        grid-template-columns:1fr;  
+    }  
+  
+    .stats{  
+        grid-template-columns:repeat(2,1fr);  
+    }  
+  
+}  
+  
+@media(max-width:550px){  
+  
+    header{  
+        padding:0 14px;  
+    }  
+  
+    .container{  
+        width:94%;  
+        margin-top:18px;  
+    }  
+  
+    .stats{  
+        gap:8px;  
+    }  
+  
+    .stat{  
+        padding:14px;  
+    }  
+  
+    .stat-number{  
+        font-size:18px;  
+    }  
+  
+    .actions{  
+        grid-template-columns:1fr;  
+    }  
+  
+    .admin-item{  
+        align-items:flex-start;  
+    }  
+  
+    .admin-actions{  
+        flex-wrap:wrap;  
+        justify-content:flex-end;  
+    }  
+  
+    .site-section{  
+        align-items:flex-start;  
+    }  
+  
+    .section-info{  
+        flex:1;  
+    }  
+  
+    .section-toggle{  
+        margin-top:3px;  
+    }  
+  
+}  
+  
+</style>  </head>  <body>  <!-- =========================  
+     LOGIN CHECK  
+========================= -->  <script>  
+  
+if(  
+    sessionStorage.getItem("kian_admin_login")  
+    !== "true"  
+){  
+  
+    window.location.replace("./login.html");  
+  
+}  
+  
+</script>  <!-- =========================  
+     HEADER  
+========================= -->  <header>  <div class="logo">  
+    Kian Music <span>• Admin</span>  
+</div>  
 
-<div class="card-title">        <h2>           ⚙️ مدیریت سایت       </h2>        <span>           مدیریت بخش‌ها       </span>    </div>     <div class="actions">         <a           href="./index.html"           class="action"       >            <div class="action-icon">               🎵           </div>            <div>                <strong>                   مدیریت آهنگ‌ها               </strong>                <span>                   افزودن و ویرایش آهنگ               </span>            </div>        </a>         <a           href="./artists.html"           class="action"       >            <div class="action-icon">               🎤           </div>            <div>                <strong>                   مدیریت خواننده‌ها               </strong>                <span>                   مدیریت هنرمندان               </span>            </div>        </a>         <a           href="./send.html"           class="action"       >            <div class="action-icon">               📩           </div>            <div>                <strong>                   ارسال آهنگ               </strong>                <span>                   درخواست ارسال آهنگ               </span>            </div>        </a>         <a           href="./contact.html"           class="action"       >            <div class="action-icon">               📞           </div>            <div>                <strong>                   تماس با ما               </strong>                <span>                   پیام‌های کاربران               </span>            </div>        </a>     </div>   
-<div class="section-control-header">        <strong>           🔌 کنترل بخش‌های سایت       </strong>        <span>           فعال / غیرفعال موقت       </span>    </div>     <div class="site-sections">         <!-- SONGS -->        <div class="site-section">            <div class="section-info">                <div class="section-icon">                   🎵               </div>                <div>                    <div class="section-name">                       بخش آهنگ‌ها                   </div>                    <div class="section-description">                       نمایش و دسترسی به آهنگ‌های سایت                   </div>                    <div                       id="songsStatus"                       class="section-status on"                   >                       فعال                   </div>                </div>            </div>             <button               id="songsToggle"               class="section-toggle active"               onclick="toggleSiteSection('songs')"               title="تغییر وضعیت"           ></button>        </div>          <!-- ARTISTS -->        <div class="site-section">            <div class="section-info">                <div class="section-icon">                   🎤               </div>                <div>                    <div class="section-name">                       بخش خواننده‌ها                   </div>                    <div class="section-description">                       لیست و صفحات خواننده‌ها                   </div>                    <div                       id="artistsStatus"                       class="section-status on"                   >                       فعال                   </div>                </div>            </div>             <button               id="artistsToggle"               class="section-toggle active"               onclick="toggleSiteSection('artists')"               title="تغییر وضعیت"           ></button>        </div>          <!-- SEND -->        <div class="site-section">            <div class="section-info">                <div class="section-icon">                   📩               </div>                <div>                    <div class="section-name">                       ارسال آهنگ                   </div>                    <div class="section-description">                       فرم ارسال آهنگ توسط کاربران                   </div>                    <div                       id="sendStatus"                       class="section-status on"                   >                       فعال                   </div>                </div>            </div>             <button               id="sendToggle"               class="section-toggle active"               onclick="toggleSiteSection('send')"               title="تغییر وضعیت"           ></button>        </div>          <!-- CONTACT -->        <div class="site-section">            <div class="section-info">                <div class="section-icon">                   📞               </div>                <div>                    <div class="section-name">                       تماس با ما                   </div>                    <div class="section-description">                       فرم تماس با مدیریت                   </div>                    <div                       id="contactStatus"                       class="section-status on"                   >                       فعال                   </div>                </div>            </div>             <button               id="contactToggle"               class="section-toggle active"               onclick="toggleSiteSection('contact')"               title="تغییر وضعیت"           ></button>        </div>          <!-- ADS -->        <div class="site-section">            <div class="section-info">                <div class="section-icon">                   📢               </div>                <div>                    <div class="section-name">                       تبلیغات                   </div>                    <div class="section-description">                       نمایش تبلیغات در سایت                   </div>                    <div                       id="adsStatus"                       class="section-status on"                   >                       فعال                   </div>                </div>            </div>             <button               id="adsToggle"               class="section-toggle active"               onclick="toggleSiteSection('ads')"               title="تغییر وضعیت"           ></button>        </div>     </div>     <div class="control-info">        💡 با خاموش کردن هر بخش، وضعیت آن در حافظه مرورگر ذخیره می‌شود.       بعداً می‌توانیم صفحات سایت را به همین سیستم متصل کنیم تا به       کاربران پیام «این قسمت در حال حاضر غیرفعال است» نمایش داده شود.    </div>   
 
-<div class="card-title">        <h2>           📊 آمار ورود به سایت       </h2>         <select           class="visitor-select"           id="visitorPeriod"           onchange="changeVisitorPeriod()"       >            <option value="day">               امروز           </option>            <option value="week">               این هفته           </option>            <option value="month">               این ماه           </option>            <option value="year">               امسال           </option>        </select>    </div>     <div class="visitor-top">        <div>            <div               class="visitor-number"               id="visitorNumber"           >               0           </div>            <div class="visitor-label">               بازدیدکننده           </div>        </div>    </div>     <div class="visitor-bars">        <div class="bar" style="height:30%"></div>       <div class="bar" style="height:55%"></div>       <div class="bar" style="height:38%"></div>       <div class="bar" style="height:70%"></div>       <div class="bar" style="height:48%"></div>       <div class="bar" style="height:82%"></div>       <div class="bar" style="height:63%"></div>       <div class="bar" style="height:90%"></div>    </div>   
+<div class="header-left">  
 
-<div class="card-title">        <h2>           👑 مدیریت مدیران و سطح دسترسی       </h2>        <span>           Admin Management       </span>    </div>     <div class="admin-add">        <input           id="adminName"           class="admin-input"           type="text"           placeholder="نام کاربری مدیر جدید..."       >         <button           class="admin-add-btn"           onclick="addAdmin()"       >           + افزودن       </button>    </div>     <div       class="admin-list"       id="adminList"   >         <!-- MAIN ADMIN -->        <div class="admin-item">            <div>                <div class="admin-name">                   👑 مدیر اصلی               </div>                <div class="admin-role">                   دسترسی کامل سیستم               </div>            </div>             <div class="admin-actions">                <select                   class="access-select"                   disabled               >                    <option>                       دسترسی کامل                   </option>                </select>            </div>        </div>     </div>     <div class="access-info">        🔐 سطح دسترسی‌ها:        <br>        <b>دسترسی کامل:</b>       مدیریت تمام بخش‌ها        <br>        <b>مدیر:</b>       مدیریت عمومی سایت        <br>        <b>مدیر آهنگ:</b>       فقط مدیریت آهنگ‌ها        <br>        <b>آمار:</b>       مشاهده آمار        <br>        <b>مشاهده‌گر:</b>       فقط مشاهده اطلاعات    </div>   
+    <a  
+        href="./index.html"  
+        class="header-btn"  
+    >  
+        🌐 مشاهده سایت  
+    </a>  
 
-<div class="card-title">        <h2>           🎵 آخرین آهنگ‌ها       </h2>        <span>           آخرین فعالیت‌ها       </span>    </div>     <div class="empty">        هنوز آهنگی ثبت نشده است.    </div>   
 
-<div class="card-title">        <h2>           🟢 وضعیت سایت       </h2>        <span>           Live Status       </span>    </div>     <div class="status">        <div class="status-left">            <div class="status-dot"></div>            <div class="status-text">                <strong>                   سایت فعال است               </strong>                <span>                   تمام سرویس‌ها در حال اجرا هستند               </span>            </div>        </div>    </div>   
+    <button  
+        class="header-btn"  
+        onclick="logout()"  
+    >  
+        خروج  
+    </button>  
 
-<div class="card-title">        <h2>           ⚡ دسترسی سریع       </h2>    </div>     <div class="quick">        <a href="./index.html">           🎵 آهنگ‌ها       </a>        <a href="./artists.html">           🎤 خواننده‌ها       </a>        <a href="./send.html">           📩 ارسال آهنگ       </a>        <a href="./contact.html">           📞 تماس       </a>        <a href="#sectionControl">           🔌 کنترل سایت       </a>        <a href="./index.html">           🌐 سایت       </a>    </div>   
+</div>
 
-<button       class="logout"       onclick="logout()"   >       🚪 خروج از پنل مدیریت   </button>   
+</header>  <main class="container">  <!-- =========================  
+     TOP STATS  
+========================= -->  <section class="stats">  <div class="stat">  
 
-`Kian Music Admin © 2026   `
+    <div class="stat-icon">  
+        🎵  
+    </div>  
+
+    <div class="stat-number">  
+        0  
+    </div>  
+
+    <div class="stat-title">  
+        تعداد آهنگ‌ها  
+    </div>  
+
+</div>  
+
+
+<div class="stat">  
+
+    <div class="stat-icon">  
+        🎤  
+    </div>  
+
+    <div class="stat-number">  
+        0  
+    </div>  
+
+    <div class="stat-title">  
+        تعداد خواننده‌ها  
+    </div>  
+
+</div>  
+
+
+<div class="stat">  
+
+    <div class="stat-icon">  
+        📩  
+    </div>  
+
+    <div class="stat-number">  
+        0  
+    </div>  
+
+    <div class="stat-title">  
+        درخواست‌های جدید  
+    </div>  
+
+</div>  
+
+
+<div class="stat">  
+
+    <div class="stat-icon">  
+        👁️  
+    </div>  
+
+    <div class="stat-number">  
+        0  
+    </div>  
+
+    <div class="stat-title">  
+        بازدید امروز  
+    </div>  
+
+</div>
+
+</section>  <section class="dashboard-grid">  <!-- ==================================================  
+     LEFT COLUMN  
+================================================== -->  <div class="column">  <!-- =========================  
+     SITE MANAGEMENT  
+========================= -->  <div class="card">  <div class="card-title">  
+
+    <h2>  
+        ⚙️ مدیریت سایت  
+    </h2>  
+
+    <span>  
+        مدیریت بخش‌ها  
+    </span>  
+
+</div>  
+
+
+<div class="actions">  
+
+
+    <a  
+        href="./index.html"  
+        class="action"  
+    >  
+
+        <div class="action-icon">  
+            🎵  
+        </div>  
+
+        <div>  
+
+            <strong>  
+                مدیریت آهنگ‌ها  
+            </strong>  
+
+            <span>  
+                افزودن و ویرایش آهنگ  
+            </span>  
+
+        </div>  
+
+    </a>  
+
+
+    <a  
+        href="./artists.html"  
+        class="action"  
+    >  
+
+        <div class="action-icon">  
+            🎤  
+        </div>  
+
+        <div>  
+
+            <strong>  
+                مدیریت خواننده‌ها  
+            </strong>  
+
+            <span>  
+                مدیریت هنرمندان  
+            </span>  
+
+        </div>  
+
+    </a>  
+
+
+    <a  
+        href="./send.html"  
+        class="action"  
+    >  
+
+        <div class="action-icon">  
+            📩  
+        </div>  
+
+        <div>  
+
+            <strong>  
+                ارسال آهنگ  
+            </strong>  
+
+            <span>  
+                درخواست ارسال آهنگ  
+            </span>  
+
+        </div>  
+
+    </a>  
+
+
+    <a  
+        href="./contact.html"  
+        class="action"  
+    >  
+
+        <div class="action-icon">  
+            📞  
+        </div>  
+
+        <div>  
+
+            <strong>  
+                تماس با ما  
+            </strong>  
+
+            <span>  
+                پیام‌های کاربران  
+            </span>  
+
+        </div>  
+
+    </a>  
+
+
+</div>
+
+<!-- ==================================================  
+     NEW: SITE SECTION CONTROL  
+================================================== -->  <div  
+    class="section-control"  
+    id="sectionControl"  
+>  <div class="section-control-header">  
+
+    <strong>  
+        🔌 کنترل بخش‌های سایت  
+    </strong>  
+
+    <span>  
+        فعال / غیرفعال موقت  
+    </span>  
+
+</div>  
+
+
+<div class="site-sections">  
+
+
+    <!-- SONGS -->  
+
+    <div class="site-section">  
+
+        <div class="section-info">  
+
+            <div class="section-icon">  
+                🎵  
+            </div>  
+
+            <div>  
+
+                <div class="section-name">  
+                    بخش آهنگ‌ها  
+                </div>  
+
+                <div class="section-description">  
+                    نمایش و دسترسی به آهنگ‌های سایت  
+                </div>  
+
+                <div  
+                    id="songsStatus"  
+                    class="section-status on"  
+                >  
+                    فعال  
+                </div>  
+
+            </div>  
+
+        </div>  
+
+
+        <button  
+            id="songsToggle"  
+            class="section-toggle active"  
+            onclick="toggleSiteSection('songs')"  
+            title="تغییر وضعیت"  
+        ></button>  
+
+    </div>  
+
+
+
+    <!-- ARTISTS -->  
+
+    <div class="site-section">  
+
+        <div class="section-info">  
+
+            <div class="section-icon">  
+                🎤  
+            </div>  
+
+            <div>  
+
+                <div class="section-name">  
+                    بخش خواننده‌ها  
+                </div>  
+
+                <div class="section-description">  
+                    لیست و صفحات خواننده‌ها  
+                </div>  
+
+                <div  
+                    id="artistsStatus"  
+                    class="section-status on"  
+                >  
+                    فعال  
+                </div>  
+
+            </div>  
+
+        </div>  
+
+
+        <button  
+            id="artistsToggle"  
+            class="section-toggle active"  
+            onclick="toggleSiteSection('artists')"  
+            title="تغییر وضعیت"  
+        ></button>  
+
+    </div>  
+
+
+
+    <!-- SEND -->  
+
+    <div class="site-section">  
+
+        <div class="section-info">  
+
+            <div class="section-icon">  
+                📩  
+            </div>  
+
+            <div>  
+
+                <div class="section-name">  
+                    ارسال آهنگ  
+                </div>  
+
+                <div class="section-description">  
+                    فرم ارسال آهنگ توسط کاربران  
+                </div>  
+
+                <div  
+                    id="sendStatus"  
+                    class="section-status on"  
+                >  
+                    فعال  
+                </div>  
+
+            </div>  
+
+        </div>  
+
+
+        <button  
+            id="sendToggle"  
+            class="section-toggle active"  
+            onclick="toggleSiteSection('send')"  
+            title="تغییر وضعیت"  
+        ></button>  
+
+    </div>  
+
+
+
+    <!-- CONTACT -->  
+
+    <div class="site-section">  
+
+        <div class="section-info">  
+
+            <div class="section-icon">  
+                📞  
+            </div>  
+
+            <div>  
+
+                <div class="section-name">  
+                    تماس با ما  
+                </div>  
+
+                <div class="section-description">  
+                    فرم تماس با مدیریت  
+                </div>  
+
+                <div  
+                    id="contactStatus"  
+                    class="section-status on"  
+                >  
+                    فعال  
+                </div>  
+
+            </div>  
+
+        </div>  
+
+
+        <button  
+            id="contactToggle"  
+            class="section-toggle active"  
+            onclick="toggleSiteSection('contact')"  
+            title="تغییر وضعیت"  
+        ></button>  
+
+    </div>  
+
+
+
+    <!-- ADS -->  
+
+    <div class="site-section">  
+
+        <div class="section-info">  
+
+            <div class="section-icon">  
+                📢  
+            </div>  
+
+            <div>  
+
+                <div class="section-name">  
+                    تبلیغات  
+                </div>  
+
+                <div class="section-description">  
+                    نمایش تبلیغات در سایت  
+                </div>  
+
+                <div  
+                    id="adsStatus"  
+                    class="section-status on"  
+                >  
+                    فعال  
+                </div>  
+
+            </div>  
+
+        </div>  
+
+
+        <button  
+            id="adsToggle"  
+            class="section-toggle active"  
+            onclick="toggleSiteSection('ads')"  
+            title="تغییر وضعیت"  
+        ></button>  
+
+    </div>  
+
+
+</div>  
+
+
+<div class="control-info">  
+
+    💡 با خاموش کردن هر بخش، وضعیت آن در حافظه مرورگر ذخیره می‌شود.  
+    بعداً می‌توانیم صفحات سایت را به همین سیستم متصل کنیم تا به  
+    کاربران پیام «این قسمت در حال حاضر غیرفعال است» نمایش داده شود.  
+
+</div>
+
+</div>  </div>  <!-- =========================  
+     VISITOR STATS  
+========================= -->  <div class="card">  <div class="card-title">  
+
+    <h2>  
+        📊 آمار ورود به سایت  
+    </h2>  
+
+
+    <select  
+        class="visitor-select"  
+        id="visitorPeriod"  
+        onchange="changeVisitorPeriod()"  
+    >  
+
+        <option value="day">  
+            امروز  
+        </option>  
+
+        <option value="week">  
+            این هفته  
+        </option>  
+
+        <option value="month">  
+            این ماه  
+        </option>  
+
+        <option value="year">  
+            امسال  
+        </option>  
+
+    </select>  
+
+</div>  
+
+
+<div class="visitor-top">  
+
+    <div>  
+
+        <div  
+            class="visitor-number"  
+            id="visitorNumber"  
+        >  
+            0  
+        </div>  
+
+        <div class="visitor-label">  
+            بازدیدکننده  
+        </div>  
+
+    </div>  
+
+</div>  
+
+
+<div class="visitor-bars">  
+
+    <div class="bar" style="height:30%"></div>  
+    <div class="bar" style="height:55%"></div>  
+    <div class="bar" style="height:38%"></div>  
+    <div class="bar" style="height:70%"></div>  
+    <div class="bar" style="height:48%"></div>  
+    <div class="bar" style="height:82%"></div>  
+    <div class="bar" style="height:63%"></div>  
+    <div class="bar" style="height:90%"></div>  
+
+</div>
+
+</div>  <!-- =========================  
+     ADMIN MANAGEMENT  
+========================= -->  <div class="card">  <div class="card-title">  
+
+    <h2>  
+        👑 مدیریت مدیران و سطح دسترسی  
+    </h2>  
+
+    <span>  
+        Admin Management  
+    </span>  
+
+</div>  
+
+
+<div class="admin-add">  
+
+    <input  
+        id="adminName"  
+        class="admin-input"  
+        type="text"  
+        placeholder="نام کاربری مدیر جدید..."  
+    >  
+
+
+    <button  
+        class="admin-add-btn"  
+        onclick="addAdmin()"  
+    >  
+        + افزودن  
+    </button>  
+
+</div>  
+
+
+<div  
+    class="admin-list"  
+    id="adminList"  
+>  
+
+
+    <!-- MAIN ADMIN -->  
+
+    <div class="admin-item">  
+
+        <div>  
+
+            <div class="admin-name">  
+                👑 مدیر اصلی  
+            </div>  
+
+            <div class="admin-role">  
+                دسترسی کامل سیستم  
+            </div>  
+
+        </div>  
+
+
+        <div class="admin-actions">  
+
+            <select  
+                class="access-select"  
+                disabled  
+            >  
+
+                <option>  
+                    دسترسی کامل  
+                </option>  
+
+            </select>  
+
+        </div>  
+
+    </div>  
+
+
+</div>  
+
+
+<div class="access-info">  
+
+    🔐 سطح دسترسی‌ها:  
+
+    <br>  
+
+    <b>دسترسی کامل:</b>  
+    مدیریت تمام بخش‌ها  
+
+    <br>  
+
+    <b>مدیر:</b>  
+    مدیریت عمومی سایت  
+
+    <br>  
+
+    <b>مدیر آهنگ:</b>  
+    فقط مدیریت آهنگ‌ها  
+
+    <br>  
+
+    <b>آمار:</b>  
+    مشاهده آمار  
+
+    <br>  
+
+    <b>مشاهده‌گر:</b>  
+    فقط مشاهده اطلاعات  
+
+</div>
+
+</div>  <!-- =========================  
+     LAST SONGS  
+========================= -->  <div class="card">  <div class="card-title">  
+
+    <h2>  
+        🎵 آخرین آهنگ‌ها  
+    </h2>  
+
+    <span>  
+        آخرین فعالیت‌ها  
+    </span>  
+
+</div>  
+
+
+<div class="empty">  
+
+    هنوز آهنگی ثبت نشده است.  
+
+</div>
+
+</div>  </div>  <!-- ==================================================  
+     RIGHT COLUMN  
+================================================== -->  <div class="column">  <!-- =========================  
+     SITE STATUS  
+========================= -->  <div class="card">  <div class="card-title">  
+
+    <h2>  
+        🟢 وضعیت سایت  
+    </h2>  
+
+    <span>  
+        Live Status  
+    </span>  
+
+</div>  
+
+
+<div class="status">  
+
+    <div class="status-left">  
+
+        <div class="status-dot"></div>  
+
+        <div class="status-text">  
+
+            <strong>  
+                سایت فعال است  
+            </strong>  
+
+            <span>  
+                تمام سرویس‌ها در حال اجرا هستند  
+            </span>  
+
+        </div>  
+
+    </div>  
+
+</div>
+
+</div>  <!-- =========================  
+     QUICK ACCESS  
+========================= -->  <div class="card">  <div class="card-title">  
+
+    <h2>  
+        ⚡ دسترسی سریع  
+    </h2>  
+
+</div>  
+
+
+<div class="quick">  
+
+    <a href="./index.html">  
+        🎵 آهنگ‌ها  
+    </a>  
+
+    <a href="./artists.html">  
+        🎤 خواننده‌ها  
+    </a>  
+
+    <a href="./send.html">  
+        📩 ارسال آهنگ  
+    </a>  
+
+    <a href="./contact.html">  
+        📞 تماس  
+    </a>  
+
+    <a href="#sectionControl">  
+        🔌 کنترل سایت  
+    </a>  
+
+    <a href="./index.html">  
+        🌐 سایت  
+    </a>  
+
+</div>
+
+</div>  <!-- =========================  
+     LOGOUT  
+========================= -->  <div class="card">  <button  
+    class="logout"  
+    onclick="logout()"  
+>  
+    🚪 خروج از پنل مدیریت  
+</button>
+
+</div>  </div>  </section>  <footer>  Kian Music Admin © 2026
+
+</footer>  </main>  <script>  
+  
+  
+/* ==================================================  
+   VISITOR DATA  
+================================================== */  
+  
+const visitorData = {  
+  
+    day:0,  
+    week:0,  
+    month:0,  
+    year:0  
+  
+};  
+  
+  
+function changeVisitorPeriod(){  
+  
+    const period =  
+        document.getElementById(  
+            "visitorPeriod"  
+        ).value;  
+  
+  
+    document.getElementById(  
+        "visitorNumber"  
+    ).textContent =  
+        visitorData[period].toLocaleString("fa-IR");  
+  
+}  
+  
+  
+changeVisitorPeriod();  
+  
+  
+  
+/* ==================================================  
+   ADMIN MANAGEMENT  
+================================================== */  
+  
+function addAdmin(){  
+  
+    const input =  
+        document.getElementById(  
+            "adminName"  
+        );  
+  
+  
+    const name =  
+        input.value.trim();  
+  
+  
+    if(!name){  
+  
+        alert(  
+            "نام کاربری مدیر را وارد کنید."  
+        );  
+  
+        return;  
+  
+    }  
+  
+  
+    const list =  
+        document.getElementById(  
+            "adminList"  
+        );  
+  
+  
+    const item =  
+        document.createElement("div");  
+  
+  
+    item.className =  
+        "admin-item";  
+  
+  
+    item.innerHTML = `  
+  
+        <div>  
+  
+            <div class="admin-name">  
+                👤 ${escapeHtml(name)}  
+            </div>  
+  
+            <div class="admin-role">  
+                مدیر جدید  
+            </div>  
+  
+        </div>  
+  
+  
+        <div class="admin-actions">  
+  
+            <select  
+                class="access-select"  
+                onchange="changeAccess(this)"  
+            >  
+  
+                <option value="full">  
+                    دسترسی کامل  
+                </option>  
+  
+                <option value="manager">  
+                    مدیر  
+                </option>  
+  
+                <option value="music">  
+                    مدیر آهنگ  
+                </option>  
+  
+                <option value="stats">  
+                    آمار  
+                </option>  
+  
+                <option value="viewer">  
+                    مشاهده‌گر  
+                </option>  
+  
+            </select>  
+  
+  
+            <button  
+                class="remove-admin"  
+                onclick="removeAdmin(this)"  
+            >  
+                حذف  
+            </button>  
+  
+        </div>  
+  
+    `;  
+  
+  
+    list.appendChild(item);  
+  
+  
+    input.value = "";  
+  
+}  
+  
+  
+  
+function changeAccess(select){  
+  
+    const names = {  
+  
+        full:"دسترسی کامل",  
+        manager:"مدیر",  
+        music:"مدیر آهنگ",  
+        stats:"آمار",  
+        viewer:"مشاهده‌گر"  
+  
+    };  
+  
+  
+    const item =  
+        select.closest(  
+            ".admin-item"  
+        );  
+  
+  
+    const role =  
+        item.querySelector(  
+            ".admin-role"  
+        );  
+  
+  
+    role.textContent =  
+        names[select.value] ||  
+        "مدیر";  
+  
+}  
+  
+  
+  
+function removeAdmin(button){  
+  
+    if(  
+        !confirm(  
+            "این مدیر حذف شود؟"  
+        )  
+    ){  
+  
+        return;  
+  
+    }  
+  
+  
+    button  
+        .closest(".admin-item")  
+        .remove();  
+  
+}  
+  
+  
+  
+function escapeHtml(text){  
+  
+    const div =  
+        document.createElement("div");  
+  
+    div.textContent =  
+        text;  
+  
+    return div.innerHTML;  
+  
+}  
+  
+  
+  
+/* ==================================================  
+   SITE SECTION MANAGEMENT  
+================================================== */  
+  
+  
+/*  
+    کلید ذخیره وضعیت‌ها  
+*/  
+  
+const SITE_SECTIONS_KEY =  
+    "kian_music_site_sections";  
+  
+  
+/*  
+    وضعیت پیش‌فرض تمام قسمت‌ها  
+*/  
+  
+const defaultSiteSections = {  
+  
+    songs:true,  
+    artists:true,  
+    send:true,  
+    contact:true,  
+    ads:true  
+  
+};  
+  
+  
+/*  
+    وضعیت فعلی  
+*/  
+  
+let siteSections =  
+    loadSiteSections();  
+  
+  
+  
+/*  
+    دریافت وضعیت‌های ذخیره‌شده  
+*/  
+  
+function loadSiteSections(){  
+  
+    try{  
+  
+        const saved =  
+            localStorage.getItem(  
+                SITE_SECTIONS_KEY  
+            );  
+  
+  
+        if(!saved){  
+  
+            return {  
+                ...defaultSiteSections  
+            };  
+  
+        }  
+  
+  
+        const parsed =  
+            JSON.parse(saved);  
+  
+  
+        return {  
+  
+            ...defaultSiteSections,  
+            ...parsed  
+  
+        };  
+  
+    }  
+    catch(error){  
+  
+        return {  
+            ...defaultSiteSections  
+        };  
+  
+    }  
+  
+}  
+  
+  
+  
+/*  
+    ذخیره وضعیت‌ها  
+*/  
+  
+function saveSiteSections(){  
+  
+    localStorage.setItem(  
+  
+        SITE_SECTIONS_KEY,  
+  
+        JSON.stringify(  
+            siteSections  
+        )  
+  
+    );  
+  
+}  
+  
+  
+  
+/*  
+    روشن / خاموش کردن  
+*/  
+  
+function toggleSiteSection(section){  
+  
+    /*  
+        وضعیت را برعکس می‌کنیم  
+    */  
+  
+    siteSections[section] =  
+        !siteSections[section];  
+  
+  
+    /*  
+        ذخیره در مرورگر  
+    */  
+  
+    saveSiteSections();  
+  
+  
+    /*  
+        تغییر ظاهر دکمه  
+    */  
+  
+    updateSectionUI(section);  
+  
+  
+    /*  
+        پیام به ادمین  
+    */  
+  
+    if(siteSections[section]){  
+  
+        console.log(  
+            "بخش " +  
+            section +  
+            " فعال شد."  
+        );  
+  
+    }  
+    else{  
+  
+        console.log(  
+            "بخش " +  
+            section +  
+            " غیرفعال شد."  
+        );  
+  
+    }  
+  
+}  
+  
+  
+  
+/*  
+    بروزرسانی ظاهر یک بخش  
+*/  
+  
+function updateSectionUI(section){  
+  
+    const toggle =  
+        document.getElementById(  
+            section + "Toggle"  
+        );  
+  
+  
+    const status =  
+        document.getElementById(  
+            section + "Status"  
+        );  
+  
+  
+    if(  
+        !toggle ||  
+        !status  
+    ){  
+  
+        return;  
+  
+    }  
+  
+  
+    if(  
+        siteSections[section]  
+    ){  
+  
+        /*  
+            فعال  
+        */  
+  
+        toggle.classList.add(  
+            "active"  
+        );  
+  
+  
+        status.classList.remove(  
+            "off"  
+        );  
+  
+  
+        status.classList.add(  
+            "on"  
+        );  
+  
+  
+        status.textContent =  
+            "فعال";  
+  
+    }  
+    else{  
+  
+        /*  
+            غیرفعال  
+        */  
+  
+        toggle.classList.remove(  
+            "active"  
+        );  
+  
+  
+        status.classList.remove(  
+            "on"  
+        );  
+  
+  
+        status.classList.add(  
+            "off"  
+        );  
+  
+  
+        status.textContent =  
+            "غیرفعال";  
+  
+    }  
+  
+}  
+  
+  
+  
+/*  
+    بروزرسانی تمام دکمه‌ها  
+*/  
+  
+function updateAllSectionsUI(){  
+  
+    Object.keys(  
+        defaultSiteSections  
+    ).forEach(  
+        function(section){  
+  
+            updateSectionUI(  
+                section  
+            );  
+  
+        }  
+    );  
+  
+}  
+  
+  
+/*  
+    اجرای اولیه  
+*/  
+  
+updateAllSectionsUI();  
+  
+  
+  
+/* ==================================================  
+   LOGOUT  
+================================================== */  
+  
+function logout(){  
+  
+    sessionStorage.removeItem(  
+        "kian_admin_login"  
+    );  
+  
+  
+    window.location.replace(  
+        "./login.html"  
+    );  
+  
+}  
+  
+  
+</script>  </body>  
+</html>
