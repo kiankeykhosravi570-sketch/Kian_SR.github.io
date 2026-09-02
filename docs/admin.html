@@ -1,1114 +1,4215 @@
-<!DOCTYPE html>  <html lang="fa" dir="rtl">  <head>  <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>پنل مدیریت | Kian Music</title>  <style>  *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Tahoma,Arial,sans-serif;
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>پنل مدیریت | Kian Music</title>
+
+
+<style>
+
+/* =====================================================
+   BASE
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Tahoma,Arial,sans-serif;
 }
 
 body{
-background:#050509;
-color:#fff;
-min-height:100vh;
-overflow-x:hidden;
+    background:#050509;
+    color:#fff;
+    min-height:100vh;
+    overflow-x:hidden;
 }
 
 body::before{
-content:"";
-position:fixed;
-width:650px;
-height:650px;
-background:#7c3aed;
-filter:blur(210px);
-opacity:.16;
-top:-300px;
-right:-220px;
-z-index:-2;
-pointer-events:none;
+    content:"";
+    position:fixed;
+    width:650px;
+    height:650px;
+    background:#7c3aed;
+    filter:blur(210px);
+    opacity:.16;
+    top:-300px;
+    right:-220px;
+    z-index:-2;
+    pointer-events:none;
 }
 
 body::after{
-content:"";
-position:fixed;
-width:600px;
-height:600px;
-background:#00e5ff;
-filter:blur(220px);
-opacity:.09;
-bottom:-300px;
-left:-220px;
-z-index:-2;
-pointer-events:none;
+    content:"";
+    position:fixed;
+    width:600px;
+    height:600px;
+    background:#00e5ff;
+    filter:blur(220px);
+    opacity:.09;
+    bottom:-300px;
+    left:-220px;
+    z-index:-2;
+    pointer-events:none;
 }
 
-/* HEADER */
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 header{
-position:sticky;
-top:0;
-z-index:100;
-padding:15px 20px;
-background:rgba(5,5,9,.78);
-backdrop-filter:blur(22px);
-border-bottom:1px solid rgba(255,255,255,.08);
+    position:sticky;
+    top:0;
+    z-index:100;
+    padding:15px 20px;
+    background:rgba(5,5,9,.78);
+    backdrop-filter:blur(22px);
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .header{
-max-width:1200px;
-margin:auto;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:15px;
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
 }
 
 .logo{
-font-size:24px;
-font-weight:900;
+    font-size:24px;
+    font-weight:900;
 
-background:
-linear-gradient(
-90deg,
-#fff,
-#b47cff,
-#00e5ff
-);
+    background:
+    linear-gradient(
+        90deg,
+        #fff,
+        #b47cff,
+        #00e5ff
+    );
 
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 .header-buttons{
-display:flex;
-gap:8px;
-flex-wrap:wrap;
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
 }
 
 .header-button{
-text-decoration:none;
-color:#ccc;
-font-size:10px;
-padding:10px 14px;
-border-radius:11px;
+    text-decoration:none;
+    color:#ccc;
+    font-size:10px;
+    padding:10px 14px;
+    border-radius:11px;
 
-background:rgba(255,255,255,.045);
+    background:rgba(255,255,255,.045);
 
-border:1px solid rgba(255,255,255,.11);
+    border:1px solid rgba(255,255,255,.11);
 
-transition:.25s;
+    transition:.25s;
 }
 
 .header-button:hover{
-color:#fff;
-background:rgba(124,58,237,.20);
-border-color:rgba(180,124,255,.40);
+    color:#fff;
+    background:rgba(124,58,237,.20);
+    border-color:rgba(180,124,255,.40);
 }
 
-/* MAIN */
+
+/* =====================================================
+   MAIN
+===================================================== */
 
 .container{
-max-width:1200px;
-margin:45px auto;
-padding:0 20px;
+    max-width:1200px;
+    margin:45px auto;
+    padding:0 20px;
 }
 
 .title{
-margin-bottom:28px;
+    margin-bottom:28px;
 }
 
 .title h1{
-font-size:32px;
-margin-bottom:9px;
+    font-size:32px;
+    margin-bottom:9px;
 
-background:
-linear-gradient(
-90deg,
-#fff,
-#b47cff,
-#00e5ff
-);
+    background:
+    linear-gradient(
+        90deg,
+        #fff,
+        #b47cff,
+        #00e5ff
+    );
 
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 .title p{
-font-size:11px;
-color:#777;
+    font-size:11px;
+    color:#777;
 }
 
-/* STATS */
+
+/* =====================================================
+   STATS
+===================================================== */
 
 .stats{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:14px;
-margin-bottom:22px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    margin-bottom:22px;
 }
 
 .stat{
-padding:21px;
-border-radius:19px;
+    padding:21px;
+    border-radius:19px;
 
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,.065),
-rgba(255,255,255,.018)
-);
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.065),
+        rgba(255,255,255,.018)
+    );
 
-border:1px solid rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.08);
 
-transition:.25s;
+    transition:.25s;
 }
 
 .stat:hover{
-transform:translateY(-4px);
-border-color:rgba(180,124,255,.35);
+    transform:translateY(-4px);
+    border-color:rgba(180,124,255,.35);
 }
 
 .stat-icon{
-font-size:23px;
-margin-bottom:12px;
+    font-size:23px;
+    margin-bottom:12px;
 }
 
 .stat-number{
-font-size:26px;
-font-weight:900;
-margin-bottom:5px;
+    font-size:26px;
+    font-weight:900;
+    margin-bottom:5px;
 }
 
 .stat-label{
-font-size:10px;
-color:#777;
+    font-size:10px;
+    color:#777;
 }
 
-/* GRID */
+
+/* =====================================================
+   GRID
+===================================================== */
 
 .grid{
-display:grid;
-grid-template-columns:1.35fr 1fr;
-gap:18px;
+    display:grid;
+    grid-template-columns:1.35fr 1fr;
+    gap:18px;
 }
 
-/* CARD */
+
+/* =====================================================
+   CARD
+===================================================== */
 
 .card{
-padding:23px;
-border-radius:20px;
+    padding:23px;
+    border-radius:20px;
 
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,.065),
-rgba(255,255,255,.018)
-);
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.065),
+        rgba(255,255,255,.018)
+    );
 
-border:1px solid rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.08);
 
-box-shadow:
-0 15px 50px rgba(0,0,0,.25);
+    box-shadow:
+    0 15px 50px rgba(0,0,0,.25);
 
-margin-bottom:18px;
+    margin-bottom:18px;
 }
 
 .card h2{
-font-size:16px;
-margin-bottom:18px;
+    font-size:16px;
+    margin-bottom:18px;
 }
 
-/* ACTIONS */
+
+/* =====================================================
+   ACTIONS
+===================================================== */
 
 .actions{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:11px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:11px;
 }
 
 .action{
-display:flex;
-align-items:center;
-gap:12px;
+    display:flex;
+    align-items:center;
+    gap:12px;
 
-padding:15px;
+    padding:15px;
 
-border-radius:14px;
+    border-radius:14px;
 
-text-decoration:none;
+    text-decoration:none;
 
-color:#ddd;
+    color:#ddd;
 
-background:
-rgba(255,255,255,.035);
+    background:
+    rgba(255,255,255,.035);
 
-border:1px solid rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.08);
 
-transition:.25s;
+    transition:.25s;
 }
 
 .action:hover{
-color:#fff;
+    color:#fff;
 
-transform:translateY(-3px);
+    transform:translateY(-3px);
 
-background:
-linear-gradient(
-135deg,
-rgba(124,58,237,.25),
-rgba(0,229,255,.06)
-);
+    background:
+    linear-gradient(
+        135deg,
+        rgba(124,58,237,.25),
+        rgba(0,229,255,.06)
+    );
 
-border-color:rgba(180,124,255,.4);
+    border-color:rgba(180,124,255,.4);
 }
 
 .action-icon{
-font-size:22px;
+    font-size:22px;
 }
 
 .action strong{
-display:block;
-font-size:11px;
-margin-bottom:4px;
+    display:block;
+    font-size:11px;
+    margin-bottom:4px;
 }
 
 .action span{
-font-size:9px;
-color:#666;
+    font-size:9px;
+    color:#666;
 }
 
-/* VISITOR */
+
+/* =====================================================
+   VISITOR
+===================================================== */
 
 .visitor-select{
 
-width:100%;
-height:50px;
+    width:100%;
+    height:50px;
 
-padding:0 15px;
+    padding:0 15px;
 
-border-radius:13px;
+    border-radius:13px;
 
-border:1px solid rgba(180,124,255,.20);
+    border:1px solid rgba(180,124,255,.20);
 
-background:#111018;
+    background:#111018;
 
-color:#fff;
+    color:#fff;
 
-font-size:11px;
+    font-size:11px;
 
-outline:none;
+    outline:none;
 
-cursor:pointer;
+    cursor:pointer;
 }
 
 .visitor-select option{
-background:#111018;
-color:#fff;
+    background:#111018;
+    color:#fff;
 }
 
 .visitor-result{
 
-margin-top:15px;
+    margin-top:15px;
 
-padding:20px;
+    padding:20px;
 
-border-radius:16px;
+    border-radius:16px;
 
-background:
-linear-gradient(
-135deg,
-rgba(124,58,237,.12),
-rgba(0,229,255,.04)
-);
+    background:
+    linear-gradient(
+        135deg,
+        rgba(124,58,237,.12),
+        rgba(0,229,255,.04)
+    );
 
-border:1px solid rgba(180,124,255,.15);
+    border:1px solid rgba(180,124,255,.15);
 
-text-align:center;
+    text-align:center;
 }
 
 .visitor-number{
 
-font-size:32px;
+    font-size:32px;
 
-font-weight:900;
+    font-weight:900;
 
-margin-bottom:6px;
+    margin-bottom:6px;
 
-background:
-linear-gradient(
-90deg,
-#fff,
-#b47cff,
-#00e5ff
-);
+    background:
+    linear-gradient(
+        90deg,
+        #fff,
+        #b47cff,
+        #00e5ff
+    );
 
--webkit-background-clip:text;
+    -webkit-background-clip:text;
 
--webkit-text-fill-color:transparent;
+    -webkit-text-fill-color:transparent;
 }
 
 .visitor-label{
-font-size:10px;
-color:#777;
+    font-size:10px;
+    color:#777;
 }
 
-/* ADMIN MANAGEMENT */
+
+/* =====================================================
+   ADMIN MANAGEMENT
+===================================================== */
 
 .admin-manager{
-display:flex;
-gap:9px;
-margin-bottom:18px;
+    display:flex;
+    gap:9px;
+    margin-bottom:18px;
 }
 
 .admin-input{
 
-flex:1;
+    flex:1;
 
-height:46px;
+    height:46px;
 
-padding:0 13px;
+    padding:0 13px;
 
-border-radius:11px;
+    border-radius:11px;
 
-outline:none;
+    outline:none;
 
-border:1px solid rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.10);
 
-background:rgba(255,255,255,.04);
+    background:rgba(255,255,255,.04);
 
-color:#fff;
+    color:#fff;
 
-font-size:11px;
+    font-size:11px;
 }
 
 .admin-input:focus{
 
-border-color:#7c3aed;
+    border-color:#7c3aed;
 
-box-shadow:
-0 0 20px rgba(124,58,237,.12);
+    box-shadow:
+    0 0 20px rgba(124,58,237,.12);
 }
 
 .admin-add{
 
-border:0;
+    border:0;
 
-padding:0 15px;
+    padding:0 15px;
 
-border-radius:11px;
+    border-radius:11px;
 
-background:
-linear-gradient(
-135deg,
-#7c3aed,
-#2563eb
-);
+    background:
+    linear-gradient(
+        135deg,
+        #7c3aed,
+        #2563eb
+    );
 
-color:#fff;
+    color:#fff;
 
-font-size:10px;
+    font-size:10px;
 
-font-weight:bold;
+    font-weight:bold;
 
-cursor:pointer;
+    cursor:pointer;
 }
-
-/* ADMIN USER */
 
 .admin-list{
 
-display:flex;
+    display:flex;
 
-flex-direction:column;
+    flex-direction:column;
 
-gap:10px;
+    gap:10px;
 }
 
 .admin-user{
 
-padding:14px;
+    padding:14px;
 
-border-radius:14px;
+    border-radius:14px;
 
-background:
-rgba(255,255,255,.035);
+    background:
+    rgba(255,255,255,.035);
 
-border:1px solid rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.07);
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-justify-content:space-between;
+    justify-content:space-between;
 
-gap:12px;
+    gap:12px;
 }
 
 .admin-info{
-flex:1;
+    flex:1;
 }
 
 .admin-name{
 
-font-size:11px;
+    font-size:11px;
 
-font-weight:bold;
+    font-weight:bold;
 
-margin-bottom:5px;
+    margin-bottom:5px;
 }
 
 .admin-level{
 
-font-size:9px;
+    font-size:9px;
 
-color:#777;
+    color:#777;
 }
-
-/* ACCESS SELECT */
 
 .access-select{
 
-height:36px;
+    height:36px;
 
-padding:0 9px;
+    padding:0 9px;
 
-border-radius:9px;
+    border-radius:9px;
 
-background:#111018;
+    background:#111018;
 
-color:#fff;
+    color:#fff;
 
-border:1px solid rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.10);
 
-font-size:9px;
+    font-size:9px;
 
-outline:none;
+    outline:none;
 
-cursor:pointer;
+    cursor:pointer;
 }
 
 .access-select:focus{
-border-color:#7c3aed;
+    border-color:#7c3aed;
 }
-
-/* DELETE */
 
 .remove-admin{
 
-border:0;
+    border:0;
 
-height:36px;
+    height:36px;
 
-padding:0 10px;
+    padding:0 10px;
 
-border-radius:9px;
+    border-radius:9px;
 
-background:
-rgba(255,70,90,.08);
+    background:
+    rgba(255,70,90,.08);
 
-color:#ff9baa;
+    color:#ff9baa;
 
-cursor:pointer;
+    cursor:pointer;
 
-font-size:9px;
+    font-size:9px;
 }
 
 .remove-admin:hover{
-background:rgba(255,70,90,.15);
+    background:rgba(255,70,90,.15);
 }
-
-/* ACCESS INFO */
 
 .access-info{
 
-margin-top:15px;
+    margin-top:15px;
 
-padding:13px;
+    padding:13px;
 
-border-radius:12px;
+    border-radius:12px;
 
-background:
-rgba(255,255,255,.025);
+    background:
+    rgba(255,255,255,.025);
 
-border:1px solid rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.06);
 
-font-size:9px;
+    font-size:9px;
 
-line-height:2.2;
+    line-height:2.2;
 
-color:#777;
+    color:#777;
 }
 
-/* NOTICE */
+
+/* =====================================================
+   NOTICE
+===================================================== */
 
 .notice{
 
-padding:16px;
+    padding:16px;
 
-border-radius:14px;
+    border-radius:14px;
 
-background:
-rgba(255,180,0,.045);
+    background:
+    rgba(255,180,0,.045);
 
-border:1px solid rgba(255,180,0,.13);
+    border:1px solid rgba(255,180,0,.13);
 
-color:#999;
+    color:#999;
 
-font-size:10px;
+    font-size:10px;
 
-line-height:2;
+    line-height:2;
 }
 
-/* LOGOUT */
+
+/* =====================================================
+   LOGOUT
+===================================================== */
 
 .logout{
 
-width:100%;
+    width:100%;
 
-padding:14px;
+    padding:14px;
 
-margin-top:14px;
+    margin-top:14px;
 
-border-radius:13px;
+    border-radius:13px;
 
-border:1px solid rgba(255,70,90,.18);
+    border:1px solid rgba(255,70,90,.18);
 
-background:
-rgba(255,70,90,.045);
+    background:
+    rgba(255,70,90,.045);
 
-color:#ff9baa;
+    color:#ff9baa;
 
-font-size:11px;
+    font-size:11px;
 
-cursor:pointer;
+    cursor:pointer;
 }
 
-/* FOOTER */
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.empty{
+    text-align:center;
+    padding:30px;
+    color:#666;
+    font-size:10px;
+}
+
+.empty-icon{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+
+/* =====================================================
+   ADS PANEL
+===================================================== */
+
+.ads-panel{
+    margin-top:25px;
+    direction:rtl;
+}
+
+.ads-panel-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    margin-bottom:18px;
+}
+
+.ads-panel-header h2{
+    font-size:20px;
+    margin-bottom:7px;
+}
+
+.ads-panel-header p{
+    color:#777;
+    font-size:10px;
+}
+
+.ads-add-btn{
+    border:0;
+    padding:12px 17px;
+    border-radius:11px;
+    color:#fff;
+    font-weight:bold;
+    font-size:10px;
+    cursor:pointer;
+
+    background:
+    linear-gradient(
+        135deg,
+        #7c3aed,
+        #2563eb
+    );
+
+    transition:.25s;
+}
+
+.ads-add-btn:hover{
+    transform:translateY(-2px);
+}
+
+
+/* ADS STATS */
+
+.ads-stats{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:10px;
+    margin-bottom:18px;
+}
+
+.ads-stat{
+    padding:16px;
+    border-radius:15px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.06),
+        rgba(255,255,255,.018)
+    );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.ads-stat > span{
+    font-size:20px;
+}
+
+.ads-stat small{
+    display:block;
+    color:#777;
+    font-size:9px;
+    margin-bottom:6px;
+}
+
+.ads-stat strong{
+    font-size:13px;
+}
+
+
+/* ADS FILTER */
+
+.ads-filter{
+    display:flex;
+    gap:9px;
+    margin-bottom:15px;
+}
+
+.ads-filter input,
+.ads-filter select{
+
+    height:43px;
+
+    padding:0 12px;
+
+    border-radius:10px;
+
+    background:#111018;
+
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.09);
+
+    outline:none;
+
+    font-size:10px;
+}
+
+.ads-filter input{
+    flex:1;
+}
+
+.ads-filter input:focus,
+.ads-filter select:focus{
+    border-color:#7c3aed;
+}
+
+
+/* ADS TABLE */
+
+.ads-table-box{
+
+    border-radius:17px;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.055),
+        rgba(255,255,255,.018)
+    );
+
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.ads-table-title{
+
+    padding:17px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    border-bottom:
+    1px solid rgba(255,255,255,.07);
+}
+
+.ads-table-title strong{
+    font-size:13px;
+}
+
+.ads-table-title span{
+    color:#777;
+    font-size:9px;
+}
+
+.ads-table-scroll{
+    overflow-x:auto;
+}
+
+.ads-table{
+
+    width:100%;
+
+    min-width:1050px;
+
+    border-collapse:collapse;
+}
+
+.ads-table th{
+
+    background:rgba(0,0,0,.18);
+
+    color:#777;
+
+    padding:13px;
+
+    text-align:right;
+
+    font-size:9px;
+
+    font-weight:normal;
+}
+
+.ads-table td{
+
+    padding:12px;
+
+    border-top:
+    1px solid rgba(255,255,255,.055);
+
+    font-size:9px;
+}
+
+.ads-table tr:hover{
+    background:rgba(124,58,237,.04);
+}
+
+.ads-ad-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+}
+
+.ads-ad-info img{
+
+    width:55px;
+
+    height:38px;
+
+    object-fit:cover;
+
+    border-radius:7px;
+
+    background:#111;
+}
+
+.ads-ad-info strong{
+
+    display:block;
+
+    margin-bottom:4px;
+}
+
+.ads-ad-info small{
+    color:#666;
+}
+
+
+/* ADS BADGES */
+
+.ads-badge{
+
+    display:inline-block;
+
+    padding:5px 8px;
+
+    border-radius:20px;
+
+    font-size:8px;
+}
+
+.ads-active{
+
+    color:#6ee7a0;
+
+    background:
+    rgba(60,190,110,.10);
+}
+
+.ads-inactive{
+
+    color:#aaa;
+
+    background:
+    rgba(255,255,255,.05);
+}
+
+.ads-paid{
+    color:#6ee7a0;
+}
+
+.ads-pending{
+    color:#ffd400;
+}
+
+
+/* ADS ACTIONS */
+
+.ads-actions{
+
+    display:flex;
+
+    gap:5px;
+}
+
+.ads-action{
+
+    width:30px;
+
+    height:30px;
+
+    border-radius:7px;
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    background:#15151d;
+
+    color:#ddd;
+
+    cursor:pointer;
+}
+
+.ads-action:hover{
+    background:#242431;
+}
+
+.ads-delete:hover{
+    color:#ff7888;
+}
+
+
+/* ADS EMPTY */
+
+.ads-empty{
+
+    display:none;
+
+    text-align:center;
+
+    padding:55px 20px;
+
+    color:#777;
+}
+
+.ads-empty strong{
+
+    display:block;
+
+    color:#aaa;
+
+    font-size:12px;
+
+    margin:10px 0 5px;
+}
+
+.ads-empty span{
+    font-size:9px;
+}
+
+
+/* FINANCE */
+
+.ads-finance{
+    margin-top:18px;
+}
+
+.ads-finance h3{
+
+    font-size:15px;
+
+    margin-bottom:13px;
+}
+
+.ads-finance-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:10px;
+}
+
+.ads-finance-grid > div{
+
+    padding:17px;
+
+    border-radius:14px;
+
+    background:
+    rgba(255,255,255,.035);
+
+    border:
+    1px solid rgba(255,255,255,.07);
+}
+
+.ads-finance-grid small{
+
+    display:block;
+
+    color:#777;
+
+    font-size:9px;
+
+    margin-bottom:8px;
+}
+
+.ads-finance-grid strong{
+    font-size:15px;
+}
+
+
+/* ADS MODAL */
+
+.ads-modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:9999;
+
+    background:
+    rgba(0,0,0,.78);
+
+    backdrop-filter:blur(8px);
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px;
+}
+
+.ads-modal.show{
+    display:flex;
+}
+
+.ads-modal-content{
+
+    width:min(850px,100%);
+
+    max-height:92vh;
+
+    overflow-y:auto;
+
+    background:#0c0c12;
+
+    border:
+    1px solid rgba(255,255,255,.10);
+
+    border-radius:18px;
+
+    box-shadow:
+    0 25px 80px rgba(0,0,0,.55);
+}
+
+.ads-modal-header{
+
+    padding:18px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    border-bottom:
+    1px solid rgba(255,255,255,.07);
+}
+
+.ads-modal-header h3{
+
+    font-size:15px;
+
+    margin-bottom:5px;
+}
+
+.ads-modal-header small{
+
+    color:#666;
+
+    font-size:9px;
+}
+
+.ads-modal-header button{
+
+    width:32px;
+
+    height:32px;
+
+    border:0;
+
+    border-radius:8px;
+
+    background:#181820;
+
+    color:#fff;
+
+    font-size:21px;
+
+    cursor:pointer;
+}
+
+
+/* FORM */
+
+#adsForm{
+    padding:18px;
+}
+
+.ads-form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:13px;
+}
+
+.ads-form-grid > div{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:7px;
+}
+
+.ads-form-grid .ads-full{
+    grid-column:1/-1;
+}
+
+.ads-form-grid label{
+
+    color:#aaa;
+
+    font-size:9px;
+}
+
+.ads-form-grid input,
+.ads-form-grid select,
+.ads-form-grid textarea{
+
+    width:100%;
+
+    background:#08080d;
+
+    color:#fff;
+
+    border:
+    1px solid rgba(255,255,255,.09);
+
+    border-radius:8px;
+
+    padding:11px;
+
+    outline:none;
+
+    font-family:
+    Tahoma,Arial,sans-serif;
+
+    font-size:10px;
+}
+
+.ads-form-grid input:focus,
+.ads-form-grid select:focus,
+.ads-form-grid textarea:focus{
+
+    border-color:#7c3aed;
+}
+
+.ads-form-grid textarea{
+
+    min-height:80px;
+
+    resize:vertical;
+}
+
+
+/* PREVIEW */
+
+.ads-preview{
+
+    margin-top:15px;
+
+    padding:13px;
+
+    background:#08080d;
+
+    border:
+    1px solid rgba(255,255,255,.07);
+
+    border-radius:10px;
+}
+
+.ads-preview > small{
+
+    display:block;
+
+    color:#666;
+
+    font-size:9px;
+
+    margin-bottom:10px;
+}
+
+.ads-preview > div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+.ads-preview img{
+
+    width:85px;
+
+    height:50px;
+
+    object-fit:cover;
+
+    border-radius:7px;
+
+    background:#15151d;
+}
+
+.ads-preview strong{
+
+    display:block;
+
+    font-size:10px;
+
+    margin-bottom:5px;
+}
+
+.ads-preview span{
+
+    color:#666;
+
+    font-size:8px;
+}
+
+
+/* MODAL BUTTONS */
+
+.ads-modal-actions{
+
+    display:flex;
+
+    gap:8px;
+
+    margin-top:18px;
+}
+
+.ads-modal-actions button{
+
+    padding:11px 18px;
+
+    border:0;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:9px;
+
+    font-weight:bold;
+}
+
+.ads-modal-actions button:first-child{
+
+    background:#191920;
+
+    color:#aaa;
+}
+
+.ads-modal-actions button:last-child{
+
+    background:
+    linear-gradient(
+        135deg,
+        #7c3aed,
+        #2563eb
+    );
+
+    color:#fff;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer{
 
-margin-top:65px;
+    margin-top:65px;
 
-padding:35px 20px;
+    padding:35px 20px;
 
-text-align:center;
+    text-align:center;
 
-border-top:
-1px solid rgba(255,255,255,.07);
+    border-top:
+    1px solid rgba(255,255,255,.07);
 
-color:#555;
+    color:#555;
 
-font-size:10px;
+    font-size:10px;
 }
 
-/* MOBILE */
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:1000px){
+
+    .ads-stats{
+        grid-template-columns:
+        repeat(3,1fr);
+    }
+
+}
 
 @media(max-width:850px){
 
-.stats{
-grid-template-columns:repeat(2,1fr);
+    .stats{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
 }
 
-.grid{
-grid-template-columns:1fr;
-}
+@media(max-width:700px){
+
+    .ads-panel-header{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .ads-add-btn{
+        width:100%;
+    }
+
+    .ads-stats{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .ads-filter{
+        flex-direction:column;
+    }
+
+    .ads-filter input,
+    .ads-filter select{
+        width:100%;
+    }
+
+    .ads-finance-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .ads-form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .ads-form-grid .ads-full{
+        grid-column:auto;
+    }
 
 }
 
 @media(max-width:550px){
 
-.header{
-flex-direction:column;
-align-items:stretch;
+    .header{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .logo{
+        text-align:center;
+    }
+
+    .header-buttons{
+        justify-content:center;
+    }
+
+    .container{
+        margin-top:30px;
+    }
+
+    .title h1{
+        font-size:27px;
+    }
+
+    .stats{
+        gap:9px;
+    }
+
+    .stat{
+        padding:16px;
+    }
+
+    .stat-number{
+        font-size:22px;
+    }
+
+    .actions{
+        grid-template-columns:1fr;
+    }
+
+    .admin-manager{
+        flex-direction:column;
+    }
+
+    .admin-add{
+        height:46px;
+    }
+
+    .admin-user{
+        align-items:stretch;
+        flex-direction:column;
+    }
+
+    .access-select{
+        width:100%;
+    }
+
+    .remove-admin{
+        width:100%;
+    }
+
+    .card{
+        padding:18px;
+    }
+
 }
 
-.logo{
-text-align:center;
-}
+@media(max-width:450px){
 
-.header-buttons{
-justify-content:center;
-}
+    .ads-stats{
+        grid-template-columns:1fr;
+    }
 
-.container{
-margin-top:30px;
-}
-
-.title h1{
-font-size:27px;
-}
-
-.stats{
-gap:9px;
-}
-
-.stat{
-padding:16px;
-}
-
-.stat-number{
-font-size:22px;
-}
-
-.actions{
-grid-template-columns:1fr;
-}
-
-.admin-manager{
-flex-direction:column;
-}
-
-.admin-add{
-height:46px;
-}
-
-.admin-user{
-align-items:stretch;
-flex-direction:column;
-}
-
-.access-select{
-width:100%;
-}
-
-.remove-admin{
-width:100%;
-}
-
-.card{
-padding:18px;
-}
+    .ads-finance-grid{
+        grid-template-columns:1fr;
+    }
 
 }
 
-</style>  </head>  <body>  <!-- LOGIN CHECK -->  <script>
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     LOGIN CHECK
+===================================================== -->
+
+<script>
 
 if(
-sessionStorage.getItem("kian_admin_login")
-!== "true"
+    sessionStorage.getItem("kian_admin_login")
+    !== "true"
 ){
 
-window.location.replace("./login.html");
+    window.location.replace("./login.html");
 
 }
 
-</script>  <header>  <div class="header">  <div class="logo">
+</script>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="header">
+
+<div class="logo">
 Kian Music • Admin
+</div>
 
-</div>  <div class="header-buttons">  <a      
-href="./index.html"      
-class="header-button">  🏠 مشاهده سایت  </a>  <button      
-class="header-button"      
-onclick="logout()">
 
-🚪 خروج
+<div class="header-buttons">
 
-</button>  </div>  </div>  </header>  <main class="container">  <div class="title">  <h1>
+<a
+    href="./index.html"
+    class="header-button">
+
+    🏠 مشاهده سایت
+
+</a>
+
+
+<button
+    class="header-button"
+    onclick="logout()">
+
+    🚪 خروج
+
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="container">
+
+
+<div class="title">
+
+<h1>
 ⚡ پنل مدیریت
+</h1>
 
-</h1>  <p>      
-مرکز کنترل Kian Music      
-</p>  </div>  <!-- STATS -->  <div class="stats">  <div class="stat">  <div class="stat-icon">      
-🎵      
-</div>  <div class="stat-number">      
-0      
-</div>  <div class="stat-label">      
-تعداد آهنگ‌ها      
-</div>  </div>  <div class="stat">  <div class="stat-icon">      
-🎤      
-</div>  <div class="stat-number">      
-0      
-</div>  <div class="stat-label">      
-تعداد خواننده‌ها      
-</div>  </div>  <div class="stat">  <div class="stat-icon">      
-📩      
-</div>  <div class="stat-number">      
-0      
-</div>  <div class="stat-label">      
-درخواست‌های جدید      
-</div>  </div>  <div class="stat">  <div class="stat-icon">      
-👁️      
-</div>  <div      
-class="stat-number">  0  </div>  <div class="stat-label">      
-بازدید امروز      
-</div>  </div>  </div>  <div class="grid">  <!-- LEFT -->  <div>  <!-- MANAGEMENT -->  <div class="card">  <h2>      
-🛠️ مدیریت سایت      
-</h2>  <div class="actions">  <a      
-href="./index.html"      
-class="action">  <div class="action-icon">      
-🎵      
-</div>  <div>  <strong>      
-مدیریت آهنگ‌ها      
-</strong>  <span>      
-مشاهده آهنگ‌های سایت      
-</span>  </div>  </a>  <a      
-href="./artists.html"      
-class="action">  <div class="action-icon">      
-🎤      
-</div>  <div>  <strong>      
-مدیریت خواننده‌ها      
-</strong>  <span>      
-مدیریت خواننده‌ها      
-</span>  </div>  </a>  <a      
-href="./send.html"      
-class="action">  <div class="action-icon">      
-📤      
-</div>  <div>  <strong>      
-ارسال آهنگ      
-</strong>  <span>      
-فرم ارسال آثار      
-</span>  </div>  </a>  <a      
-href="./contact.html"      
-class="action">  <div class="action-icon">      
-📞      
-</div>  <div>  <strong>      
-تماس با ما      
-</strong>  <span>      
-اطلاعات تماس      
-</span>  </div>  </a>  </div>  </div>  <!-- VISITORS -->  <div class="card">  <h2>      
-👥 آمار ورود به سایت      
-</h2>  <select      
-id="visitorPeriod"      
-class="visitor-select"      
-onchange="changeVisitorPeriod()">  <option value="day">      
-🟢 امروز      
-</option>  <option value="week">      
-🔵 ۷ روز اخیر      
-</option>  <option value="month">      
-🟣 ۳۰ روز اخیر      
-</option>  <option value="year">      
-🟠 یک سال اخیر      
-</option>  </select>  <div class="visitor-result">  <div      
-class="visitor-number"      
-id="visitorNumber">  0  </div>  <div      
-class="visitor-label"      
-id="visitorLabel">  ورود در امروز  </div>  </div>  </div>  <!-- ADMIN MANAGEMENT -->  <div class="card">  <h2>      
-👑 مدیریت مدیران و سطح دسترسی      
-</h2>  <div class="admin-manager">  <input    
-id="newAdmin"    
-class="admin-input"    
-type="text"    
-placeholder="نام کاربری مدیر جدید"  >   <button      
-class="admin-add"      
-onclick="addAdmin()">
+<p>
+مرکز کنترل Kian Music
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     MAIN STATS
+===================================================== -->
+
+<div class="stats">
+
+
+<div class="stat">
+
+<div class="stat-icon">
+🎵
+</div>
+
+<div class="stat-number">
+0
+</div>
+
+<div class="stat-label">
+تعداد آهنگ‌ها
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-icon">
+🎤
+</div>
+
+<div class="stat-number">
+0
+</div>
+
+<div class="stat-label">
+تعداد خواننده‌ها
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-icon">
+📩
+</div>
+
+<div class="stat-number">
+0
+</div>
+
+<div class="stat-label">
+درخواست‌های جدید
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-icon">
+👁️
+</div>
+
+<div class="stat-number">
+0
+</div>
+
+<div class="stat-label">
+بازدید امروز
+</div>
+
+</div>
+
+</div>
+
+
+<div class="grid">
+
+
+<!-- =====================================================
+     LEFT
+===================================================== -->
+
+<div>
+
+
+<!-- MANAGEMENT -->
+
+<div class="card">
+
+<h2>
+🛠️ مدیریت سایت
+</h2>
+
+
+<div class="actions">
+
+
+<a
+    href="./index.html"
+    class="action">
+
+    <div class="action-icon">
+        🎵
+    </div>
+
+    <div>
+
+        <strong>
+            مدیریت آهنگ‌ها
+        </strong>
+
+        <span>
+            مشاهده آهنگ‌های سایت
+        </span>
+
+    </div>
+
+</a>
+
+
+<a
+    href="./artists.html"
+    class="action">
+
+    <div class="action-icon">
+        🎤
+    </div>
+
+    <div>
+
+        <strong>
+            مدیریت خواننده‌ها
+        </strong>
+
+        <span>
+            مدیریت خواننده‌ها
+        </span>
+
+    </div>
+
+</a>
+
+
+<a
+    href="./send.html"
+    class="action">
+
+    <div class="action-icon">
+        📤
+    </div>
+
+    <div>
+
+        <strong>
+            ارسال آهنگ
+        </strong>
+
+        <span>
+            فرم ارسال آثار
+        </span>
+
+    </div>
+
+</a>
+
+
+<a
+    href="./contact.html"
+    class="action">
+
+    <div class="action-icon">
+        📞
+    </div>
+
+    <div>
+
+        <strong>
+            تماس با ما
+        </strong>
+
+        <span>
+            اطلاعات تماس
+        </span>
+
+    </div>
+
+</a>
+
+
+<!-- ADS BUTTON -->
+
+<a
+    href="#adsPanel"
+    class="action"
+    onclick="openAdsPanel()">
+
+    <div class="action-icon">
+        📢
+    </div>
+
+    <div>
+
+        <strong>
+            مدیریت تبلیغات
+        </strong>
+
+        <span>
+            تبلیغات و درآمد سایت
+        </span>
+
+    </div>
+
+</a>
+
+
+</div>
+
+</div>
+
+
+<!-- VISITORS -->
+
+<div class="card">
+
+<h2>
+👥 آمار ورود به سایت
+</h2>
+
+
+<select
+    id="visitorPeriod"
+    class="visitor-select"
+    onchange="changeVisitorPeriod()">
+
+<option value="day">
+🟢 امروز
+</option>
+
+<option value="week">
+🔵 ۷ روز اخیر
+</option>
+
+<option value="month">
+🟣 ۳۰ روز اخیر
+</option>
+
+<option value="year">
+🟠 یک سال اخیر
+</option>
+
+</select>
+
+
+<div class="visitor-result">
+
+<div
+    class="visitor-number"
+    id="visitorNumber">
+
+0
+
+</div>
+
+<div
+    class="visitor-label"
+    id="visitorLabel">
+
+ورود در امروز
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ADMIN MANAGEMENT -->
+
+<div class="card">
+
+<h2>
+👑 مدیریت مدیران و سطح دسترسی
+</h2>
+
+
+<div class="admin-manager">
+
+<input
+    id="newAdmin"
+    class="admin-input"
+    type="text"
+    placeholder="نام کاربری مدیر جدید"
+>
+
+
+<button
+    class="admin-add"
+    onclick="addAdmin()">
 
 ➕ افزودن مدیر
 
-</button>  </div>  <div      
-id="adminList"      
-class="admin-list">  <!-- MAIN ADMIN -->  <div      
-class="admin-user"      
-data-username="admin">  <div class="admin-info">  <div class="admin-name">
-👑 admin
+</button>
 
-</div>  <div      
-class="admin-level"      
-id="level-admin">  مدیر اصلی • دسترسی کامل  </div>  </div>  <select      
-class="access-select"      
-disabled>  <option>      
-دسترسی کامل      
-</option>  </select>  <div class="main-admin">      
-اصلی      
-</div>  </div>  </div>  <div class="access-info">  <b style="color:#b47cff;">      
-سطح‌های دسترسی:      
-</b>  <br>  👑 <b>دسترسی کامل:</b>    
-تمام بخش‌های مدیریت  <br>  🛠️ <b>مدیر کامل:</b>  
-آهنگ‌ها، خواننده‌ها، درخواست‌ها و آمار  <br>  🎵 <b>مدیر آهنگ:</b>
+</div>
+
+
+<div
+    id="adminList"
+    class="admin-list">
+
+
+<div
+    class="admin-user"
+    data-username="admin">
+
+<div class="admin-info">
+
+<div class="admin-name">
+👑 admin
+</div>
+
+<div
+    class="admin-level"
+    id="level-admin">
+
+مدیر اصلی • دسترسی کامل
+
+</div>
+
+</div>
+
+
+<select
+    class="access-select"
+    disabled>
+
+<option>
+دسترسی کامل
+</option>
+
+</select>
+
+
+<div class="main-admin">
+اصلی
+</div>
+
+</div>
+
+</div>
+
+
+<div class="access-info">
+
+<b style="color:#b47cff;">
+سطح‌های دسترسی:
+</b>
+
+<br>
+
+👑 <b>دسترسی کامل:</b>
+تمام بخش‌های مدیریت
+
+<br>
+
+🛠️ <b>مدیر کامل:</b>
+آهنگ‌ها، خواننده‌ها، درخواست‌ها و آمار
+
+<br>
+
+🎵 <b>مدیر آهنگ:</b>
 مدیریت آهنگ‌ها و درخواست‌های ارسال
 
-<br>  📊 <b>مدیر آمار:</b>
+<br>
+
+📊 <b>مدیر آمار:</b>
 مشاهده آمار سایت
 
-<br>  👁️ <b>مشاهده‌گر:</b>
+<br>
+
+👁️ <b>مشاهده‌گر:</b>
 فقط مشاهده اطلاعات
 
-</div>  </div>  <!-- SONGS -->  <div class="card">  <h2>      
-🎵 آخرین آهنگ‌ها      
-</h2>  <div class="empty">  <div class="empty-icon">      
-🎧      
-</div>  هنوز آهنگی ثبت نشده است.  </div>  </div>  </div>  <!-- RIGHT -->  <div>  <div class="card">  <h2>      
-📊 وضعیت سایت      
-</h2>  <div class="notice">  🟢 وضعیت سایت: فعال  <br>  🔐 وضعیت پنل مدیر: فعال  <br>  👑 مدیریت مدیران: فعال
+</div>
 
-<br>  🛡️ سطح دسترسی: نمایشی
+</div>
 
-<br>  👥 آمار بازدید: در حال توسعه
 
-</div>  </div>  <div class="card">  <h2>      
-⚡ دسترسی سریع      
-</h2>  <div class="actions">  <a      
-href="./send.html"      
-class="action">  <div class="action-icon">      
-➕      
-</div>  <div>  <strong>      
-ارسال آهنگ جدید      
-</strong>  <span>      
-افزودن اثر      
-</span>  </div>  </a>  <a      
-href="./index.html"      
-class="action">  <div class="action-icon">      
-🌐      
-</div>  <div>  <strong>      
-مشاهده سایت      
-</strong>  <span>      
-صفحه اصلی      
-</span>  </div>  </a>  </div>  </div>  <button      
-class="logout"      
-onclick="logout()">  🚪 خروج از پنل مدیریت  </button>  </div>  </div>  </main>  <footer>  Kian Music Admin
+<!-- SONGS -->
 
-<br><br>
+<div class="card">
+
+<h2>
+🎵 آخرین آهنگ‌ها
+</h2>
+
+<div class="empty">
+
+<div class="empty-icon">
+🎧
+</div>
+
+هنوز آهنگی ثبت نشده است.
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     RIGHT
+===================================================== -->
+
+<div>
+
+
+<div class="card">
+
+<h2>
+📊 وضعیت سایت
+</h2>
+
+
+<div class="notice">
+
+🟢 وضعیت سایت: فعال
+
+<br>
+
+🔐 وضعیت پنل مدیر: فعال
+
+<br>
+
+👑 مدیریت مدیران: فعال
+
+<br>
+
+🛡️ سطح دسترسی: نمایشی
+
+<br>
+
+👥 آمار بازدید: در حال توسعه
+
+<br>
+
+📢 سیستم تبلیغات: فعال
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+⚡ دسترسی سریع
+</h2>
+
+
+<div class="actions">
+
+
+<a
+    href="./send.html"
+    class="action">
+
+<div class="action-icon">
+➕
+</div>
+
+<div>
+
+<strong>
+ارسال آهنگ جدید
+</strong>
+
+<span>
+افزودن اثر
+</span>
+
+</div>
+
+</a>
+
+
+<a
+    href="./index.html"
+    class="action">
+
+<div class="action-icon">
+🌐
+</div>
+
+<div>
+
+<strong>
+مشاهده سایت
+</strong>
+
+<span>
+صفحه اصلی
+</span>
+
+</div>
+
+</a>
+
+
+<a
+    href="#adsPanel"
+    class="action"
+    onclick="openAdsPanel()">
+
+<div class="action-icon">
+📢
+</div>
+
+<div>
+
+<strong>
+تبلیغات
+</strong>
+
+<span>
+مدیریت تبلیغات
+</span>
+
+</div>
+
+</a>
+
+
+</div>
+
+</div>
+
+
+<button
+    class="logout"
+    onclick="logout()">
+
+🚪 خروج از پنل مدیریت
+
+</button>
+
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     ADS MANAGEMENT
+===================================================== -->
+
+<section
+    id="adsPanel"
+    class="ads-panel">
+
+
+<div class="ads-panel-header">
+
+<div>
+
+<h2>
+📢 مدیریت تبلیغات
+</h2>
+
+<p>
+مدیریت تبلیغات، درآمد، هزینه‌ها و جایگاه‌های تبلیغاتی
+</p>
+
+</div>
+
+
+<button
+    class="ads-add-btn"
+    onclick="openAdModal()">
+
+➕ افزودن تبلیغ
+
+</button>
+
+</div>
+
+
+<!-- ADS STATS -->
+
+<div class="ads-stats">
+
+
+<div class="ads-stat">
+
+<span>📢</span>
+
+<div>
+
+<small>
+کل تبلیغات
+</small>
+
+<strong id="adsTotal">
+0
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="ads-stat">
+
+<span>🟢</span>
+
+<div>
+
+<small>
+تبلیغات فعال
+</small>
+
+<strong id="adsActive">
+0
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="ads-stat">
+
+<span>👁️</span>
+
+<div>
+
+<small>
+کل نمایش
+</small>
+
+<strong id="adsViews">
+0
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="ads-stat">
+
+<span>🖱️</span>
+
+<div>
+
+<small>
+کل کلیک
+</small>
+
+<strong id="adsClicks">
+0
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="ads-stat">
+
+<span>💰</span>
+
+<div>
+
+<small>
+درآمد کل
+</small>
+
+<strong id="adsIncome">
+0 تومان
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="ads-stat">
+
+<span>⏳</span>
+
+<div>
+
+<small>
+در انتظار پرداخت
+</small>
+
+<strong id="adsPending">
+0 تومان
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FILTER -->
+
+<div class="ads-filter">
+
+<input
+    type="text"
+    id="adsSearch"
+    placeholder="🔎 جستجوی تبلیغ یا تبلیغ‌دهنده..."
+    oninput="renderAds()"
+>
+
+
+<select
+    id="adsStatusFilter"
+    onchange="renderAds()">
+
+<option value="all">
+همه وضعیت‌ها
+</option>
+
+<option value="active">
+فعال
+</option>
+
+<option value="inactive">
+غیرفعال
+</option>
+
+</select>
+
+
+<select
+    id="adsPositionFilter"
+    onchange="renderAds()">
+
+<option value="all">
+همه جایگاه‌ها
+</option>
+
+<option value="top">
+بالای سایت
+</option>
+
+<option value="music">
+بین آهنگ‌ها
+</option>
+
+<option value="download">
+صفحه دانلود
+</option>
+
+<option value="bottom">
+پایین سایت
+</option>
+
+<option value="sidebar">
+سایدبار
+</option>
+
+</select>
+
+</div>
+
+
+<!-- ADS TABLE -->
+
+<div class="ads-table-box">
+
+
+<div class="ads-table-title">
+
+<strong>
+لیست تبلیغات
+</strong>
+
+<span id="adsCount">
+0 تبلیغ
+</span>
+
+</div>
+
+
+<div class="ads-table-scroll">
+
+<table class="ads-table">
+
+<thead>
+
+<tr>
+
+<th>تبلیغ</th>
+<th>تبلیغ‌دهنده</th>
+<th>جایگاه</th>
+<th>تاریخ</th>
+<th>مبلغ</th>
+<th>نمایش</th>
+<th>کلیک</th>
+<th>پرداخت</th>
+<th>وضعیت</th>
+<th>عملیات</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="adsTableBody">
+</tbody>
+
+</table>
+
+</div>
+
+
+<div
+    id="adsEmpty"
+    class="ads-empty">
+
+📢
+
+<strong>
+تبلیغی ثبت نشده است
+</strong>
+
+<span>
+برای شروع یک تبلیغ جدید اضافه کنید.
+</span>
+
+</div>
+
+</div>
+
+
+<!-- FINANCE -->
+
+<div class="ads-finance">
+
+<h3>
+💰 مدیریت مالی تبلیغات
+</h3>
+
+
+<div class="ads-finance-grid">
+
+
+<div>
+
+<small>
+درآمد کل
+</small>
+
+<strong id="adsFinanceTotal">
+0 تومان
+</strong>
+
+</div>
+
+
+<div>
+
+<small>
+دریافت شده
+</small>
+
+<strong id="adsFinancePaid">
+0 تومان
+</strong>
+
+</div>
+
+
+<div>
+
+<small>
+در انتظار پرداخت
+</small>
+
+<strong id="adsFinancePending">
+0 تومان
+</strong>
+
+</div>
+
+
+<div>
+
+<small>
+میانگین هر تبلیغ
+</small>
+
+<strong id="adsFinanceAverage">
+0 تومان
+</strong>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     ADS MODAL
+===================================================== -->
+
+<div
+    id="adsModal"
+    class="ads-modal">
+
+
+<div class="ads-modal-content">
+
+
+<div class="ads-modal-header">
+
+<div>
+
+<h3 id="adsModalTitle">
+➕ افزودن تبلیغ
+</h3>
+
+<small>
+اطلاعات تبلیغ را وارد کنید
+</small>
+
+</div>
+
+
+<button
+    onclick="closeAdModal()">
+
+×
+
+</button>
+
+</div>
+
+
+<form
+    id="adsForm"
+    onsubmit="saveAd(event)">
+
+
+<input
+    type="hidden"
+    id="adsEditId"
+>
+
+
+<div class="ads-form-grid">
+
+
+<div>
+
+<label>
+عنوان تبلیغ
+</label>
+
+<input
+    id="adsTitle"
+    type="text"
+    placeholder="مثلاً تبلیغ فروشگاه..."
+    required
+>
+
+</div>
+
+
+<div>
+
+<label>
+نام تبلیغ‌دهنده
+</label>
+
+<input
+    id="adsAdvertiser"
+    type="text"
+    placeholder="نام تبلیغ‌دهنده"
+    required
+>
+
+</div>
+
+
+<div>
+
+<label>
+لینک تبلیغ
+</label>
+
+<input
+    id="adsLink"
+    type="url"
+    placeholder="https://example.com"
+    required
+>
+
+</div>
+
+
+<div>
+
+<label>
+لینک تصویر تبلیغ
+</label>
+
+<input
+    id="adsImage"
+    type="url"
+    placeholder="https://example.com/banner.jpg"
+    required
+>
+
+</div>
+
+
+<div>
+
+<label>
+جایگاه
+</label>
+
+<select id="adsPosition">
+
+<option value="top">
+بالای سایت
+</option>
+
+<option value="music">
+بین آهنگ‌ها
+</option>
+
+<option value="download">
+صفحه دانلود
+</option>
+
+<option value="bottom">
+پایین سایت
+</option>
+
+<option value="sidebar">
+سایدبار
+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label>
+مبلغ تبلیغ
+</label>
+
+<input
+    id="adsPrice"
+    type="number"
+    min="0"
+    placeholder="500000"
+    required
+>
+
+</div>
+
+
+<div>
+
+<label>
+تاریخ شروع
+</label>
+
+<input
+    id="adsStart"
+    type="date"
+    required
+>
+
+</div>
+
+
+<div>
+
+<label>
+تاریخ پایان
+</label>
+
+<input
+    id="adsEnd"
+    type="date"
+    required
+>
+
+</div>
+
+
+<div>
+
+<label>
+وضعیت پرداخت
+</label>
+
+<select id="adsPayment">
+
+<option value="paid">
+✅ پرداخت شده
+</option>
+
+<option value="pending">
+⏳ در انتظار پرداخت
+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label>
+وضعیت تبلیغ
+</label>
+
+<select id="adsStatus">
+
+<option value="active">
+🟢 فعال
+</option>
+
+<option value="inactive">
+⚪ غیرفعال
+</option>
+
+</select>
+
+</div>
+
+
+<div class="ads-full">
+
+<label>
+توضیحات
+</label>
+
+<textarea
+    id="adsDescription"
+    placeholder="توضیحات تبلیغ..."
+></textarea>
+
+</div>
+
+
+</div>
+
+
+<div class="ads-preview">
+
+<small>
+پیش‌نمایش
+</small>
+
+
+<div>
+
+<img
+    id="adsPreviewImage"
+    src=""
+    alt=""
+>
+
+
+<section>
+
+<strong id="adsPreviewTitle">
+عنوان تبلیغ
+</strong>
+
+<span id="adsPreviewAdvertiser">
+تبلیغ‌دهنده
+</span>
+
+</section>
+
+</div>
+
+</div>
+
+
+<div class="ads-modal-actions">
+
+
+<button
+    type="button"
+    onclick="closeAdModal()">
+
+انصراف
+
+</button>
+
+
+<button type="submit">
+
+💾 ذخیره تبلیغ
+
+</button>
+
+
+</div>
+
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+Kian Music Admin
+
+<br>
+<br>
 
 © 2026 Kian Music
 
-</footer>  <script>    /* =========================  
-VISITOR DATA  
-========================= */  const visitorData = {
+</footer>
 
-day:0,
 
-week:0,
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
-month:0,
+<script>
 
-year:0
+
+/* =====================================================
+   VISITOR DATA
+===================================================== */
+
+const visitorData = {
+
+    day:0,
+
+    week:0,
+
+    month:0,
+
+    year:0
 
 };
+
 
 function changeVisitorPeriod(){
 
-const period =
-document
-.getElementById("visitorPeriod")
-.value;
+    const period =
+        document
+        .getElementById("visitorPeriod")
+        .value;
 
-document
-.getElementById("visitorNumber")
-.textContent =
-visitorData[period];
 
-const labels = {
+    document
+        .getElementById("visitorNumber")
+        .textContent =
+        visitorData[period];
 
-day:"ورود در امروز",
 
-week:"ورود در ۷ روز اخیر",
+    const labels = {
 
-month:"ورود در ۳۰ روز اخیر",
+        day:"ورود در امروز",
 
-year:"ورود در یک سال اخیر"
+        week:"ورود در ۷ روز اخیر",
 
-};
+        month:"ورود در ۳۰ روز اخیر",
 
-document
-.getElementById("visitorLabel")
-.textContent =
-labels[period];
+        year:"ورود در یک سال اخیر"
+
+    };
+
+
+    document
+        .getElementById("visitorLabel")
+        .textContent =
+        labels[period];
 
 }
 
-/* =========================
-ADD ADMIN
-========================= */
+
+/* =====================================================
+   ADMIN MANAGEMENT
+===================================================== */
 
 function addAdmin(){
 
-const input =
-document.getElementById(
-"newAdmin"
-);
+    const input =
+        document.getElementById("newAdmin");
 
-const username =
-input.value.trim();
 
-if(!username){
+    const username =
+        input.value.trim();
 
-alert(
-"نام کاربری مدیر را وارد کنید."
-);
 
-return;
+    if(!username){
+
+        alert(
+            "نام کاربری مدیر را وارد کنید."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        username.toLowerCase()
+        ===
+        "admin"
+    ){
+
+        alert(
+            "مدیر اصلی از قبل وجود دارد."
+        );
+
+        return;
+
+    }
+
+
+    const list =
+        document.getElementById("adminList");
+
+
+    const exists =
+        Array.from(
+            list.querySelectorAll(
+                "[data-username]"
+            )
+        )
+        .some(
+            el =>
+                el.dataset.username
+                .toLowerCase()
+                ===
+                username.toLowerCase()
+        );
+
+
+    if(exists){
+
+        alert(
+            "این مدیر قبلاً اضافه شده است."
+        );
+
+        return;
+
+    }
+
+
+    const item =
+        document.createElement("div");
+
+
+    item.className =
+        "admin-user";
+
+
+    item.dataset.username =
+        username;
+
+
+    item.innerHTML = `
+
+        <div class="admin-info">
+
+            <div class="admin-name">
+                👤 ${escapeHtml(username)}
+            </div>
+
+            <div class="admin-level">
+                مدیر سایت • دسترسی مشاهده‌گر
+            </div>
+
+        </div>
+
+
+        <select
+            class="access-select"
+            onchange="changeAccess(this)">
+
+            <option value="full">
+                👑 دسترسی کامل
+            </option>
+
+            <option value="manager">
+                🛠️ مدیر کامل
+            </option>
+
+            <option value="music">
+                🎵 مدیر آهنگ
+            </option>
+
+            <option value="stats">
+                📊 مدیر آمار
+            </option>
+
+            <option value="viewer" selected>
+                👁️ مشاهده‌گر
+            </option>
+
+        </select>
+
+
+        <button
+            class="remove-admin"
+            onclick="removeAdmin(this)">
+
+            🗑️ حذف
+
+        </button>
+
+    `;
+
+
+    list.appendChild(item);
+
+
+    input.value = "";
 
 }
 
-if(username.toLowerCase()
-=== "admin"){
-
-alert(
-"مدیر اصلی از قبل وجود دارد."
-);
-
-return;
-
-}
-
-const list =
-document.getElementById(
-"adminList"
-);
-
-const exists =
-Array.from(
-list.querySelectorAll(
-"[data-username]"
-)
-)
-.some(
-el =>
-el.dataset.username
-.toLowerCase()
-=== username.toLowerCase()
-);
-
-if(exists){
-
-alert(
-"این مدیر قبلاً اضافه شده است."
-);
-
-return;
-
-}
-
-const item =
-document.createElement(
-"div"
-);
-
-item.className =
-"admin-user";
-
-item.dataset.username =
-username;
-
-item.innerHTML = `
-
-<div class="admin-info">    <div class="admin-name">    👤 ${escapeHtml(username)}  </div>    <div class="admin-level">    مدیر سایت • دسترسی مشاهده‌گر  </div>    </div>    <select      
-class="access-select"      
-onchange="changeAccess(this)">  <option value="full">      
-👑 دسترسی کامل      
-</option>    <option value="manager">      
-🛠️ مدیر کامل      
-</option>    <option value="music">      
-🎵 مدیر آهنگ      
-</option>    <option value="stats">      
-📊 مدیر آمار      
-</option>    <option value="viewer" selected>      
-👁️ مشاهده‌گر      
-</option>    </select>    <button      
-class="remove-admin"      
-onclick="removeAdmin(this)">  🗑️ حذف
-
-</button>    `;
-
-list.appendChild(item);
-
-input.value = "";
-
-}
-
-/* =========================
-CHANGE ACCESS
-========================= */
 
 function changeAccess(select){
 
-const user =
-select.closest(
-".admin-user"
-);
+    const user =
+        select.closest(
+            ".admin-user"
+        );
 
-const level =
-user.querySelector(
-".admin-level"
-);
 
-const values = {
+    const level =
+        user.querySelector(
+            ".admin-level"
+        );
 
-full:
-"مدیر سایت • دسترسی کامل",
 
-manager:
-"مدیر سایت • مدیر کامل",
+    const values = {
 
-music:
-"مدیر سایت • مدیریت آهنگ",
+        full:
+        "مدیر سایت • دسترسی کامل",
 
-stats:
-"مدیر سایت • مدیریت آمار",
+        manager:
+        "مدیر سایت • مدیر کامل",
 
-viewer:
-"مدیر سایت • دسترسی مشاهده"
+        music:
+        "مدیر سایت • مدیریت آهنگ",
 
-};
+        stats:
+        "مدیر سایت • مدیریت آمار",
 
-level.textContent =
-values[select.value];
+        viewer:
+        "مدیر سایت • دسترسی مشاهده"
+
+    };
+
+
+    level.textContent =
+        values[select.value];
 
 }
 
-/* =========================
-REMOVE ADMIN
-========================= */
 
 function removeAdmin(button){
 
-const user =
-button.closest(
-".admin-user"
-);
+    const user =
+        button.closest(
+            ".admin-user"
+        );
 
-const username =
-user.dataset.username;
 
-if(
-confirm(
-"آیا دسترسی مدیر «"
-+
-username
-+
-"» حذف شود؟"
-)
-){
+    const username =
+        user.dataset.username;
 
-user.remove();
+
+    if(
+        confirm(
+            "آیا دسترسی مدیر «"
+            +
+            username
+            +
+            "» حذف شود؟"
+        )
+    ){
+
+        user.remove();
+
+    }
 
 }
 
-}
-
-/* =========================
-ESCAPE HTML
-========================= */
 
 function escapeHtml(text){
 
-const div =
-document.createElement(
-"div"
-);
+    const div =
+        document.createElement(
+            "div"
+        );
 
-div.textContent =
-text;
 
-return div.innerHTML;
+    div.textContent =
+        text;
+
+
+    return div.innerHTML;
 
 }
 
-/* =========================
-LOGOUT
-========================= */
+
+/* =====================================================
+   LOGOUT
+===================================================== */
 
 function logout(){
 
-sessionStorage.removeItem(
-"kian_admin_login"
-);
+    sessionStorage.removeItem(
+        "kian_admin_login"
+    );
 
-window.location.replace(
-"./login.html"
-);
+
+    window.location.replace(
+        "./login.html"
+    );
 
 }
 
-/* INITIAL */
+
+/* =====================================================
+   ADS DATA
+===================================================== */
+
+let kianAds =
+    JSON.parse(
+        localStorage.getItem(
+            "kian_music_ads"
+        )
+        ||
+        "[]"
+    );
+
+
+/* =====================================================
+   OPEN ADS PANEL
+===================================================== */
+
+function openAdsPanel(){
+
+    setTimeout(
+        function(){
+
+            document
+                .getElementById("adsPanel")
+                .scrollIntoView({
+
+                    behavior:"smooth",
+
+                    block:"start"
+
+                });
+
+        },
+        100
+    );
+
+}
+
+
+/* =====================================================
+   MONEY
+===================================================== */
+
+function adsMoney(number){
+
+    return Number(number || 0)
+        .toLocaleString("fa-IR")
+        +
+        " تومان";
+
+}
+
+
+/* =====================================================
+   POSITION NAME
+===================================================== */
+
+function adsPositionName(position){
+
+    const names = {
+
+        top:"بالای سایت",
+
+        music:"بین آهنگ‌ها",
+
+        download:"صفحه دانلود",
+
+        bottom:"پایین سایت",
+
+        sidebar:"سایدبار"
+
+    };
+
+
+    return (
+        names[position]
+        ||
+        "-"
+    );
+
+}
+
+
+/* =====================================================
+   RENDER ADS
+===================================================== */
+
+function renderAds(){
+
+    const tbody =
+        document.getElementById(
+            "adsTableBody"
+        );
+
+
+    if(!tbody){
+        return;
+    }
+
+
+    const search =
+        document
+        .getElementById("adsSearch")
+        .value
+        .trim()
+        .toLowerCase();
+
+
+    const status =
+        document
+        .getElementById("adsStatusFilter")
+        .value;
+
+
+    const position =
+        document
+        .getElementById("adsPositionFilter")
+        .value;
+
+
+    const filtered =
+        kianAds.filter(
+            function(ad){
+
+                const title =
+                    String(
+                        ad.title || ""
+                    )
+                    .toLowerCase();
+
+
+                const advertiser =
+                    String(
+                        ad.advertiser || ""
+                    )
+                    .toLowerCase();
+
+
+                const searchMatch =
+                    !search
+                    ||
+                    title.includes(search)
+                    ||
+                    advertiser.includes(search);
+
+
+                const statusMatch =
+                    status === "all"
+                    ||
+                    ad.status === status;
+
+
+                const positionMatch =
+                    position === "all"
+                    ||
+                    ad.position === position;
+
+
+                return(
+                    searchMatch
+                    &&
+                    statusMatch
+                    &&
+                    positionMatch
+                );
+
+            }
+        );
+
+
+    tbody.innerHTML = "";
+
+
+    filtered.forEach(
+        function(ad){
+
+            const row =
+                document.createElement(
+                    "tr"
+                );
+
+
+            const payment =
+                ad.payment === "paid"
+
+                ?
+
+                `<span class="ads-paid">
+                    پرداخت شده
+                </span>`
+
+                :
+
+                `<span class="ads-pending">
+                    در انتظار
+                </span>`;
+
+
+            const statusHTML =
+                ad.status === "active"
+
+                ?
+
+                `<span class="ads-badge ads-active">
+                    فعال
+                </span>`
+
+                :
+
+                `<span class="ads-badge ads-inactive">
+                    غیرفعال
+                </span>`;
+
+
+            row.innerHTML = `
+
+                <td>
+
+                    <div class="ads-ad-info">
+
+                        <img
+                            src="${adsSafe(ad.image)}"
+                            onerror="this.style.opacity='.25'"
+                        >
+
+                        <div>
+
+                            <strong>
+                                ${adsSafe(ad.title)}
+                            </strong>
+
+                            <small>
+                                تبلیغ
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </td>
+
+
+                <td>
+                    ${adsSafe(ad.advertiser)}
+                </td>
+
+
+                <td>
+                    ${adsPositionName(ad.position)}
+                </td>
+
+
+                <td>
+
+                    ${adsSafe(ad.start)}
+
+                    <br>
+
+                    <small style="color:#555">
+                        تا ${adsSafe(ad.end)}
+                    </small>
+
+                </td>
+
+
+                <td>
+                    ${adsMoney(ad.price)}
+                </td>
+
+
+                <td>
+                    ${Number(ad.views || 0)
+                        .toLocaleString("fa-IR")}
+                </td>
+
+
+                <td>
+                    ${Number(ad.clicks || 0)
+                        .toLocaleString("fa-IR")}
+                </td>
+
+
+                <td>
+                    ${payment}
+                </td>
+
+
+                <td>
+                    ${statusHTML}
+                </td>
+
+
+                <td>
+
+                    <div class="ads-actions">
+
+                        <button
+                            class="ads-action"
+                            onclick="editAd(${ad.id})"
+                            title="ویرایش">
+
+                            ✏️
+
+                        </button>
+
+
+                        <button
+                            class="ads-action"
+                            onclick="toggleAd(${ad.id})"
+                            title="فعال/غیرفعال">
+
+                            ${
+                                ad.status === "active"
+                                ? "⏸️"
+                                : "▶️"
+                            }
+
+                        </button>
+
+
+                        <button
+                            class="ads-action ads-delete"
+                            onclick="deleteAd(${ad.id})"
+                            title="حذف">
+
+                            🗑️
+
+                        </button>
+
+                    </div>
+
+                </td>
+
+            `;
+
+
+            tbody.appendChild(row);
+
+        }
+    );
+
+
+    document
+        .getElementById("adsCount")
+        .textContent =
+        filtered.length
+        .toLocaleString("fa-IR")
+        +
+        " تبلیغ";
+
+
+    document
+        .getElementById("adsEmpty")
+        .style.display =
+        filtered.length
+        ? "none"
+        : "block";
+
+
+    updateAdsStats();
+
+}
+
+
+/* =====================================================
+   ADS STATS
+===================================================== */
+
+function updateAdsStats(){
+
+    const total =
+        kianAds.length;
+
+
+    const active =
+        kianAds.filter(
+            ad =>
+                ad.status === "active"
+        )
+        .length;
+
+
+    const views =
+        kianAds.reduce(
+            function(sum,ad){
+
+                return(
+                    sum
+                    +
+                    Number(
+                        ad.views || 0
+                    )
+                );
+
+            },
+            0
+        );
+
+
+    const clicks =
+        kianAds.reduce(
+            function(sum,ad){
+
+                return(
+                    sum
+                    +
+                    Number(
+                        ad.clicks || 0
+                    )
+                );
+
+            },
+            0
+        );
+
+
+    const income =
+        kianAds.reduce(
+            function(sum,ad){
+
+                return(
+                    sum
+                    +
+                    Number(
+                        ad.price || 0
+                    )
+                );
+
+            },
+            0
+        );
+
+
+    const paid =
+        kianAds
+        .filter(
+            ad =>
+                ad.payment === "paid"
+        )
+        .reduce(
+            function(sum,ad){
+
+                return(
+                    sum
+                    +
+                    Number(
+                        ad.price || 0
+                    )
+                );
+
+            },
+            0
+        );
+
+
+    const pending =
+        kianAds
+        .filter(
+            ad =>
+                ad.payment === "pending"
+        )
+        .reduce(
+            function(sum,ad){
+
+                return(
+                    sum
+                    +
+                    Number(
+                        ad.price || 0
+                    )
+                );
+
+            },
+            0
+        );
+
+
+    const average =
+        total
+        ?
+        income / total
+        :
+        0;
+
+
+    document.getElementById(
+        "adsTotal"
+    )
+    .textContent =
+        total.toLocaleString("fa-IR");
+
+
+    document.getElementById(
+        "adsActive"
+    )
+    .textContent =
+        active.toLocaleString("fa-IR");
+
+
+    document.getElementById(
+        "adsViews"
+    )
+    .textContent =
+        views.toLocaleString("fa-IR");
+
+
+    document.getElementById(
+        "adsClicks"
+    )
+    .textContent =
+        clicks.toLocaleString("fa-IR");
+
+
+    document.getElementById(
+        "adsIncome"
+    )
+    .textContent =
+        adsMoney(income);
+
+
+    document.getElementById(
+        "adsPending"
+    )
+    .textContent =
+        adsMoney(pending);
+
+
+    document.getElementById(
+        "adsFinanceTotal"
+    )
+    .textContent =
+        adsMoney(income);
+
+
+    document.getElementById(
+        "adsFinancePaid"
+    )
+    .textContent =
+        adsMoney(paid);
+
+
+    document.getElementById(
+        "adsFinancePending"
+    )
+    .textContent =
+        adsMoney(pending);
+
+
+    document.getElementById(
+        "adsFinanceAverage"
+    )
+    .textContent =
+        adsMoney(average);
+
+}
+
+
+/* =====================================================
+   OPEN MODAL
+===================================================== */
+
+function openAdModal(){
+
+    document
+        .getElementById("adsModal")
+        .classList.add("show");
+
+
+    document
+        .getElementById("adsForm")
+        .reset();
+
+
+    document
+        .getElementById("adsEditId")
+        .value = "";
+
+
+    document
+        .getElementById("adsModalTitle")
+        .textContent =
+        "➕ افزودن تبلیغ";
+
+
+    updateAdsPreview();
+
+}
+
+
+/* =====================================================
+   CLOSE MODAL
+===================================================== */
+
+function closeAdModal(){
+
+    document
+        .getElementById("adsModal")
+        .classList.remove("show");
+
+}
+
+
+/* =====================================================
+   SAVE AD
+===================================================== */
+
+function saveAd(event){
+
+    event.preventDefault();
+
+
+    const editId =
+        document
+        .getElementById("adsEditId")
+        .value;
+
+
+    const data = {
+
+        title:
+            document
+            .getElementById("adsTitle")
+            .value
+            .trim(),
+
+        advertiser:
+            document
+            .getElementById("adsAdvertiser")
+            .value
+            .trim(),
+
+        link:
+            document
+            .getElementById("adsLink")
+            .value
+            .trim(),
+
+        image:
+            document
+            .getElementById("adsImage")
+            .value
+            .trim(),
+
+        position:
+            document
+            .getElementById("adsPosition")
+            .value,
+
+        price:
+            Number(
+                document
+                .getElementById("adsPrice")
+                .value
+            ),
+
+        start:
+            document
+            .getElementById("adsStart")
+            .value,
+
+        end:
+            document
+            .getElementById("adsEnd")
+            .value,
+
+        payment:
+            document
+            .getElementById("adsPayment")
+            .value,
+
+        status:
+            document
+            .getElementById("adsStatus")
+            .value,
+
+        description:
+            document
+            .getElementById("adsDescription")
+            .value
+            .trim()
+
+    };
+
+
+    if(editId){
+
+        const index =
+            kianAds.findIndex(
+                ad =>
+                    ad.id == editId
+            );
+
+
+        if(index !== -1){
+
+            kianAds[index] = {
+
+                ...kianAds[index],
+
+                ...data
+
+            };
+
+        }
+
+    }
+    else{
+
+        kianAds.push({
+
+            id:
+                Date.now(),
+
+            ...data,
+
+            views:0,
+
+            clicks:0
+
+        });
+
+    }
+
+
+    saveAds();
+
+
+    closeAdModal();
+
+
+    renderAds();
+
+
+    alert(
+
+        editId
+
+        ?
+
+        "تبلیغ با موفقیت ویرایش شد."
+
+        :
+
+        "تبلیغ با موفقیت اضافه شد."
+
+    );
+
+}
+
+
+/* =====================================================
+   SAVE ADS STORAGE
+===================================================== */
+
+function saveAds(){
+
+    localStorage.setItem(
+
+        "kian_music_ads",
+
+        JSON.stringify(kianAds)
+
+    );
+
+}
+
+
+/* =====================================================
+   EDIT AD
+===================================================== */
+
+function editAd(id){
+
+    const ad =
+        kianAds.find(
+            item =>
+                item.id === id
+        );
+
+
+    if(!ad){
+        return;
+    }
+
+
+    document.getElementById(
+        "adsEditId"
+    )
+    .value =
+        ad.id;
+
+
+    document.getElementById(
+        "adsTitle"
+    )
+    .value =
+        ad.title;
+
+
+    document.getElementById(
+        "adsAdvertiser"
+    )
+    .value =
+        ad.advertiser;
+
+
+    document.getElementById(
+        "adsLink"
+    )
+    .value =
+        ad.link;
+
+
+    document.getElementById(
+        "adsImage"
+    )
+    .value =
+        ad.image;
+
+
+    document.getElementById(
+        "adsPosition"
+    )
+    .value =
+        ad.position;
+
+
+    document.getElementById(
+        "adsPrice"
+    )
+    .value =
+        ad.price;
+
+
+    document.getElementById(
+        "adsStart"
+    )
+    .value =
+        ad.start;
+
+
+    document.getElementById(
+        "adsEnd"
+    )
+    .value =
+        ad.end;
+
+
+    document.getElementById(
+        "adsPayment"
+    )
+    .value =
+        ad.payment;
+
+
+    document.getElementById(
+        "adsStatus"
+    )
+    .value =
+        ad.status;
+
+
+    document.getElementById(
+        "adsDescription"
+    )
+    .value =
+        ad.description || "";
+
+
+    document.getElementById(
+        "adsModalTitle"
+    )
+    .textContent =
+        "✏️ ویرایش تبلیغ";
+
+
+    updateAdsPreview();
+
+
+    document
+        .getElementById("adsModal")
+        .classList.add("show");
+
+}
+
+
+/* =====================================================
+   TOGGLE AD
+===================================================== */
+
+function toggleAd(id){
+
+    const ad =
+        kianAds.find(
+            item =>
+                item.id === id
+        );
+
+
+    if(!ad){
+        return;
+    }
+
+
+    ad.status =
+        ad.status === "active"
+        ?
+        "inactive"
+        :
+        "active";
+
+
+    saveAds();
+
+
+    renderAds();
+
+}
+
+
+/* =====================================================
+   DELETE AD
+===================================================== */
+
+function deleteAd(id){
+
+    const ad =
+        kianAds.find(
+            item =>
+                item.id === id
+        );
+
+
+    if(!ad){
+        return;
+    }
+
+
+    if(
+        !confirm(
+            "آیا تبلیغ «"
+            +
+            ad.title
+            +
+            "» حذف شود؟"
+        )
+    ){
+
+        return;
+
+    }
+
+
+    kianAds =
+        kianAds.filter(
+            item =>
+                item.id !== id
+        );
+
+
+    saveAds();
+
+
+    renderAds();
+
+}
+
+
+/* =====================================================
+   PREVIEW
+===================================================== */
+
+function updateAdsPreview(){
+
+    const image =
+        document
+        .getElementById("adsImage")
+        .value;
+
+
+    const title =
+        document
+        .getElementById("adsTitle")
+        .value;
+
+
+    const advertiser =
+        document
+        .getElementById("adsAdvertiser")
+        .value;
+
+
+    document
+        .getElementById("adsPreviewImage")
+        .src =
+        image;
+
+
+    document
+        .getElementById("adsPreviewTitle")
+        .textContent =
+        title
+        ||
+        "عنوان تبلیغ";
+
+
+    document
+        .getElementById("adsPreviewAdvertiser")
+        .textContent =
+        advertiser
+        ||
+        "تبلیغ‌دهنده";
+
+}
+
+
+document
+    .getElementById("adsImage")
+    .addEventListener(
+        "input",
+        updateAdsPreview
+    );
+
+
+document
+    .getElementById("adsTitle")
+    .addEventListener(
+        "input",
+        updateAdsPreview
+    );
+
+
+document
+    .getElementById("adsAdvertiser")
+    .addEventListener(
+        "input",
+        updateAdsPreview
+    );
+
+
+/* =====================================================
+   CLOSE MODAL BY OUTSIDE CLICK
+===================================================== */
+
+document
+    .getElementById("adsModal")
+    .addEventListener(
+        "click",
+        function(event){
+
+            if(
+                event.target === this
+            ){
+
+                closeAdModal();
+
+            }
+
+        }
+    );
+
+
+/* =====================================================
+   INITIAL
+===================================================== */
 
 changeVisitorPeriod();
 
-</script>  </body>  </html>
+renderAds();
+
+</script>
+
+</body>
+
+</html>
