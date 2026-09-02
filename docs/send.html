@@ -659,6 +659,149 @@ line-height:1.9;
 
 
 /* =========================
+   DISABLED SECTION
+========================= */
+
+.disabled-section{
+
+display:none;
+
+min-height:430px;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+padding:30px 20px;
+}
+
+.disabled-box{
+
+width:100%;
+
+max-width:650px;
+
+padding:55px 30px;
+
+border-radius:28px;
+
+background:
+
+linear-gradient(
+145deg,
+rgba(255,255,255,.075),
+rgba(255,255,255,.018)
+);
+
+border:1px solid rgba(180,124,255,.20);
+
+box-shadow:
+
+0 25px 80px rgba(0,0,0,.45),
+
+0 0 50px rgba(124,58,237,.10);
+
+position:relative;
+
+overflow:hidden;
+}
+
+.disabled-box::before{
+
+content:"";
+
+position:absolute;
+
+width:220px;
+
+height:220px;
+
+background:#7c3aed;
+
+filter:blur(100px);
+
+opacity:.13;
+
+top:-120px;
+
+right:-100px;
+
+pointer-events:none;
+}
+
+.disabled-icon{
+
+width:80px;
+
+height:80px;
+
+margin:0 auto 22px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:34px;
+
+border-radius:23px;
+
+background:
+
+linear-gradient(
+135deg,
+rgba(124,58,237,.20),
+rgba(0,229,255,.07)
+);
+
+border:1px solid rgba(180,124,255,.25);
+
+box-shadow:
+
+0 0 35px rgba(124,58,237,.15);
+}
+
+.disabled-box h1{
+
+position:relative;
+
+font-size:28px;
+
+font-weight:900;
+
+margin-bottom:14px;
+
+background:
+
+linear-gradient(
+90deg,
+#ffffff,
+#b47cff,
+#00e5ff
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+}
+
+.disabled-box p{
+
+position:relative;
+
+color:#888;
+
+font-size:12px;
+
+line-height:2.2;
+
+}
+
+
+/* =========================
    FOOTER
 ========================= */
 
@@ -749,6 +892,16 @@ padding:20px;
 grid-template-columns:1fr;
 }
 
+.disabled-box{
+
+padding:45px 20px;
+}
+
+.disabled-box h1{
+
+font-size:23px;
+}
+
 }
 
 @media(max-width:400px){
@@ -831,7 +984,7 @@ class="active">
      CONTENT
 ========================= -->
 
-<main class="container">
+<main class="container" id="pageContent">
 
 
 <div class="title">
@@ -982,6 +1135,33 @@ rel="noopener noreferrer">
 </main>
 
 
+<!-- =========================
+     DISABLED MESSAGE
+========================= -->
+
+<div class="disabled-section" id="disabledSection">
+
+<div class="disabled-box">
+
+<div class="disabled-icon">
+🚫
+</div>
+
+<h1>
+این قسمت در حال حاضر غیرفعال است
+</h1>
+
+<p>
+این بخش به صورت موقت توسط مدیریت سایت غیرفعال شده است.
+<br>
+لطفاً بعداً دوباره مراجعه کنید.
+</p>
+
+</div>
+
+</div>
+
+
 
 <!-- FOOTER -->
 
@@ -1000,6 +1180,72 @@ Kian Music
 © 2026 Kian Music • تمام حقوق محفوظ است.
 
 </footer>
+
+
+<script>
+
+/* =========================
+   CHECK SEND SECTION STATUS
+========================= */
+
+function checkSendSectionStatus(){
+
+    const pageContent =
+        document.getElementById("pageContent");
+
+    const disabledSection =
+        document.getElementById("disabledSection");
+
+    let sections = {};
+
+    try{
+
+        const saved =
+            localStorage.getItem(
+                "kian_music_site_sections"
+            );
+
+        if(saved){
+            sections = JSON.parse(saved);
+        }
+
+    }catch(error){
+
+        console.log(
+            "خطا در خواندن وضعیت بخش ارسال آهنگ:",
+            error
+        );
+
+    }
+
+
+    /*
+       اگر بخش ارسال آهنگ
+       در پنل مدیریت غیرفعال شده باشد
+    */
+
+    if(sections.send === false){
+
+        pageContent.style.display = "none";
+
+        disabledSection.style.display = "flex";
+
+    }else{
+
+        pageContent.style.display = "block";
+
+        disabledSection.style.display = "none";
+
+    }
+
+}
+
+
+/* اجرای بررسی هنگام باز شدن صفحه */
+
+checkSendSectionStatus();
+
+</script>
 
 
 </body>
