@@ -32,9 +32,16 @@ body{
     overflow-x:hidden;
 }
 
+button,
+input,
+select,
+textarea{
+    font-family:inherit;
+}
+
 
 /* =====================================================
-   NEON BACKGROUND
+   BACKGROUND
 ===================================================== */
 
 body::before{
@@ -67,16 +74,14 @@ body::after{
 
 
 /* =====================================================
-   TOP HEADER
+   HEADER
 ===================================================== */
 
 .admin-header{
     position:sticky;
     top:0;
     z-index:9999;
-
     width:100%;
-
     padding:16px 25px;
 
     background:rgba(5,5,9,.84);
@@ -106,18 +111,19 @@ body::after{
     font-weight:900;
 
     background:
-    linear-gradient(
-        90deg,
-        #fff,
-        #b47cff,
-        #00e5ff
-    );
+        linear-gradient(
+            90deg,
+            #fff,
+            #b47cff,
+            #00e5ff
+        );
 
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 
-    filter:
-        drop-shadow(0 0 12px rgba(124,58,237,.20));
+    filter:drop-shadow(
+        0 0 12px rgba(124,58,237,.20)
+    );
 }
 
 .header-right{
@@ -128,14 +134,12 @@ body::after{
 
 .admin-status{
     padding:9px 13px;
-
     border-radius:12px;
 
     font-size:10px;
     color:#aaa;
 
-    background:
-        rgba(255,255,255,.045);
+    background:rgba(255,255,255,.045);
 
     border:1px solid
         rgba(180,124,255,.15);
@@ -192,7 +196,7 @@ body::after{
 
 
 /* =====================================================
-   PAGE TITLE
+   TITLE
 ===================================================== */
 
 .page-title{
@@ -201,9 +205,7 @@ body::after{
 }
 
 .page-title .badge{
-
     display:inline-flex;
-
     align-items:center;
     gap:8px;
 
@@ -212,11 +214,9 @@ body::after{
     border-radius:50px;
 
     font-size:10px;
-
     color:#aaa;
 
-    background:
-        rgba(255,255,255,.045);
+    background:rgba(255,255,255,.045);
 
     border:1px solid
         rgba(180,124,255,.16);
@@ -229,7 +229,6 @@ body::after{
 }
 
 .page-title h1{
-
     font-size:38px;
     font-weight:900;
 
@@ -255,28 +254,17 @@ body::after{
 
 
 /* =====================================================
-   DASHBOARD GRID
+   DASHBOARD
 ===================================================== */
 
 .dashboard-grid{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
+    grid-template-columns:repeat(4,1fr);
     gap:15px;
-
     margin-bottom:35px;
 }
 
-
-/* =====================================================
-   STAT CARD
-===================================================== */
-
 .stat-card{
-
     position:relative;
 
     padding:22px;
@@ -294,8 +282,7 @@ body::after{
         rgba(180,124,255,.14);
 
     box-shadow:
-        0 20px 55px
-        rgba(0,0,0,.28);
+        0 20px 55px rgba(0,0,0,.28);
 
     overflow:hidden;
 
@@ -303,7 +290,6 @@ body::after{
 }
 
 .stat-card::before{
-
     content:"";
 
     position:absolute;
@@ -322,7 +308,6 @@ body::after{
 }
 
 .stat-card:hover{
-
     transform:translateY(-5px);
 
     border-color:
@@ -334,7 +319,6 @@ body::after{
 }
 
 .stat-icon{
-
     width:45px;
     height:45px;
 
@@ -360,15 +344,12 @@ body::after{
 }
 
 .stat-card h3{
-
     font-size:10px;
     color:#777;
-
     margin-bottom:8px;
 }
 
 .stat-number{
-
     font-size:25px;
     font-weight:900;
 
@@ -393,35 +374,29 @@ body::after{
 }
 
 .section-title{
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 
     margin-bottom:15px;
 }
 
 .section-title h2{
-
     font-size:17px;
     font-weight:900;
 }
 
 .section-title span{
-
     color:#666;
     font-size:9px;
 }
 
 
 /* =====================================================
-   GLASS CARD
+   CARD
 ===================================================== */
 
 .card{
-
     position:relative;
 
     padding:23px;
@@ -439,14 +414,12 @@ body::after{
         rgba(180,124,255,.14);
 
     box-shadow:
-        0 20px 65px
-        rgba(0,0,0,.32);
+        0 20px 65px rgba(0,0,0,.32);
 
     overflow:hidden;
 }
 
 .card::before{
-
     content:"";
 
     position:absolute;
@@ -472,23 +445,16 @@ body::after{
 ===================================================== */
 
 .actions-grid{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
+    grid-template-columns:repeat(3,1fr);
     gap:12px;
 }
 
 .action-btn{
-
     position:relative;
 
     display:flex;
-
     align-items:center;
-
     gap:12px;
 
     padding:16px;
@@ -515,7 +481,6 @@ body::after{
 }
 
 .action-btn:hover{
-
     color:#fff;
 
     transform:translateY(-4px);
@@ -536,7 +501,6 @@ body::after{
 }
 
 .action-icon{
-
     width:42px;
     height:42px;
 
@@ -562,44 +526,31 @@ body::after{
 }
 
 .action-text strong{
-
     display:block;
-
     font-size:11px;
-
     margin-bottom:5px;
 }
 
 .action-text span{
-
     display:block;
-
     color:#666;
-
     font-size:9px;
 }
 
 
 /* =====================================================
-   SITE SECTIONS
+   CONTROLS
 ===================================================== */
 
 .section-controls{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
+    grid-template-columns:repeat(2,1fr);
     gap:12px;
 }
 
 .control-row{
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 
     padding:16px;
@@ -616,20 +567,17 @@ body::after{
 }
 
 .control-row:hover{
-
     border-color:
         rgba(180,124,255,.25);
 }
 
 .control-info{
-
     display:flex;
     align-items:center;
     gap:10px;
 }
 
 .control-icon{
-
     width:38px;
     height:38px;
 
@@ -647,13 +595,11 @@ body::after{
 }
 
 .control-info strong{
-
     display:block;
     font-size:11px;
 }
 
 .control-info span{
-
     display:block;
 
     margin-top:4px;
@@ -668,7 +614,6 @@ body::after{
 ===================================================== */
 
 .switch{
-
     position:relative;
 
     width:48px;
@@ -682,9 +627,7 @@ body::after{
 }
 
 .slider{
-
     position:absolute;
-
     inset:0;
 
     cursor:pointer;
@@ -700,7 +643,6 @@ body::after{
 }
 
 .slider::before{
-
     content:"";
 
     position:absolute;
@@ -719,7 +661,6 @@ body::after{
 }
 
 .switch input:checked + .slider{
-
     background:
         linear-gradient(
             135deg,
@@ -733,9 +674,7 @@ body::after{
 }
 
 .switch input:checked + .slider::before{
-
     transform:translateX(23px);
-
     background:#fff;
 }
 
@@ -745,12 +684,8 @@ body::after{
 ===================================================== */
 
 .form-grid{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
+    grid-template-columns:repeat(2,1fr);
     gap:15px;
 }
 
@@ -763,7 +698,6 @@ body::after{
 }
 
 .form-group label{
-
     display:block;
 
     color:#999;
@@ -774,7 +708,6 @@ body::after{
 }
 
 .form-control{
-
     width:100%;
 
     padding:12px 14px;
@@ -797,7 +730,6 @@ body::after{
 }
 
 .form-control:focus{
-
     border-color:
         rgba(180,124,255,.45);
 
@@ -809,6 +741,10 @@ body::after{
         rgba(255,255,255,.05);
 }
 
+.form-control::placeholder{
+    color:#555;
+}
+
 textarea.form-control{
     min-height:100px;
     resize:vertical;
@@ -818,13 +754,17 @@ select.form-control{
     cursor:pointer;
 }
 
+option{
+    background:#101018;
+    color:#fff;
+}
+
 
 /* =====================================================
    BUTTONS
 ===================================================== */
 
 .btn{
-
     display:inline-flex;
 
     align-items:center;
@@ -849,7 +789,6 @@ select.form-control{
 }
 
 .btn-primary{
-
     background:
         linear-gradient(
             135deg,
@@ -864,7 +803,6 @@ select.form-control{
 }
 
 .btn-primary:hover{
-
     transform:translateY(-3px);
 
     filter:brightness(1.12);
@@ -875,7 +813,6 @@ select.form-control{
 }
 
 .btn-secondary{
-
     background:
         rgba(255,255,255,.045);
 
@@ -886,7 +823,6 @@ select.form-control{
 }
 
 .btn-secondary:hover{
-
     color:#fff;
 
     transform:translateY(-3px);
@@ -896,7 +832,6 @@ select.form-control{
 }
 
 .btn-danger{
-
     background:
         rgba(220,38,38,.10);
 
@@ -907,12 +842,26 @@ select.form-control{
 }
 
 .btn-danger:hover{
-
     background:
         rgba(220,38,38,.20);
 
     border-color:
         rgba(248,113,113,.40);
+}
+
+.btn-success{
+    background:
+        rgba(34,197,94,.10);
+
+    border:1px solid
+        rgba(74,222,128,.20);
+
+    color:#86efac;
+}
+
+.btn-small{
+    padding:8px 11px;
+    font-size:9px;
 }
 
 
@@ -921,12 +870,3729 @@ select.form-control{
 ===================================================== */
 
 .table-wrapper{
-
     width:100%;
-
     overflow-x:auto;
 }
 
 table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:700px;
+}
 
-    width:
+thead{
+    background:
+        rgba(124,58,237,.08);
+}
+
+th{
+    padding:13px 12px;
+
+    text-align:right;
+
+    color:#888;
+
+    font-size:9px;
+
+    font-weight:bold;
+
+    border-bottom:1px solid
+        rgba(255,255,255,.07);
+}
+
+td{
+    padding:14px 12px;
+
+    color:#ccc;
+
+    font-size:10px;
+
+    border-bottom:1px solid
+        rgba(255,255,255,.045);
+}
+
+tbody tr{
+    transition:.25s;
+}
+
+tbody tr:hover{
+    background:
+        rgba(124,58,237,.035);
+}
+
+.empty{
+    text-align:center;
+    color:#555;
+    padding:30px !important;
+}
+
+
+/* =====================================================
+   BADGES
+===================================================== */
+
+.badge-status{
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:5px 9px;
+
+    border-radius:30px;
+
+    font-size:8px;
+}
+
+.badge-active{
+    color:#86efac;
+    background:rgba(34,197,94,.09);
+    border:1px solid rgba(74,222,128,.15);
+}
+
+.badge-off{
+    color:#fca5a5;
+    background:rgba(220,38,38,.08);
+    border:1px solid rgba(248,113,113,.15);
+}
+
+.badge-admin{
+    color:#c4b5fd;
+    background:rgba(124,58,237,.10);
+    border:1px solid rgba(167,139,250,.18);
+}
+
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.form-actions{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    margin-top:18px;
+
+    flex-wrap:wrap;
+}
+
+.row-actions{
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap;
+}
+
+
+/* =====================================================
+   IMAGE PREVIEW
+===================================================== */
+
+.image-preview{
+    margin-top:10px;
+
+    width:100%;
+    max-height:180px;
+
+    object-fit:cover;
+
+    border-radius:14px;
+
+    border:1px solid
+        rgba(255,255,255,.08);
+
+    display:none;
+}
+
+
+/* =====================================================
+   AD CARD
+===================================================== */
+
+.ads-list{
+    display:grid;
+    gap:12px;
+}
+
+.ad-card{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding:15px;
+
+    border-radius:16px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:1px solid
+        rgba(255,255,255,.06);
+}
+
+.ad-info{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    min-width:0;
+}
+
+.ad-image{
+    width:55px;
+    height:55px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    background:#111118;
+
+    border:1px solid
+        rgba(255,255,255,.08);
+}
+
+.ad-text{
+    min-width:0;
+}
+
+.ad-text strong{
+    display:block;
+    font-size:11px;
+    margin-bottom:5px;
+}
+
+.ad-text span{
+    display:block;
+    color:#666;
+    font-size:8px;
+    margin-top:3px;
+}
+
+.ad-actions{
+    display:flex;
+    gap:6px;
+    flex-shrink:0;
+}
+
+
+/* =====================================================
+   ADMIN CARDS
+===================================================== */
+
+.admin-list{
+    display:grid;
+    gap:10px;
+}
+
+.admin-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:1px solid
+        rgba(255,255,255,.06);
+}
+
+.admin-user{
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.admin-avatar{
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:13px;
+
+    font-weight:bold;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124,58,237,.20),
+            rgba(0,229,255,.07)
+        );
+
+    border:1px solid
+        rgba(180,124,255,.18);
+}
+
+.admin-user strong{
+    display:block;
+    font-size:11px;
+}
+
+.admin-user span{
+    display:block;
+    color:#666;
+    font-size:8px;
+    margin-top:4px;
+}
+
+.admin-actions{
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap;
+}
+
+
+/* =====================================================
+   PRICE BOX
+===================================================== */
+
+.price-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:10px;
+}
+
+.price-box{
+    padding:13px;
+
+    border-radius:14px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:1px solid
+        rgba(255,255,255,.06);
+}
+
+.price-box label{
+    display:block;
+    color:#777;
+    font-size:8px;
+    margin-bottom:7px;
+}
+
+.price-box input{
+    width:100%;
+    background:transparent;
+    border:none;
+    outline:none;
+    color:#fff;
+    font-size:11px;
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    z-index:10000;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    background:
+        rgba(0,0,0,.72);
+
+    backdrop-filter:blur(12px);
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:100%;
+    max-width:600px;
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    padding:25px;
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,20,28,.98),
+            rgba(8,8,13,.98)
+        );
+
+    border:1px solid
+        rgba(180,124,255,.18);
+
+    box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.6);
+}
+
+.modal-header{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:20px;
+}
+
+.modal-header h3{
+    font-size:17px;
+}
+
+.close-modal{
+    width:34px;
+    height:34px;
+
+    border-radius:10px;
+
+    border:1px solid
+        rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.04);
+
+    color:#aaa;
+
+    cursor:pointer;
+
+    font-size:16px;
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast{
+    position:fixed;
+
+    left:20px;
+    bottom:20px;
+
+    z-index:20000;
+
+    min-width:230px;
+
+    max-width:350px;
+
+    padding:14px 17px;
+
+    border-radius:14px;
+
+    background:
+        rgba(18,18,25,.96);
+
+    border:1px solid
+        rgba(180,124,255,.20);
+
+    box-shadow:
+        0 15px 50px
+        rgba(0,0,0,.4);
+
+    color:#ddd;
+
+    font-size:10px;
+
+    transform:
+        translateY(30px);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.3s;
+}
+
+.toast.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+    max-width:1200px;
+    margin:auto;
+
+    padding:20px;
+
+    text-align:center;
+
+    color:#444;
+
+    font-size:9px;
+
+    border-top:1px solid
+        rgba(255,255,255,.05);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:950px){
+
+    .dashboard-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .actions-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .price-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+@media(max-width:650px){
+
+    .admin-header{
+        padding:13px 15px;
+    }
+
+    .header-inner{
+        align-items:flex-start;
+    }
+
+    .logo{
+        font-size:19px;
+    }
+
+    .admin-status{
+        display:none;
+    }
+
+    .container{
+        padding:30px 13px 50px;
+    }
+
+    .page-title h1{
+        font-size:28px;
+    }
+
+    .page-title p{
+        font-size:9px;
+    }
+
+    .dashboard-grid{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    .stat-card{
+        padding:16px;
+    }
+
+    .stat-number{
+        font-size:21px;
+    }
+
+    .actions-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-controls{
+        grid-template-columns:1fr;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-group.full{
+        grid-column:auto;
+    }
+
+    .card{
+        padding:16px;
+        border-radius:18px;
+    }
+
+    .price-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .ad-card,
+    .admin-card{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .ad-actions,
+    .admin-actions{
+        width:100%;
+    }
+
+    .ad-actions .btn,
+    .admin-actions .btn{
+        flex:1;
+    }
+}
+
+@media(max-width:430px){
+
+    .dashboard-grid{
+        grid-template-columns:1fr;
+    }
+
+    .header-right{
+        gap:5px;
+    }
+
+    .logout-btn{
+        padding:8px 10px;
+    }
+
+    .page-title h1{
+        font-size:25px;
+    }
+
+    .price-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="admin-header">
+
+<div class="header-inner">
+
+<div class="logo">
+Kian Music
+</div>
+
+<div class="header-right">
+
+<div class="admin-status">
+👑 مدیر: <span id="currentAdmin">Kian</span>
+</div>
+
+<button
+class="logout-btn"
+id="logoutBtn">
+خروج
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="container">
+
+
+<!-- TITLE -->
+
+<div class="page-title">
+
+<div class="badge">
+⚡ پنل مدیریت
+</div>
+
+<h1>
+مدیریت Kian Music
+</h1>
+
+<p>
+کنترل کامل سایت، آهنگ‌ها، هنرمندان، تبلیغات و مدیران
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     STATISTICS
+===================================================== -->
+
+<div class="dashboard-grid">
+
+<div class="stat-card">
+
+<div class="stat-icon">
+🎵
+</div>
+
+<h3>
+تعداد آهنگ‌ها
+</h3>
+
+<div
+class="stat-number"
+id="songsCount">
+0
+</div>
+
+</div>
+
+
+<div class="stat-card">
+
+<div class="stat-icon">
+🎤
+</div>
+
+<h3>
+هنرمندان
+</h3>
+
+<div
+class="stat-number"
+id="artistsCount">
+0
+</div>
+
+</div>
+
+
+<div class="stat-card">
+
+<div class="stat-icon">
+📩
+</div>
+
+<h3>
+درخواست‌ها
+</h3>
+
+<div
+class="stat-number"
+id="requestsCount">
+0
+</div>
+
+</div>
+
+
+<div class="stat-card">
+
+<div class="stat-icon">
+👁️
+</div>
+
+<h3>
+بازدید کل
+</h3>
+
+<div
+class="stat-number">
+12570
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     QUICK ACTIONS
+===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>
+دسترسی سریع
+</h2>
+
+<span>
+Quick Actions
+</span>
+
+</div>
+
+
+<div class="card">
+
+<div class="actions-grid">
+
+
+<a
+href="./index.html"
+class="action-btn">
+
+<div class="action-icon">
+🏠
+</div>
+
+<div class="action-text">
+
+<strong>
+مشاهده سایت
+</strong>
+
+<span>
+رفتن به صفحه اصلی
+</span>
+
+</div>
+
+</a>
+
+
+<a
+href="./send.html"
+class="action-btn">
+
+<div class="action-icon">
+📤
+</div>
+
+<div class="action-text">
+
+<strong>
+ارسال آهنگ
+</strong>
+
+<span>
+مدیریت ارسال آهنگ
+</span>
+
+</div>
+
+</a>
+
+
+<a
+href="./artists.html"
+class="action-btn">
+
+<div class="action-icon">
+🎤
+</div>
+
+<div class="action-text">
+
+<strong>
+هنرمندان
+</strong>
+
+<span>
+مدیریت هنرمندان
+</span>
+
+</div>
+
+</a>
+
+
+<a
+href="./contact.html"
+class="action-btn">
+
+<div class="action-icon">
+📞
+</div>
+
+<div class="action-text">
+
+<strong>
+تماس با ما
+</strong>
+
+<span>
+مشاهده پیام‌ها
+</span>
+
+</div>
+
+</a>
+
+
+<a
+href="#songs"
+class="action-btn">
+
+<div class="action-icon">
+🎧
+</div>
+
+<div class="action-text">
+
+<strong>
+آهنگ‌ها
+</strong>
+
+<span>
+مدیریت آهنگ‌ها
+</span>
+
+</div>
+
+</a>
+
+
+<a
+href="#advertising"
+class="action-btn">
+
+<div class="action-icon">
+📢
+</div>
+
+<div class="action-text">
+
+<strong>
+تبلیغات
+</strong>
+
+<span>
+مدیریت تبلیغات سایت
+</span>
+
+</div>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SITE SECTIONS
+===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>
+بخش‌های سایت
+</h2>
+
+<span>
+Site Sections
+</span>
+
+</div>
+
+
+<div class="card">
+
+<div class="section-controls">
+
+
+<div class="control-row">
+
+<div class="control-info">
+
+<div class="control-icon">
+🎵
+</div>
+
+<div>
+
+<strong>
+بخش آهنگ‌ها
+</strong>
+
+<span>
+نمایش آهنگ‌ها در سایت
+</span>
+
+</div>
+
+</div>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="toggleSongs">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+
+
+<div class="control-row">
+
+<div class="control-info">
+
+<div class="control-icon">
+🎤
+</div>
+
+<div>
+
+<strong>
+بخش هنرمندان
+</strong>
+
+<span>
+نمایش هنرمندان
+</span>
+
+</div>
+
+</div>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="toggleArtists">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+
+
+<div class="control-row">
+
+<div class="control-info">
+
+<div class="control-icon">
+📤
+</div>
+
+<div>
+
+<strong>
+ارسال آهنگ
+</strong>
+
+<span>
+فعال بودن ارسال آهنگ
+</span>
+
+</div>
+
+</div>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="toggleSend">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+
+
+<div class="control-row">
+
+<div class="control-info">
+
+<div class="control-icon">
+📞
+</div>
+
+<div>
+
+<strong>
+تماس با ما
+</strong>
+
+<span>
+فعال بودن صفحه تماس
+</span>
+
+</div>
+
+</div>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="toggleContact">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+
+
+<div class="control-row">
+
+<div class="control-info">
+
+<div class="control-icon">
+📢
+</div>
+
+<div>
+
+<strong>
+تبلیغات
+</strong>
+
+<span>
+نمایش تبلیغات سایت
+</span>
+
+</div>
+
+</div>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="toggleAds">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SONGS
+===================================================== -->
+
+<section
+class="section"
+id="songs">
+
+<div class="section-title">
+
+<h2>
+🎵 مدیریت آهنگ‌ها
+</h2>
+
+<span>
+Songs
+</span>
+
+</div>
+
+
+<div class="card">
+
+<form id="songForm">
+
+<div class="form-grid">
+
+<div class="form-group">
+
+<label>
+نام آهنگ
+</label>
+
+<input
+type="text"
+class="form-control"
+id="songTitle"
+placeholder="مثلاً عشق من"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+نام خواننده
+</label>
+
+<input
+type="text"
+class="form-control"
+id="songArtist"
+placeholder="مثلاً Kian"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+لینک پخش آهنگ
+</label>
+
+<input
+type="url"
+class="form-control"
+id="songUrl"
+placeholder="https://..."
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+لینک تصویر
+</label>
+
+<input
+type="url"
+class="form-control"
+id="songImage"
+placeholder="https://...">
+
+</div>
+
+</div>
+
+
+<div class="form-actions">
+
+<button
+type="submit"
+class="btn btn-primary">
+
+➕ افزودن آهنگ
+
+</button>
+
+<button
+type="button"
+class="btn btn-secondary"
+id="clearSongs">
+
+پاک کردن همه
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- SONG TABLE -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>
+آخرین آهنگ‌ها
+</h2>
+
+<span>
+Last Songs
+</span>
+
+</div>
+
+
+<div class="card">
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>
+نام
+</th>
+
+<th>
+خواننده
+</th>
+
+<th>
+تاریخ
+</th>
+
+<th>
+وضعیت
+</th>
+
+<th>
+عملیات
+</th>
+
+</tr>
+
+</thead>
+
+<tbody id="songsTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ARTISTS
+===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>
+🎤 مدیریت هنرمندان
+</h2>
+
+<span>
+Artists
+</span>
+
+</div>
+
+
+<div class="card">
+
+<form id="artistForm">
+
+<div class="form-grid">
+
+<div class="form-group">
+
+<label>
+نام هنرمند
+</label>
+
+<input
+type="text"
+class="form-control"
+id="artistName"
+placeholder="نام هنرمند"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+سبک موسیقی
+</label>
+
+<input
+type="text"
+class="form-control"
+id="artistGenre"
+placeholder="پاپ، رپ، سنتی...">
+
+</div>
+
+
+<div class="form-group full">
+
+<label>
+لینک تصویر هنرمند
+</label>
+
+<input
+type="url"
+class="form-control"
+id="artistImage"
+placeholder="https://...">
+
+</div>
+
+</div>
+
+
+<div class="form-actions">
+
+<button
+type="submit"
+class="btn btn-primary">
+
+➕ افزودن هنرمند
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="card">
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>
+نام هنرمند
+</th>
+
+<th>
+سبک
+</th>
+
+<th>
+تاریخ
+</th>
+
+<th>
+عملیات
+</th>
+
+</tr>
+
+</thead>
+
+<tbody id="artistsTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     REQUESTS
+===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>
+📩 درخواست‌های ارسال آهنگ
+</h2>
+
+<span>
+Requests
+</span>
+
+</div>
+
+
+<div class="card">
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>
+نام
+</th>
+
+<th>
+خواننده
+</th>
+
+<th>
+تاریخ
+</th>
+
+<th>
+وضعیت
+</th>
+
+<th>
+عملیات
+</th>
+
+</tr>
+
+</thead>
+
+<tbody id="requestsTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ADVERTISING
+===================================================== -->
+
+<section
+class="section"
+id="advertising">
+
+<div class="section-title">
+
+<h2>
+📢 مدیریت تبلیغات
+</h2>
+
+<span>
+Advertising
+</span>
+
+</div>
+
+
+<div class="card">
+
+<form id="adForm">
+
+<input
+type="hidden"
+id="adEditId">
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label>
+عنوان تبلیغ
+</label>
+
+<input
+type="text"
+class="form-control"
+id="adTitle"
+placeholder="عنوان تبلیغ"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+نوع تبلیغ
+</label>
+
+<select
+class="form-control"
+id="adType">
+
+<option value="banner">
+بنر
+</option>
+
+<option value="link">
+لینکی
+</option>
+
+<option value="special">
+ویژه
+</option>
+
+<option value="page">
+صفحه‌ای
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+قیمت
+</label>
+
+<input
+type="number"
+class="form-control"
+id="adPrice"
+placeholder="مثلاً 500000">
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+مدت
+</label>
+
+<select
+class="form-control"
+id="adDuration">
+
+<option value="1">
+۱ روز
+</option>
+
+<option value="3">
+۳ روز
+</option>
+
+<option value="7">
+۷ روز
+</option>
+
+<option value="15">
+۱۵ روز
+</option>
+
+<option value="30">
+۳۰ روز
+</option>
+
+<option value="custom">
+سفارشی
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+تاریخ شروع
+</label>
+
+<input
+type="date"
+class="form-control"
+id="adStart">
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+تاریخ پایان
+</label>
+
+<input
+type="date"
+class="form-control"
+id="adEnd">
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+لینک تصویر
+</label>
+
+<input
+type="url"
+class="form-control"
+id="adImage"
+placeholder="https://...">
+
+<img
+id="adImagePreview"
+class="image-preview"
+alt="preview">
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+لینک مقصد
+</label>
+
+<input
+type="url"
+class="form-control"
+id="adUrl"
+placeholder="https://...">
+
+</div>
+
+
+<div class="form-group full">
+
+<label>
+توضیحات
+</label>
+
+<textarea
+class="form-control"
+id="adDescription"
+placeholder="توضیحات تبلیغ"></textarea>
+
+</div>
+
+</div>
+
+
+<div class="form-actions">
+
+<button
+type="submit"
+class="btn btn-primary"
+id="adSubmit">
+
+➕ ثبت تبلیغ
+
+</button>
+
+<button
+type="button"
+class="btn btn-secondary"
+id="adCancel"
+style="display:none">
+
+لغو ویرایش
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- ADS LIST -->
+
+<section class="section">
+
+<div class="card">
+
+<div
+class="ads-list"
+id="adsList">
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     AD PRICES
+===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>
+💰 قیمت پایه تبلیغات
+</h2>
+
+<span>
+Base Prices
+</span>
+
+</div>
+
+
+<div class="card">
+
+<div class="price-grid">
+
+<div class="price-box">
+
+<label>
+بنر
+</label>
+
+<input
+type="number"
+id="priceBanner"
+placeholder="قیمت">
+
+</div>
+
+
+<div class="price-box">
+
+<label>
+لینکی
+</label>
+
+<input
+type="number"
+id="priceLink"
+placeholder="قیمت">
+
+</div>
+
+
+<div class="price-box">
+
+<label>
+ویژه
+</label>
+
+<input
+type="number"
+id="priceSpecial"
+placeholder="قیمت">
+
+</div>
+
+
+<div class="price-box">
+
+<label>
+صفحه‌ای
+</label>
+
+<input
+type="number"
+id="pricePage"
+placeholder="قیمت">
+
+</div>
+
+
+<div class="price-box">
+
+<label>
+۳۰ روزه
+</label>
+
+<input
+type="number"
+id="price30"
+placeholder="قیمت">
+
+</div>
+
+</div>
+
+
+<div class="form-actions">
+
+<button
+class="btn btn-primary"
+id="savePrices">
+
+💾 ذخیره قیمت‌ها
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ADMIN MANAGEMENT
+===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>
+👑 مدیریت مدیران
+</h2>
+
+<span>
+Administrators
+</span>
+
+</div>
+
+
+<div class="card">
+
+<form id="adminForm">
+
+<input
+type="hidden"
+id="adminEditId">
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label>
+نام کاربری
+</label>
+
+<input
+type="text"
+class="form-control"
+id="adminUsername"
+placeholder="username"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+رمز عبور
+</label>
+
+<input
+type="password"
+class="form-control"
+id="adminPassword"
+placeholder="رمز عبور"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+عنوان
+</label>
+
+<input
+type="text"
+class="form-control"
+id="adminRole"
+placeholder="مثلاً مدیر محتوا">
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+سطح دسترسی
+</label>
+
+<select
+class="form-control"
+id="adminAccess">
+
+<option value="full">
+دسترسی کامل
+</option>
+
+<option value="manager">
+مدیر
+</option>
+
+<option value="editor">
+ویرایشگر
+</option>
+
+<option value="limited">
+محدود
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div class="form-actions">
+
+<button
+type="submit"
+class="btn btn-primary"
+id="adminSubmit">
+
+➕ افزودن مدیر
+
+</button>
+
+<button
+type="button"
+class="btn btn-secondary"
+id="adminCancel"
+style="display:none">
+
+لغو ویرایش
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- ADMIN LIST -->
+
+<section class="section">
+
+<div class="card">
+
+<div
+class="admin-list"
+id="adminsList">
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     VISITOR STATS
+===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>
+📊 آمار بازدید
+</h2>
+
+<span>
+Visitors
+</span>
+
+</div>
+
+
+<div class="dashboard-grid">
+
+<div class="stat-card">
+
+<div class="stat-icon">
+📅
+</div>
+
+<h3>
+امروز
+</h3>
+
+<div class="stat-number">
+124
+</div>
+
+</div>
+
+
+<div class="stat-card">
+
+<div class="stat-icon">
+📈
+</div>
+
+<h3>
+این هفته
+</h3>
+
+<div class="stat-number">
+863
+</div>
+
+</div>
+
+
+<div class="stat-card">
+
+<div class="stat-icon">
+📆
+</div>
+
+<h3>
+این ماه
+</h3>
+
+<div class="stat-number">
+3942
+</div>
+
+</div>
+
+
+<div class="stat-card">
+
+<div class="stat-icon">
+🌐
+</div>
+
+<h3>
+کل بازدید
+</h3>
+
+<div class="stat-number">
+12570
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     MODAL
+===================================================== -->
+
+<div
+class="modal"
+id="modal">
+
+<div class="modal-box">
+
+<div class="modal-header">
+
+<h3 id="modalTitle">
+جزئیات
+</h3>
+
+<button
+class="close-modal"
+id="closeModal">
+×
+</button>
+
+</div>
+
+<div id="modalContent"></div>
+
+</div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div
+class="toast"
+id="toast">
+انجام شد
+</div>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+© 2026 Kian Music — پنل مدیریت
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   LOGIN GUARD
+===================================================== */
+
+if(
+    sessionStorage.getItem("kian_admin_login") !== "true"
+){
+    window.location.href="./login.html";
+}
+
+
+/* =====================================================
+   HELPERS
+===================================================== */
+
+const $ = id => document.getElementById(id);
+
+function getData(key, fallback=[]){
+
+    try{
+
+        const data =
+            JSON.parse(localStorage.getItem(key));
+
+        return data ?? fallback;
+
+    }catch(e){
+
+        return fallback;
+
+    }
+
+}
+
+function saveData(key,data){
+
+    localStorage.setItem(
+        key,
+        JSON.stringify(data)
+    );
+
+}
+
+function showToast(message){
+
+    const toast=$("toast");
+
+    toast.textContent=message;
+
+    toast.classList.add("show");
+
+    setTimeout(()=>{
+        toast.classList.remove("show");
+    },2500);
+
+}
+
+function formatDate(date){
+
+    if(!date) return "-";
+
+    return new Date(date).toLocaleDateString(
+        "fa-IR"
+    );
+
+}
+
+
+/* =====================================================
+   CURRENT ADMIN
+===================================================== */
+
+function loadCurrentAdmin(){
+
+    const current =
+        localStorage.getItem(
+            "kian_current_admin"
+        );
+
+    if(current){
+
+        $("currentAdmin").textContent=current;
+
+    }
+
+}
+
+
+/* =====================================================
+   SITE SECTIONS
+===================================================== */
+
+const defaultSections={
+    songs:true,
+    artists:true,
+    send:true,
+    contact:true,
+    ads:true
+};
+
+function loadSections(){
+
+    let sections=getData(
+        "kian_music_site_sections",
+        defaultSections
+    );
+
+    if(Array.isArray(sections)){
+        sections=defaultSections;
+    }
+
+    $("toggleSongs").checked =
+        sections.songs !== false;
+
+    $("toggleArtists").checked =
+        sections.artists !== false;
+
+    $("toggleSend").checked =
+        sections.send !== false;
+
+    $("toggleContact").checked =
+        sections.contact !== false;
+
+    $("toggleAds").checked =
+        sections.ads !== false;
+
+}
+
+function saveSections(){
+
+    saveData(
+        "kian_music_site_sections",
+        {
+            songs:$("toggleSongs").checked,
+            artists:$("toggleArtists").checked,
+            send:$("toggleSend").checked,
+            contact:$("toggleContact").checked,
+            ads:$("toggleAds").checked
+        }
+    );
+
+    showToast("وضعیت بخش سایت ذخیره شد");
+
+}
+
+[
+    "toggleSongs",
+    "toggleArtists",
+    "toggleSend",
+    "toggleContact",
+    "toggleAds"
+].forEach(id=>{
+
+    $(id).addEventListener(
+        "change",
+        saveSections
+    );
+
+});
+
+
+/* =====================================================
+   SONGS
+===================================================== */
+
+function loadSongs(){
+
+    const songs=getData(
+        "kian_music_songs"
+    );
+
+    $("songsCount").textContent=
+        songs.length;
+
+    const table=$("songsTable");
+
+    table.innerHTML="";
+
+    if(!songs.length){
+
+        table.innerHTML=`
+        <tr>
+            <td colspan="5" class="empty">
+                هنوز آهنگی ثبت نشده است
+            </td>
+        </tr>`;
+
+        return;
+    }
+
+    songs.slice().reverse().forEach(
+        (song,index)=>{
+
+            const realIndex =
+                songs.length-1-index;
+
+            const tr=document.createElement("tr");
+
+            tr.innerHTML=`
+
+            <td>
+                ${escapeHtml(song.title || "-")}
+            </td>
+
+            <td>
+                ${escapeHtml(song.artist || "-")}
+            </td>
+
+            <td>
+                ${formatDate(song.date)}
+            </td>
+
+            <td>
+                <span class="badge-status badge-active">
+                    فعال
+                </span>
+            </td>
+
+            <td>
+
+                <div class="row-actions">
+
+                    <button
+                    class="btn btn-danger btn-small"
+                    onclick="deleteSong(${realIndex})">
+
+                    حذف
+
+                    </button>
+
+                </div>
+
+            </td>
+
+            `;
+
+            table.appendChild(tr);
+
+        }
+    );
+
+}
+
+
+function deleteSong(index){
+
+    const songs=getData(
+        "kian_music_songs"
+    );
+
+    songs.splice(index,1);
+
+    saveData(
+        "kian_music_songs",
+        songs
+    );
+
+    loadSongs();
+
+    showToast("آهنگ حذف شد");
+
+}
+
+
+$("songForm").addEventListener(
+"submit",
+function(e){
+
+    e.preventDefault();
+
+    const songs=getData(
+        "kian_music_songs"
+    );
+
+    songs.push({
+
+        id:Date.now(),
+
+        title:$("songTitle").value.trim(),
+
+        artist:$("songArtist").value.trim(),
+
+        url:$("songUrl").value.trim(),
+
+        image:$("songImage").value.trim(),
+
+        date:new Date().toISOString()
+
+    });
+
+    saveData(
+        "kian_music_songs",
+        songs
+    );
+
+    this.reset();
+
+    loadSongs();
+
+    showToast("آهنگ با موفقیت اضافه شد");
+
+});
+
+
+$("clearSongs").addEventListener(
+"click",
+function(){
+
+    if(!confirm(
+        "آیا از حذف تمام آهنگ‌ها مطمئن هستید؟"
+    )) return;
+
+    localStorage.removeItem(
+        "kian_music_songs"
+    );
+
+    loadSongs();
+
+    showToast("تمام آهنگ‌ها حذف شدند");
+
+});
+
+
+/* =====================================================
+   ARTISTS
+===================================================== */
+
+function loadArtists(){
+
+    const artists=getData(
+        "kian_music_artists"
+    );
+
+    $("artistsCount").textContent=
+        artists.length;
+
+    const table=$("artistsTable");
+
+    table.innerHTML="";
+
+    if(!artists.length){
+
+        table.innerHTML=`
+        <tr>
+            <td colspan="4" class="empty">
+                هنوز هنرمندی ثبت نشده است
+            </td>
+        </tr>`;
+
+        return;
+    }
+
+    artists.slice().reverse().forEach(
+        (artist,index)=>{
+
+            const realIndex=
+                artists.length-1-index;
+
+            const tr=document.createElement("tr");
+
+            tr.innerHTML=`
+
+            <td>
+                ${escapeHtml(artist.name || "-")}
+            </td>
+
+            <td>
+                ${escapeHtml(artist.genre || "-")}
+            </td>
+
+            <td>
+                ${formatDate(artist.date)}
+            </td>
+
+            <td>
+
+                <button
+                class="btn btn-danger btn-small"
+                onclick="deleteArtist(${realIndex})">
+
+                حذف
+
+                </button>
+
+            </td>
+
+            `;
+
+            table.appendChild(tr);
+
+        }
+    );
+
+}
+
+
+function deleteArtist(index){
+
+    const artists=getData(
+        "kian_music_artists"
+    );
+
+    artists.splice(index,1);
+
+    saveData(
+        "kian_music_artists",
+        artists
+    );
+
+    loadArtists();
+
+    showToast("هنرمند حذف شد");
+
+}
+
+
+$("artistForm").addEventListener(
+"submit",
+function(e){
+
+    e.preventDefault();
+
+    const artists=getData(
+        "kian_music_artists"
+    );
+
+    artists.push({
+
+        id:Date.now(),
+
+        name:$("artistName").value.trim(),
+
+        genre:$("artistGenre").value.trim(),
+
+        image:$("artistImage").value.trim(),
+
+        date:new Date().toISOString()
+
+    });
+
+    saveData(
+        "kian_music_artists",
+        artists
+    );
+
+    this.reset();
+
+    loadArtists();
+
+    showToast("هنرمند اضافه شد");
+
+});
+
+
+/* =====================================================
+   REQUESTS
+===================================================== */
+
+function loadRequests(){
+
+    const requests=getData(
+        "kian_music_requests"
+    );
+
+    $("requestsCount").textContent=
+        requests.length;
+
+    const table=$("requestsTable");
+
+    table.innerHTML="";
+
+    if(!requests.length){
+
+        table.innerHTML=`
+        <tr>
+            <td colspan="5" class="empty">
+                درخواستی وجود ندارد
+            </td>
+        </tr>`;
+
+        return;
+    }
+
+    requests.slice().reverse().forEach(
+        (request,index)=>{
+
+            const realIndex=
+                requests.length-1-index;
+
+            const tr=document.createElement("tr");
+
+            const status=
+                request.status || "در انتظار";
+
+            tr.innerHTML=`
+
+            <td>
+                ${escapeHtml(
+                    request.name ||
+                    request.title ||
+                    "-"
+                )}
+            </td>
+
+            <td>
+                ${escapeHtml(
+                    request.artist ||
+                    "-"
+                )}
+            </td>
+
+            <td>
+                ${formatDate(
+                    request.date ||
+                    request.createdAt
+                )}
+            </td>
+
+            <td>
+
+                <span class="badge-status ${
+                    status==="تأیید شده"
+                    ?"badge-active"
+                    :"badge-admin"
+                }">
+
+                    ${escapeHtml(status)}
+
+                </span>
+
+            </td>
+
+            <td>
+
+                <div class="row-actions">
+
+                    <button
+                    class="btn btn-success btn-small"
+                    onclick="approveRequest(${realIndex})">
+
+                    تأیید
+
+                    </button>
+
+                    <button
+                    class="btn btn-danger btn-small"
+                    onclick="deleteRequest(${realIndex})">
+
+                    حذف
+
+                    </button>
+
+                </div>
+
+            </td>
+
+            `;
+
+            table.appendChild(tr);
+
+        }
+    );
+
+}
+
+
+function approveRequest(index){
+
+    const requests=getData(
+        "kian_music_requests"
+    );
+
+    if(requests[index]){
+
+        requests[index].status=
+            "تأیید شده";
+
+    }
+
+    saveData(
+        "kian_music_requests",
+        requests
+    );
+
+    loadRequests();
+
+    showToast("درخواست تأیید شد");
+
+}
+
+
+function deleteRequest(index){
+
+    const requests=getData(
+        "kian_music_requests"
+    );
+
+    requests.splice(index,1);
+
+    saveData(
+        "kian_music_requests",
+        requests
+    );
+
+    loadRequests();
+
+    showToast("درخواست حذف شد");
+
+}
+
+
+/* =====================================================
+   ADS
+===================================================== */
+
+const defaultPrices={
+    banner:0,
+    link:0,
+    special:0,
+    page:0,
+    d30:0
+};
+
+
+function loadPrices(){
+
+    const prices=getData(
+        "kian_music_ad_prices",
+        defaultPrices
+    );
+
+    $("priceBanner").value=
+        prices.banner || 0;
+
+    $("priceLink").value=
+        prices.link || 0;
+
+    $("priceSpecial").value=
+        prices.special || 0;
+
+    $("pricePage").value=
+        prices.page || 0;
+
+    $("price30").value=
+        prices.d30 || 0;
+
+}
+
+
+$("savePrices").addEventListener(
+"click",
+function(){
+
+    saveData(
+        "kian_music_ad_prices",
+        {
+            banner:Number(
+                $("priceBanner").value
+            ) || 0,
+
+            link:Number(
+                $("priceLink").value
+            ) || 0,
+
+            special:Number(
+                $("priceSpecial").value
+            ) || 0,
+
+            page:Number(
+                $("pricePage").value
+            ) || 0,
+
+            d30:Number(
+                $("price30").value
+            ) || 0
+        }
+    );
+
+    showToast("قیمت‌ها ذخیره شدند");
+
+});
+
+
+$("adImage").addEventListener(
+"input",
+function(){
+
+    const preview=$("adImagePreview");
+
+    if(this.value.trim()){
+
+        preview.src=this.value.trim();
+
+        preview.style.display="block";
+
+        preview.onerror=()=>{
+            preview.style.display="none";
+        };
+
+    }else{
+
+        preview.style.display="none";
+
+    }
+
+});
+
+
+function loadAds(){
+
+    const ads=getData(
+        "kian_music_ads"
+    );
+
+    const list=$("adsList");
+
+    list.innerHTML="";
+
+    if(!ads.length){
+
+        list.innerHTML=`
+        <div class="empty">
+            هنوز تبلیغی ثبت نشده است
+        </div>`;
+
+        return;
+    }
+
+    ads.slice().reverse().forEach(
+        (ad,index)=>{
+
+            const realIndex=
+                ads.length-1-index;
+
+            const item=document.createElement("div");
+
+            item.className="ad-card";
+
+            const image=
+                ad.image ||
+                "";
+
+            item.innerHTML=`
+
+            <div class="ad-info">
+
+                ${
+                    image
+                    ?
+                    `<img
+                    class="ad-image"
+                    src="${escapeAttribute(image)}"
+                    onerror="this.style.display='none'">`
+                    :
+                    `<div class="ad-image"></div>`
+                }
+
+                <div class="ad-text">
+
+                    <strong>
+                        ${escapeHtml(
+                            ad.title || "-"
+                        )}
+                    </strong>
+
+                    <span>
+                        نوع:
+                        ${escapeHtml(
+                            ad.type || "-"
+                        )}
+                    </span>
+
+                    <span>
+                        مدت:
+                        ${escapeHtml(
+                            String(ad.duration || "-")
+                        )} روز
+                    </span>
+
+                    <span>
+                        ${
+                            ad.start
+                            ? formatDate(ad.start)
+                            : "-"
+                        }
+                        تا
+                        ${
+                            ad.end
+                            ? formatDate(ad.end)
+                            : "-"
+                        }
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="ad-actions">
+
+                <button
+                class="btn btn-secondary btn-small"
+                onclick="editAd(${realIndex})">
+
+                ویرایش
+
+                </button>
+
+                <button
+                class="btn btn-danger btn-small"
+                onclick="deleteAd(${realIndex})">
+
+                حذف
+
+                </button>
+
+            </div>
+
+            `;
+
+            list.appendChild(item);
+
+        }
+    );
+
+}
+
+
+$("adForm").addEventListener(
+"submit",
+function(e){
+
+    e.preventDefault();
+
+    const ads=getData(
+        "kian_music_ads"
+    );
+
+    const editId=$("adEditId").value;
+
+    const ad={
+
+        id:
+            editId
+            ?
+            Number(editId)
+            :
+            Date.now(),
+
+        title:$("adTitle").value.trim(),
+
+        type:$("adType").value,
+
+        price:Number(
+            $("adPrice").value
+        ) || 0,
+
+        duration:
+            $("adDuration").value,
+
+        start:$("adStart").value,
+
+        end:$("adEnd").value,
+
+        image:$("adImage").value.trim(),
+
+        url:$("adUrl").value.trim(),
+
+        description:
+            $("adDescription").value.trim(),
+
+        active:true
+
+    };
+
+
+    if(editId){
+
+        const index=ads.findIndex(
+            x=>Number(x.id)===Number(editId)
+        );
+
+        if(index!==-1){
+
+            ads[index]=ad;
+
+        }
+
+        showToast("تبلیغ ویرایش شد");
+
+    }else{
+
+        ads.push(ad);
+
+        showToast("تبلیغ ثبت شد");
+
+    }
+
+
+    saveData(
+        "kian_music_ads",
+        ads
+    );
+
+    resetAdForm();
+
+    loadAds();
+
+});
+
+
+function editAd(index){
+
+    const ads=getData(
+        "kian_music_ads"
+    );
+
+    const ad=ads[index];
+
+    if(!ad) return;
+
+    $("adEditId").value=
+        ad.id || "";
+
+    $("adTitle").value=
+        ad.title || "";
+
+    $("adType").value=
+        ad.type || "banner";
+
+    $("adPrice").value=
+        ad.price || "";
+
+    $("adDuration").value=
+        ad.duration || "1";
+
+    $("adStart").value=
+        ad.start || "";
+
+    $("adEnd").value=
+        ad.end || "";
+
+    $("adImage").value=
+        ad.image || "";
+
+    $("adUrl").value=
+        ad.url || "";
+
+    $("adDescription").value=
+        ad.description || "";
+
+    $("adSubmit").textContent=
+        "💾 ذخیره تغییرات";
+
+    $("adCancel").style.display=
+        "inline-flex";
+
+    if(ad.image){
+
+        $("adImagePreview").src=
+            ad.image;
+
+        $("adImagePreview").style.display=
+            "block";
+
+    }
+
+    document
+        .getElementById("advertising")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+function deleteAd(index){
+
+    const ads=getData(
+        "kian_music_ads"
+    );
+
+    if(!confirm(
+        "آیا این تبلیغ حذف شود؟"
+    )) return;
+
+    ads.splice(index,1);
+
+    saveData(
+        "kian_music_ads",
+        ads
+    );
+
+    loadAds();
+
+    showToast("تبلیغ حذف شد");
+
+}
+
+
+$("adCancel").addEventListener(
+"click",
+resetAdForm
+);
+
+
+function resetAdForm(){
+
+    $("adForm").reset();
+
+    $("adEditId").value="";
+
+    $("adSubmit").textContent=
+        "➕ ثبت تبلیغ";
+
+    $("adCancel").style.display=
+        "none";
+
+    $("adImagePreview").style.display=
+        "none";
+
+}
+
+
+/* =====================================================
+   ADMINS
+===================================================== */
+
+const mainAdmin={
+    id:1,
+    username:"Kian",
+    role:"مدیر اصلی",
+    access:"full",
+    protected:true
+};
+
+
+function loadAdmins(){
+
+    let admins=getData(
+        "kian_music_admins"
+    );
+
+    if(!admins.length){
+
+        admins=[mainAdmin];
+
+        saveData(
+            "kian_music_admins",
+            admins
+        );
+
+    }
+
+    const list=$("adminsList");
+
+    list.innerHTML="";
+
+    admins.forEach(
+        (admin,index)=>{
+
+            const item=
+                document.createElement("div");
+
+            item.className="admin-card";
+
+            const first=
+                String(
+                    admin.username ||
+                    "A"
+                ).charAt(0).toUpperCase();
+
+            item.innerHTML=`
+
+            <div class="admin-user">
+
+                <div class="admin-avatar">
+                    ${escapeHtml(first)}
+                </div>
+
+                <div>
+
+                    <strong>
+                        ${escapeHtml(
+                            admin.username
+                        )}
+                    </strong>
+
+                    <span>
+                        ${escapeHtml(
+                            admin.role ||
+                            "مدیر"
+                        )}
+                        —
+                        سطح:
+                        ${getAccessName(
+                            admin.access
+                        )}
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-actions">
+
+                <button
+                class="btn btn-secondary btn-small"
+                onclick="editAdmin(${index})">
+
+                ویرایش
+
+                </button>
+
+                ${
+                    admin.protected
+                    ?
+                    ""
+                    :
+                    `
+                    <button
+                    class="btn btn-danger btn-small"
+                    onclick="deleteAdmin(${index})">
+
+                    حذف
+
+                    </button>
+                    `
+                }
+
+            </div>
+
+            `;
+
+            list.appendChild(item);
+
+        }
+    );
+
+}
+
+
+function getAccessName(access){
+
+    const names={
+        full:"کامل",
+        manager:"مدیر",
+        editor:"ویرایشگر",
+        limited:"محدود"
+    };
+
+    return names[access] || "محدود";
+
+}
+
+
+$("adminForm").addEventListener(
+"submit",
+function(e){
+
+    e.preventDefault();
+
+    let admins=getData(
+        "kian_music_admins"
+    );
+
+    const editId=$("adminEditId").value;
+
+    const username=
+        $("adminUsername")
+        .value
+        .trim();
+
+    const password=
+        $("adminPassword")
+        .value;
+
+    const role=
+        $("adminRole")
+        .value
+        .trim();
+
+    const access=
+        $("adminAccess")
+        .value;
+
+
+    if(editId){
+
+        const index=admins.findIndex(
+            x=>Number(x.id)===Number(editId)
+        );
+
+        if(index===-1) return;
+
+        if(admins[index].protected){
+
+            admins[index].role=
+                role || "مدیر اصلی";
+
+            saveData(
+                "kian_music_admins",
+                admins
+            );
+
+            resetAdminForm();
+
+            loadAdmins();
+
+            showToast(
+                "اطلاعات مدیر اصلی به‌روزرسانی شد"
+            );
+
+            return;
+
+        }
+
+        admins[index].username=
+            username;
+
+        if(password){
+
+            admins[index].password=
+                password;
+
+        }
+
+        admins[index].role=
+            role || "مدیر";
+
+        admins[index].access=
+            access;
+
+        saveData(
+            "kian_music_admins",
+            admins
+        );
+
+        resetAdminForm();
+
+        loadAdmins();
+
+        showToast(
+            "اطلاعات مدیر ویرایش شد"
+        );
+
+        return;
+
+    }
+
+
+    if(
+        admins.some(
+            x=>
+            String(x.username)
+            .toLowerCase()
+            ===
+            username.toLowerCase()
+        )
+    ){
+
+        showToast(
+            "این نام کاربری قبلاً وجود دارد"
+        );
+
+        return;
+
+    }
+
+
+    admins.push({
+
+        id:Date.now(),
+
+        username,
+
+        password,
+
+        role:
+            role || "مدیر",
+
+        access,
+
+        protected:false
+
+    });
+
+
+    saveData(
+        "kian_music_admins",
+        admins
+    );
+
+    resetAdminForm();
+
+    loadAdmins();
+
+    showToast(
+        "مدیر جدید اضافه شد"
+    );
+
+});
+
+
+function editAdmin(index){
+
+    const admins=getData(
+        "kian_music_admins"
+    );
+
+    const admin=admins[index];
+
+    if(!admin) return;
+
+    $("adminEditId").value=
+        admin.id;
+
+    $("adminUsername").value=
+        admin.username || "";
+
+    $("adminPassword").value=
+        "";
+
+    $("adminRole").value=
+        admin.role || "";
+
+    $("adminAccess").value=
+        admin.access || "limited";
+
+
+    if(admin.protected){
+
+        $("adminUsername").readOnly=true;
+
+        $("adminAccess").disabled=true;
+
+    }else{
+
+        $("adminUsername").readOnly=false;
+
+        $("adminAccess").disabled=false;
+
+    }
+
+
+    $("adminSubmit").textContent=
+        "💾 ذخیره تغییرات";
+
+    $("adminCancel").style.display=
+        "inline-flex";
+
+
+    document
+        .querySelector(
+            ".section-title h2"
+        )
+        ?.scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+function deleteAdmin(index){
+
+    const admins=getData(
+        "kian_music_admins"
+    );
+
+    const admin=admins[index];
+
+    if(!admin) return;
+
+    if(admin.protected){
+
+        showToast(
+            "مدیر اصلی قابل حذف نیست"
+        );
+
+        return;
+
+    }
+
+    if(!confirm(
+        "آیا این مدیر حذف شود؟"
+    )) return;
+
+    admins.splice(index,1);
+
+    saveData(
+        "kian_music_admins",
+        admins
+    );
+
+    loadAdmins();
+
+    showToast(
+        "مدیر حذف شد"
+    );
+
+}
+
+
+$("adminCancel").addEventListener(
+"click",
+resetAdminForm
+);
+
+
+function resetAdminForm(){
+
+    $("adminForm").reset();
+
+    $("adminEditId").value="";
+
+    $("adminUsername").readOnly=false;
+
+    $("adminAccess").disabled=false;
+
+    $("adminSubmit").textContent=
+        "➕ افزودن مدیر";
+
+    $("adminCancel").style.display=
+        "none";
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHtml(value){
+
+    return String(value ?? "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+function escapeAttribute(value){
+
+    return escapeHtml(value);
+
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+$("closeModal").addEventListener(
+"click",
+function(){
+
+    $("modal").classList.remove(
+        "show"
+    );
+
+});
+
+
+$("modal").addEventListener(
+"click",
+function(e){
+
+    if(e.target===this){
+
+        this.classList.remove(
+            "show"
+        );
+
+    }
+
+});
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+$("logoutBtn").addEventListener(
+"click",
+function(){
+
+    sessionStorage.removeItem(
+        "kian_admin_login"
+    );
+
+    localStorage.removeItem(
+        "kian_current_admin"
+    );
+
+    window.location.href=
+        "./login.html";
+
+});
+
+
+/* =====================================================
+   INIT
+===================================================== */
+
+loadCurrentAdmin();
+
+loadSections();
+
+loadSongs();
+
+loadArtists();
+
+loadRequests();
+
+loadAds();
+
+loadPrices();
+
+loadAdmins();
+
+</script>
+
+</body>
+</html>
